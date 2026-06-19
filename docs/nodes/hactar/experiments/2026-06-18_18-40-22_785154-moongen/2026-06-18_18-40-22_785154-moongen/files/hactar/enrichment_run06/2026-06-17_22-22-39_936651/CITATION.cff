@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network Latency Measurements and Energy Consumption Under Varying Load Conditions
+abstract: This dataset documents a network latency measurement experiment using a
+  custom load generation tool, MoonGen, to evaluate performance under different configurations.
+  The methodology involved configuring a device under test environment, executing
+  a looped workload with varying packet rates and sizes, and capturing associated
+  energy consumption data per run. Latency measurements were recorded during the execution
+  of the load generator process, and resulting histograms were generated for analysis.
+  Per-run logs and evaluation outputs are included to support reproducibility and
+  detailed investigation.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- hugetlbfs
+- latency
+- nida
+- cesis
+license: CC-BY-SA-4.0

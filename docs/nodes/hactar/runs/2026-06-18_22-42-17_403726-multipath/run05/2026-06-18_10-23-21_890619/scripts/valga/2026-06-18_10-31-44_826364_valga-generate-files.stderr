@@ -1,0 +1,39 @@
++ FLOW_0=1000000
++ FLOW_1=1000000
++ FLOW_2=1000000
++ FLOW_3=1000000
++ FLOW_4=1000000
++ FLOW_5=1000000
++ FLOW_6=1000000
++ FLOW_7=1000000
++ FLOW_8=1000000
++ TARGET_DIR=/root/mp-nada/apps/src/bin/root
++ mkdir -p /root/mp-nada/apps/src/bin/root
++ LC_ALL=C
++ tr -dc 0
++ head -c 1000000
++ LC_ALL=C
++ tr -dc 1
++ head -c 1000000
++ LC_ALL=C
++ tr -dc 2
++ head -c 1000000
++ LC_ALL=C
++ tr -dc 3
++ head -c 1000000
++ LC_ALL=C
++ tr -dc 4
++ head -c 1000000
++ LC_ALL=C
++ tr -dc 5
++ head -c 1000000
++ LC_ALL=C
++ tr -dc 6
++ head -c 1000000
++ LC_ALL=C
++ tr -dc 7
++ head -c 1000000
++ LC_ALL=C
++ tr -dc 8
++ head -c 1000000
++ echo 'Generated files'

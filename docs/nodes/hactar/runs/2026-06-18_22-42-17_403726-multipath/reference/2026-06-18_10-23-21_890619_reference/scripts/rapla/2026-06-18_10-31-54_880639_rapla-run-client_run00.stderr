@@ -1,0 +1,884 @@
+++ pos_get_variable results_dir -r
++ RESULTS_DIR=/root/results
+++ pos_get_variable scheduler --from-loop
++ SCHEDULER_CONFIG=unreliable:lowrtt
+++ pos_get_variable slow_path_profile --from-loop
++ SLOW_PATH_PROFILE=10:5
++ IFS=:
++ read -r SLOW_PATH_RATE SLOW_PATH_DELAY
+++ pos_get_variable tbf_latency -r
++ TBF_LATENCY=10
+++ pos_get_variable tbf_burst -r
++ TBF_BURST=64000
+++ pos_get_variable iteration --from-loop
++ ITERATION=01
+++ pos_get_variable cc_algorithm -r
++ CC_ALGORITHM=cubic
++ RELIABLE_FLAG=
++ SCHEDULER=unreliable:lowrtt
++ case "$SCHEDULER_CONFIG" in
++ SCHEDULER=lowrtt
++ PATH_PROPERTIES=delay-5ms_rate-10mbit
++ SCHEDULER_DIR_NAME=unreliable_lowrtt
++ RUN_NAME=unreliable_lowrtt_delay-5ms_rate-10mbit_run-01
++ RUN_DIR=/root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01
++ mkdir -p /root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01
+++ pos_get_variable client_ip -r
++ CLIENT_IP=fd00:0:0:1::1
+++ pos_get_variable client_extra_ip -r
++ CLIENT_EXTRA_IP=fd00:0:0:2::1
+++ pos_get_variable client_extra_interface -r
++ CLIENT_EXTRA_INTERFACE=enp133s0f0
+++ pos_get_variable proxy_ip -r
++ PROXY_IP=fd00:0:0:3::1
+++ pos_get_variable proxy_port -r
++ PROXY_PORT=443
+++ pos_get_variable server_ip -r
++ TARGET_IP=fd00:0:0:4::1
+++ pos_get_variable server_port -r
++ TARGET_PORT=25565
++ PROXY_ADDRESS='[fd00:0:0:3::1]:443'
++ TUNNEL_PRIO_LIST=(" --op u=0,i" " --op u=0,i" " --op u=3,i" " --op u=3,i" " --op u=3,i" " --op u=5,i" " --op u=5,i" " --op u=5,i")
++ REQUEST_FLAGS=("--endpoint /flow0.txt" " --ep /flow1.txt" " --ep /flow2.txt" " --ep /flow3.txt" " --ep /flow4.txt" " --ep /flow5.txt" " --ep /flow6.txt" " --ep /flow7.txt" " --ep /flow8.txt")
++ echo '...Set slow path parameters'
++ tc qdisc replace dev enp133s0f0 root handle 1: tbf rate 10mbit latency 10ms burst 64000
++ tc qdisc replace dev enp133s0f0 parent 1: handle 10: netem delay 5ms
++ SYNC_TAG=unreliable_lowrtt_delay-5ms_rate-10mbit_run-01_services_ready
++ FINISH_TAG=unreliable_lowrtt_delay-5ms_rate-10mbit_run-01_client_finished
++ pos_sync --tag unreliable_lowrtt_delay-5ms_rate-10mbit_run-01_services_ready
++ RUN_FLAGS=' --outer-prio u=0,i,sched=lowrtt --op u=0,i  --op u=0,i  --op u=3,i  --op u=3,i  --op u=3,i  --op u=5,i  --op u=5,i  --op u=5,i --endpoint /flow0.txt  --ep /flow1.txt  --ep /flow2.txt  --ep /flow3.txt  --ep /flow4.txt  --ep /flow5.txt  --ep /flow6.txt  --ep /flow7.txt  --ep /flow8.txt'
++ echo 'Starting client iteration 01: /root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01'
++ pos_energy_start --loop --filename client
++ cd /root/mp-nada/tokio-quiche/nada
++ cargo run --release --bin masque-client -- --results-dir /root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01 --proxy-address '[fd00:0:0:3::1]:443' --target-ip fd00:0:0:4::1 --target-port 25565 --multipath --probe-timeout 3 --client-address '[fd00:0:0:1::1]:0' --extra-address '[fd00:0:0:2::1]:0' --log-stats --qlog --log-keys --cc-algorithm cubic --scheduler lowrtt --outer-prio u=0,i,sched=lowrtt --op u=0,i --op u=0,i --op u=3,i --op u=3,i --op u=3,i --op u=5,i --op u=5,i --op u=5,i --endpoint /flow0.txt --ep /flow1.txt --ep /flow2.txt --ep /flow3.txt --ep /flow4.txt --ep /flow5.txt --ep /flow6.txt --ep /flow7.txt --ep /flow8.txt
+    Updating crates.io index
+     Locking 299 packages to latest compatible versions
+      Adding foundations v4.5.0 (available: v5.7.3)
+      Adding sfv v0.14.0 (available: v0.15.0)
+ Downloading crates ...
+  Downloaded adler2 v2.0.1
+  Downloaded anstyle v1.0.14
+  Downloaded darling_macro v0.20.11
+  Downloaded dtoa v1.0.11
+  Downloaded deranged v0.5.8
+  Downloaded icu_collections v2.2.0
+  Downloaded icu_normalizer_data v2.2.0
+  Downloaded idna_adapter v1.2.2
+  Downloaded is_terminal_polyfill v1.70.2
+  Downloaded linked-hash-map v0.5.6
+  Downloaded ipnetwork v0.20.0
+  Downloaded itertools v0.12.1
+  Downloaded lock_api v0.4.14
+  Downloaded gimli v0.32.3
+  Downloaded miniz_oxide v0.8.9
+  Downloaded slog-json v2.6.1
+  Downloaded serde_with_macros v3.21.0
+  Downloaded stable_deref_trait v1.2.1
+  Downloaded smallvec v1.15.2
+  Downloaded spinning_top v0.3.0
+  Downloaded socket2 v0.6.4
+  Downloaded prometheus v0.13.4
+  Downloaded serde_with v3.21.0
+  Downloaded thiserror-impl v1.0.69
+  Downloaded trackable v1.3.0
+  Downloaded triomphe v0.1.15
+  Downloaded zmij v1.0.21
+  Downloaded zerofrom v0.1.8
+  Downloaded zerofrom-derive v0.1.7
+  Downloaded syn v2.0.118
+  Downloaded zerovec-derive v0.11.3
+  Downloaded zerotrie v0.2.4
+  Downloaded url v2.5.8
+  Downloaded zerovec v0.11.6
+  Downloaded icu_properties v2.2.0
+  Downloaded time v0.3.49
+  Downloaded rustix v0.38.44
+  Downloaded yoke-derive v0.8.2
+  Downloaded regex-automata v0.4.14
+  Downloaded yaml-rust v0.4.5
+  Downloaded unicode-ident v1.0.24
+  Downloaded tokio-util v0.7.18
+  Downloaded zerocopy v0.8.52
+  Downloaded yoke v0.8.3
+  Downloaded writeable v0.6.3
+  Downloaded utf8parse v0.2.2
+  Downloaded syn v1.0.109
+  Downloaded tracing v0.1.44
+  Downloaded yaml-merge-keys v0.5.1
+  Downloaded utf8_iter v1.0.4
+  Downloaded urlencoding v2.1.3
+  Downloaded tracing-core v0.1.36
+  Downloaded tonic v0.11.0
+  Downloaded tinyvec v1.11.0
+  Downloaded trackable_derive v1.0.0
+  Downloaded tracing-attributes v0.1.31
+  Downloaded tower-layer v0.3.3
+  Downloaded tokio-stream v0.1.18
+  Downloaded tokio-macros v2.7.0
+  Downloaded tinystr v0.8.3
+  Downloaded time-macros v0.2.29
+  Downloaded regex-syntax v0.8.11
+  Downloaded tower-service v0.3.3
+  Downloaded tinyvec_macros v0.1.1
+  Downloaded time-core v0.1.9
+  Downloaded thrift_codec v0.3.2
+  Downloaded thread_local v1.1.9
+  Downloaded object v0.37.3
+  Downloaded thiserror v1.0.69
+  Downloaded term v1.2.1
+  Downloaded take_mut v0.2.2
+  Downloaded tokio v1.52.3
+  Downloaded synstructure v0.13.2
+  Downloaded strsim v0.11.1
+  Downloaded serde_json v1.0.150
+  Downloaded regex v1.12.4
+  Downloaded portable-atomic v1.13.1
+  Downloaded nix v0.26.4
+  Downloaded schemars v1.2.1
+  Downloaded rand v0.8.6
+  Downloaded libc v0.2.186
+  Downloaded serde_core v1.0.228
+  Downloaded schemars v0.9.0
+  Downloaded rand v0.10.1
+  Downloaded procfs v0.16.0
+  Downloaded opentelemetry-proto v0.5.0
+  Downloaded slog v2.8.2
+  Downloaded serde_derive v1.0.228
+  Downloaded raw-cpuid v11.6.0
+  Downloaded linux-raw-sys v0.4.15
+  Downloaded slab v0.4.12
+  Downloaded shlex v2.0.1
+  Downloaded sfv v0.14.0
+  Downloaded serde_yaml v0.8.26
+  Downloaded serde_path_to_error v0.1.20
+  Downloaded prost-derive v0.12.6
+  Downloaded opentelemetry_sdk v0.22.1
+  Downloaded slog-term v2.9.2
+  Downloaded slog-stdlog v4.1.1
+  Downloaded slog-scope v4.4.1
+  Downloaded slog-async v2.8.0
+  Downloaded shlex v1.3.0
+  Downloaded rustversion v1.0.22
+  Downloaded ref-cast-impl v1.0.25
+  Downloaded ref-cast v1.0.25
+  Downloaded rand_core v0.6.4
+  Downloaded quanta v0.12.6
+  Downloaded prometools v0.2.3
+  Downloaded prometheus-client v0.18.1
+  Downloaded procfs-core v0.16.0
+  Downloaded powerfmt v0.2.0
+  Downloaded opentelemetry v0.22.0
+  Downloaded nom v7.1.3
+  Downloaded serde v1.0.228
+  Downloaded ryu v1.0.23
+  Downloaded rustc-hash v2.1.2
+  Downloaded rustc-demangle v0.1.27
+  Downloaded rand_core v0.10.1
+  Downloaded rand_chacha v0.3.1
+  Downloaded quote v1.0.45
+  Downloaded prost v0.12.6
+  Downloaded proc-macro2 v1.0.106
+  Downloaded ppv-lite86 v0.2.21
+  Downloaded potential_utf v0.1.5
+  Downloaded pin-utils v0.1.0
+  Downloaded pin-project-lite v0.2.17
+  Downloaded pin-project-internal v1.1.13
+  Downloaded pin-project v1.1.13
+  Downloaded percent-encoding v2.3.2
+  Downloaded parking_lot_core v0.9.12
+  Downloaded parking_lot v0.12.5
+  Downloaded ordered-float v4.6.0
+  Downloaded num-traits v0.2.19
+  Downloaded scopeguard v1.2.0
+  Downloaded prometheus-client-derive-text-encode v0.3.0
+  Downloaded openssl-macros v0.1.1
+  Downloaded once_cell v1.21.4
+  Downloaded num-conv v0.2.2
+  Downloaded nonzero_ext v0.3.0
+  Downloaded no-std-compat v0.4.1
+  Downloaded neli-proc-macros v0.2.2
+  Downloaded neli v0.7.4
+  Downloaded mio v1.2.1
+  Downloaded minimal-lexical v0.2.1
+  Downloaded memoffset v0.9.1
+  Downloaded memoffset v0.7.1
+  Downloaded memchr v2.8.2
+  Downloaded local-ip-address v0.6.13
+  Downloaded litemap v0.8.2
+  Downloaded indexmap v2.14.0
+  Downloaded foundations v4.5.0
+  Downloaded log v0.4.32
+  Downloaded itoa v1.0.18
+  Downloaded libm v0.2.16
+  Downloaded itertools v0.13.0
+  Downloaded idna v1.1.0
+  Downloaded intrusive-collections v0.9.7
+  Downloaded futures-util v0.3.32
+  Downloaded chrono v0.4.45
+  Downloaded bindgen v0.72.1
+  Downloaded indexmap v1.9.3
+  Downloaded icu_properties_data v2.2.0
+  Downloaded libloading v0.8.9
+  Downloaded lazy_static v1.5.0
+  Downloaded is-terminal v0.4.17
+  Downloaded hashbrown v0.17.1
+  Downloaded hashbrown v0.14.5
+  Downloaded governor v0.6.3
+  Downloaded clap_builder v4.6.0
+  Downloaded backtrace v0.3.76
+  Downloaded ident_case v1.0.1
+  Downloaded icu_provider v2.2.0
+  Downloaded icu_normalizer v2.2.0
+  Downloaded http v0.2.12
+  Downloaded futures v0.3.32
+  Downloaded darling_core v0.20.11
+  Downloaded crossbeam-epoch v0.9.18
+  Downloaded crossbeam-channel v0.5.15
+  Downloaded clap_derive v4.6.1
+  Downloaded clang-sys v1.8.1
+  Downloaded chacha20 v0.10.0
+  Downloaded cc v1.2.64
+  Downloaded bs58 v0.5.1
+  Downloaded boring v4.22.0
+  Downloaded anyhow v1.0.102
+  Downloaded iana-time-zone v0.1.65
+  Downloaded hashbrown v0.12.3
+  Downloaded getset v0.1.7
+  Downloaded getrandom v0.4.3
+  Downloaded getrandom v0.2.17
+  Downloaded futures-timer v3.0.4
+  Downloaded futures-executor v0.3.32
+  Downloaded futures-core v0.3.32
+  Downloaded fslock v0.2.1
+  Downloaded form_urlencoded v1.2.2
+  Downloaded foreign-types-shared v0.3.1
+  Downloaded foreign-types v0.5.0
+  Downloaded fnv v1.0.7
+  Downloaded find-msvc-tools v0.1.9
+  Downloaded errno v0.3.14
+  Downloaded either v1.16.0
+  Downloaded dyn-clone v1.0.20
+  Downloaded derive_builder_core v0.20.2
+  Downloaded darling_macro v0.23.0
+  Downloaded cpufeatures v0.3.0
+  Downloaded cmake v0.1.58
+  Downloaded clap v4.6.1
+  Downloaded cfg-if v1.0.4
+  Downloaded cf-rustracing-jaeger v1.3.0
+  Downloaded byteorder v1.5.0
+  Downloaded arc-swap v1.9.1
+  Downloaded anstyle-query v1.1.5
+  Downloaded icu_locale_core v2.2.0
+  Downloaded http-body v0.4.6
+  Downloaded hostname v0.4.2
+  Downloaded hex v0.4.3
+  Downloaded heck v0.5.0
+  Downloaded glob v0.3.3
+  Downloaded futures-task v0.3.32
+  Downloaded futures-sink v0.3.32
+  Downloaded futures-macro v0.3.32
+  Downloaded futures-io v0.3.32
+  Downloaded futures-channel v0.3.32
+  Downloaded fs_extra v1.3.0
+  Downloaded foreign-types-macros v0.2.3
+  Downloaded equivalent v1.0.2
+  Downloaded derive_builder_macro v0.20.2
+  Downloaded darling v0.20.11
+  Downloaded crossbeam v0.8.4
+  Downloaded atomic_float v1.1.0
+  Downloaded foundations-macros v4.5.0
+  Downloaded erased-serde v0.3.31
+  Downloaded displaydoc v0.2.6
+  Downloaded darling_core v0.23.0
+  Downloaded crossbeam-utils v0.8.21
+  Downloaded colorchoice v1.0.5
+  Downloaded clap_lex v1.1.0
+  Downloaded bitflags v1.3.2
+  Downloaded base64 v0.21.7
+  Downloaded autocfg v1.5.1
+  Downloaded async-trait v0.1.89
+  Downloaded dashmap v5.5.3
+  Downloaded darling v0.23.0
+  Downloaded bitflags v2.13.0
+  Downloaded base64 v0.22.1
+  Downloaded anstyle-parse v1.0.0
+  Downloaded derive_builder v0.20.2
+  Downloaded crossbeam-queue v0.3.12
+  Downloaded cexpr v0.6.0
+  Downloaded bytes v1.11.1
+  Downloaded aho-corasick v1.1.4
+  Downloaded addr2line v0.25.1
+  Downloaded cf-rustracing v1.3.0
+  Downloaded anstream v1.0.0
+  Downloaded boring-sys v4.22.0
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.45
+   Compiling serde_core v1.0.228
+   Compiling libc v0.2.186
+   Compiling serde v1.0.228
+   Compiling cfg-if v1.0.4
+   Compiling autocfg v1.5.1
+   Compiling strsim v0.11.1
+   Compiling ident_case v1.0.1
+   Compiling memchr v2.8.2
+   Compiling pin-project-lite v0.2.17
+   Compiling either v1.16.0
+   Compiling crossbeam-utils v0.8.21
+   Compiling stable_deref_trait v1.2.1
+   Compiling bitflags v2.13.0
+   Compiling parking_lot_core v0.9.12
+   Compiling futures-core v0.3.32
+   Compiling scopeguard v1.2.0
+   Compiling bytes v1.11.1
+   Compiling rustversion v1.0.22
+   Compiling itoa v1.0.18
+   Compiling fnv v1.0.7
+   Compiling futures-sink v0.3.32
+   Compiling syn v1.0.109
+   Compiling slab v0.4.12
+   Compiling glob v0.3.3
+   Compiling once_cell v1.21.4
+   Compiling lock_api v0.4.14
+   Compiling shlex v2.0.1
+   Compiling futures-channel v0.3.32
+   Compiling futures-io v0.3.32
+   Compiling zerocopy v0.8.52
+   Compiling find-msvc-tools v0.1.9
+   Compiling futures-task v0.3.32
+   Compiling regex-syntax v0.8.11
+   Compiling thiserror v1.0.69
+   Compiling minimal-lexical v0.2.1
+   Compiling libloading v0.8.9
+   Compiling zmij v1.0.21
+   Compiling cc v1.2.64
+   Compiling writeable v0.6.3
+   Compiling percent-encoding v2.3.2
+   Compiling hashbrown v0.17.1
+   Compiling num-traits v0.2.19
+   Compiling clang-sys v1.8.1
+   Compiling bindgen v0.72.1
+   Compiling equivalent v1.0.2
+   Compiling anyhow v1.0.102
+   Compiling litemap v0.8.2
+   Compiling itertools v0.13.0
+   Compiling icu_properties_data v2.2.0
+   Compiling shlex v1.3.0
+   Compiling rustc-hash v2.1.2
+   Compiling icu_normalizer_data v2.2.0
+   Compiling serde_json v1.0.150
+   Compiling object v0.37.3
+   Compiling utf8_iter v1.0.4
+   Compiling lazy_static v1.5.0
+   Compiling getrandom v0.4.3
+   Compiling rand_core v0.10.1
+   Compiling log v0.4.32
+   Compiling slog v2.8.2
+   Compiling nom v7.1.3
+   Compiling indexmap v1.9.3
+   Compiling itertools v0.12.1
+   Compiling gimli v0.32.3
+   Compiling byteorder v1.5.0
+   Compiling time-core v0.1.9
+   Compiling cpufeatures v0.3.0
+   Compiling syn v2.0.118
+   Compiling adler2 v2.0.1
+   Compiling num-conv v0.2.2
+   Compiling fs_extra v1.3.0
+   Compiling rustix v0.38.44
+   Compiling miniz_oxide v0.8.9
+   Compiling chacha20 v0.10.0
+   Compiling http v0.2.12
+   Compiling time-macros v0.2.29
+   Compiling crossbeam-channel v0.5.15
+   Compiling cmake v0.1.58
+   Compiling memoffset v0.9.1
+   Compiling tracing-core v0.1.36
+   Compiling urlencoding v2.1.3
+   Compiling powerfmt v0.2.0
+   Compiling regex-automata v0.4.14
+   Compiling fslock v0.2.1
+   Compiling hex v0.4.3
+   Compiling linux-raw-sys v0.4.15
+   Compiling portable-atomic v1.13.1
+   Compiling rustc-demangle v0.1.27
+   Compiling deranged v0.5.8
+   Compiling hashbrown v0.12.3
+   Compiling ryu v1.0.23
+   Compiling procfs v0.16.0
+   Compiling linked-hash-map v0.5.6
+   Compiling http-body v0.4.6
+   Compiling mio v1.2.1
+   Compiling socket2 v0.6.4
+   Compiling getrandom v0.2.17
+   Compiling rand_core v0.6.4
+   Compiling yaml-rust v0.4.5
+   Compiling procfs-core v0.16.0
+   Compiling rand v0.10.1
+   Compiling ordered-float v4.6.0
+   Compiling crossbeam-epoch v0.9.18
+   Compiling cexpr v0.6.0
+   Compiling crossbeam-queue v0.3.12
+   Compiling memoffset v0.7.1
+   Compiling raw-cpuid v11.6.0
+   Compiling thread_local v1.1.9
+   Compiling base64 v0.21.7
+   Compiling hashbrown v0.14.5
+   Compiling tower-layer v0.3.3
+   Compiling tower-service v0.3.3
+   Compiling dtoa v1.0.11
+   Compiling iana-time-zone v0.1.65
+   Compiling indexmap v2.14.0
+   Compiling time v0.3.49
+   Compiling prometheus v0.13.4
+   Compiling foreign-types-shared v0.3.1
+   Compiling slog-async v2.8.0
+   Compiling regex v1.12.4
+   Compiling libm v0.2.16
+   Compiling utf8parse v0.2.2
+   Compiling anstyle-parse v1.0.0
+   Compiling chrono v0.4.45
+   Compiling crossbeam v0.8.4
+   Compiling is-terminal v0.4.17
+   Compiling hostname v0.4.2
+   Compiling quiche v0.23.4 (/root/mp-nada/quiche)
+   Compiling arc-swap v1.9.1
+   Compiling spinning_top v0.3.0
+   Compiling colorchoice v1.0.5
+   Compiling anstyle-query v1.1.5
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling trackable_derive v1.0.0
+   Compiling prometheus-client-derive-text-encode v0.3.0
+   Compiling term v1.2.1
+   Compiling no-std-compat v0.4.1
+   Compiling anstyle v1.0.14
+   Compiling futures-timer v3.0.4
+   Compiling addr2line v0.25.1
+   Compiling ref-cast v1.0.25
+   Compiling nonzero_ext v0.3.0
+   Compiling take_mut v0.2.2
+   Compiling foundations v4.5.0
+   Compiling anstream v1.0.0
+   Compiling trackable v1.3.0
+   Compiling intrusive-collections v0.9.7
+   Compiling buffer-pool v0.1.0 (/root/mp-nada/buffer-pool)
+   Compiling serde_path_to_error v0.1.20
+   Compiling thrift_codec v0.3.2
+   Compiling form_urlencoded v1.2.2
+   Compiling octets v0.3.0 (/root/mp-nada/octets)
+   Compiling bitflags v1.3.2
+   Compiling clap_lex v1.1.0
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:474:22
+    |
+474 |     pub fn get_bytes(&mut self, len: usize) -> Result<Octets> {
+    |                      ^^^^^^^^^                        ^^^^^^ the same lifetime is hidden here
+    |                      |
+    |                      the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+474 |     pub fn get_bytes(&mut self, len: usize) -> Result<Octets<'_>> {
+    |                                                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:491:26
+    |
+491 |     pub fn get_bytes_mut(&mut self, len: usize) -> Result<OctetsMut> {
+    |                          ^^^^^^^^^                        ^^^^^^^^^ the same lifetime is hidden here
+    |                          |
+    |                          the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+491 |     pub fn get_bytes_mut(&mut self, len: usize) -> Result<OctetsMut<'_>> {
+    |                                                                    ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:508:37
+    |
+508 |     pub fn get_bytes_with_u8_length(&mut self) -> Result<Octets> {
+    |                                     ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                     |
+    |                                     the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+508 |     pub fn get_bytes_with_u8_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:516:38
+    |
+516 |     pub fn get_bytes_with_u16_length(&mut self) -> Result<Octets> {
+    |                                      ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                      |
+    |                                      the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+516 |     pub fn get_bytes_with_u16_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:524:41
+    |
+524 |     pub fn get_bytes_with_varint_length(&mut self) -> Result<Octets> {
+    |                                         ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                         |
+    |                                         the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+524 |     pub fn get_bytes_with_varint_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                    ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:531:23
+    |
+531 |     pub fn peek_bytes(&mut self, len: usize) -> Result<Octets> {
+    |                       ^^^^^^^^^                        ^^^^^^ the same lifetime is hidden here
+    |                       |
+    |                       the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+531 |     pub fn peek_bytes(&mut self, len: usize) -> Result<Octets<'_>> {
+    |                                                              ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:546:27
+    |
+546 |     pub fn peek_bytes_mut(&mut self, len: usize) -> Result<OctetsMut> {
+    |                           ^^^^^^^^^                        ^^^^^^^^^ the same lifetime is hidden here
+    |                           |
+    |                           the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+546 |     pub fn peek_bytes_mut(&mut self, len: usize) -> Result<OctetsMut<'_>> {
+    |                                                                     ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:580:21
+    |
+580 |     pub fn split_at(&mut self, off: usize) -> Result<(OctetsMut, OctetsMut)> {
+    |                     ^^^^^^^^^                         ^^^^^^^^^  ^^^^^^^^^ the same lifetime is hidden here
+    |                     |                                 |
+    |                     |                                 the same lifetime is hidden here
+    |                     the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+580 |     pub fn split_at(&mut self, off: usize) -> Result<(OctetsMut<'_>, OctetsMut<'_>)> {
+    |                                                                ++++           ++++
+
+   Compiling pin-utils v0.1.0
+warning: `octets` (lib) generated 8 warnings (run `cargo fix --lib -p octets` to apply 8 suggestions)
+   Compiling heck v0.5.0
+   Compiling nix v0.26.4
+   Compiling atomic_float v1.1.0
+   Compiling base64 v0.22.1
+   Compiling clap_builder v4.6.0
+   Compiling synstructure v0.13.2
+   Compiling darling_core v0.20.11
+   Compiling darling_core v0.23.0
+   Compiling ppv-lite86 v0.2.21
+   Compiling quanta v0.12.6
+   Compiling backtrace v0.3.76
+   Compiling rand_chacha v0.3.1
+   Compiling rand v0.8.6
+   Compiling serde_derive v1.0.228
+   Compiling zerofrom-derive v0.1.7
+   Compiling yoke-derive v0.8.2
+   Compiling zerovec-derive v0.11.3
+   Compiling tokio-macros v2.7.0
+   Compiling displaydoc v0.2.6
+   Compiling futures-macro v0.3.32
+   Compiling thiserror-impl v1.0.69
+   Compiling prost-derive v0.12.6
+   Compiling async-trait v0.1.89
+   Compiling pin-project-internal v1.1.13
+   Compiling tokio v1.52.3
+   Compiling getset v0.1.7
+   Compiling tracing-attributes v0.1.31
+   Compiling futures-util v0.3.32
+   Compiling foreign-types-macros v0.2.3
+   Compiling openssl-macros v0.1.1
+   Compiling ref-cast-impl v1.0.25
+   Compiling clap_derive v4.6.1
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling opentelemetry v0.22.0
+   Compiling zerovec v0.11.6
+   Compiling zerotrie v0.2.4
+   Compiling foreign-types v0.5.0
+   Compiling pin-project v1.1.13
+   Compiling sfv v0.14.0
+   Compiling prost v0.12.6
+   Compiling darling_macro v0.20.11
+   Compiling darling_macro v0.23.0
+   Compiling darling v0.20.11
+   Compiling derive_builder_core v0.20.2
+   Compiling foundations-macros v4.5.0
+   Compiling tracing v0.1.44
+   Compiling darling v0.23.0
+   Compiling serde_with_macros v3.21.0
+   Compiling tinystr v0.8.3
+   Compiling potential_utf v0.1.5
+   Compiling icu_locale_core v2.2.0
+   Compiling icu_collections v2.2.0
+   Compiling derive_builder_macro v0.20.2
+   Compiling clap v4.6.1
+   Compiling serde_with v3.21.0
+   Compiling derive_builder v0.20.2
+   Compiling smallvec v1.15.2
+   Compiling erased-serde v0.3.31
+   Compiling icu_provider v2.2.0
+   Compiling neli-proc-macros v0.2.2
+   Compiling serde_yaml v0.8.26
+   Compiling ipnetwork v0.20.0
+   Compiling triomphe v0.1.15
+   Compiling icu_properties v2.2.0
+   Compiling parking_lot v0.12.5
+   Compiling icu_normalizer v2.2.0
+   Compiling dashmap v5.5.3
+   Compiling futures-executor v0.3.32
+   Compiling prometheus-client v0.18.1
+   Compiling opentelemetry_sdk v0.22.1
+   Compiling futures v0.3.32
+   Compiling boring-sys v4.22.0
+   Compiling neli v0.7.4
+   Compiling governor v0.6.3
+   Compiling slog-scope v4.4.1
+   Compiling slog-json v2.6.1
+   Compiling slog-term v2.9.2
+   Compiling yaml-merge-keys v0.5.1
+   Compiling prometools v0.2.3
+   Compiling slog-stdlog v4.1.1
+   Compiling tokio-stream v0.1.18
+   Compiling cf-rustracing v1.3.0
+   Compiling idna_adapter v1.2.2
+   Compiling datagram-socket v0.1.0 (/root/mp-nada/datagram-socket)
+   Compiling idna v1.1.0
+   Compiling task-killswitch v0.1.0 (/root/mp-nada/task-killswitch)
+   Compiling tokio-util v0.7.18
+   Compiling tonic v0.11.0
+   Compiling qlog v0.15.1 (/root/mp-nada/qlog)
+   Compiling url v2.5.8
+   Compiling opentelemetry-proto v0.5.0
+   Compiling local-ip-address v0.6.13
+   Compiling cf-rustracing-jaeger v1.3.0
+   Compiling boring v4.22.0
+warning: unnecessary parentheses around closure body
+   --> /root/mp-nada/quiche/src/ranges.rs:316:29
+    |
+316 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+316 -             .map(|(&s, &e)| (s..e))
+316 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: unnecessary parentheses around closure body
+   --> /root/mp-nada/quiche/src/ranges.rs:332:29
+    |
+332 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+help: remove these parentheses
+    |
+332 -             .map(|(&s, &e)| (s..e))
+332 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: unnecessary parentheses around closure body
+   --> /root/mp-nada/quiche/src/ranges.rs:339:29
+    |
+339 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+help: remove these parentheses
+    |
+339 -             .map(|(&s, &e)| (s..e))
+339 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7492:30
+     |
+7492 |     pub fn source_id_on_path(&self, path_id: PathId) -> Option<ConnectionId> {
+     |                              ^^^^^ the lifetime is elided here ^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+7492 |     pub fn source_id_on_path(&self, path_id: PathId) -> Option<ConnectionId<'_>> {
+     |                                                                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7506:22
+     |
+7506 |     pub fn source_id(&self) -> ConnectionId {
+     |                      ^^^^^     ^^^^^^^^^^^^ the same lifetime is hidden here
+     |                      |
+     |                      the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7506 |     pub fn source_id(&self) -> ConnectionId<'_> {
+     |                                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7524:23
+     |
+7524 |     pub fn source_ids(&self) -> impl Iterator<Item = &ConnectionId> {
+     |                       ^^^^^                          ^^^^^^^^^^^^^
+     |                       |                              ||
+     |                       |                              |the same lifetime is hidden here
+     |                       |                              the same lifetime is elided here
+     |                       the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7524 |     pub fn source_ids(&self) -> impl Iterator<Item = &ConnectionId<'_>> {
+     |                                                                   ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7538:9
+     |
+7538 |         &self, path_id: PathId,
+     |         ^^^^^ the lifetime is elided here
+7539 |     ) -> Option<ConnectionId> {
+     |                 ^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7539 |     ) -> Option<ConnectionId<'_>> {
+     |                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7550:27
+     |
+7550 |     pub fn destination_id(&self) -> ConnectionId {
+     |                           ^^^^^     ^^^^^^^^^^^^ the same lifetime is hidden here
+     |                           |
+     |                           the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7550 |     pub fn destination_id(&self) -> ConnectionId<'_> {
+     |                                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/cid.rs:1168:23
+     |
+1168 |     pub fn scids_iter(&self) -> impl Iterator<Item = &ConnectionId> {
+     |                       ^^^^^                          ^^^^^^^^^^^^^
+     |                       |                              ||
+     |                       |                              |the same lifetime is hidden here
+     |                       |                              the same lifetime is elided here
+     |                       the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+1168 |     pub fn scids_iter(&self) -> impl Iterator<Item = &ConnectionId<'_>> {
+     |                                                                   ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/quiche/src/stream/mod.rs:600:20
+    |
+600 |     pub fn blocked(&self) -> hash_map::Iter<u64, u64> {
+    |                    ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                    |
+    |                    the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+600 |     pub fn blocked(&self) -> hash_map::Iter<'_, u64, u64> {
+    |                                             +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/quiche/src/stream/mod.rs:605:18
+    |
+605 |     pub fn reset(&self) -> hash_map::Iter<u64, (u64, u64)> {
+    |                  ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                  |
+    |                  the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+605 |     pub fn reset(&self) -> hash_map::Iter<'_, u64, (u64, u64)> {
+    |                                           +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/quiche/src/stream/mod.rs:610:20
+    |
+610 |     pub fn stopped(&self) -> hash_map::Iter<u64, u64> {
+    |                    ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                    |
+    |                    the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+610 |     pub fn stopped(&self) -> hash_map::Iter<'_, u64, u64> {
+    |                                             +++
+
+warning: `quiche` (lib) generated 12 warnings (run `cargo fix --lib -p quiche` to apply 12 suggestions)
+   Compiling tokio-quiche v0.2.1 (/root/mp-nada/tokio-quiche)
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> /root/mp-nada/tokio-quiche/src/quic/io/gso.rs:83:19
+   |
+83 |     fn make_cmsg(&'_ self) -> ControlMessage {
+   |                   ^^          ^^^^^^^^^^^^^^ the same lifetime is hidden here
+   |                   |
+   |                   the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+   |
+83 |     fn make_cmsg(&'_ self) -> ControlMessage<'_> {
+   |                                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/tokio-quiche/src/socket/listener.rs:100:14
+    |
+100 |     fn as_fd(&self) -> BorrowedFd {
+    |              ^^^^^     ^^^^^^^^^^ the same lifetime is hidden here
+    |              |
+    |              the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+100 |     fn as_fd(&self) -> BorrowedFd<'_> {
+    |                                  ++++
+
+   Compiling masque v0.1.0 (/root/mp-nada/tokio-quiche/nada)
+warning: `tokio-quiche` (lib) generated 2 warnings (run `cargo fix --lib -p tokio-quiche` to apply 2 suggestions)
+    Finished `release` profile [optimized] target(s) in 1m 27s
+     Running `target/release/masque-client --results-dir /root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01 --proxy-address '[fd00:0:0:3::1]:443' --target-ip 'fd00:0:0:4::1' --target-port 25565 --multipath --probe-timeout 3 --client-address '[fd00:0:0:1::1]:0' --extra-address '[fd00:0:0:2::1]:0' --log-stats --qlog --log-keys --cc-algorithm cubic --scheduler lowrtt --outer-prio u=0,i,sched=lowrtt --op u=0,i --op u=0,i --op u=3,i --op u=3,i --op u=3,i --op u=5,i --op u=5,i --op u=5,i --endpoint /flow0.txt --ep /flow1.txt --ep /flow2.txt --ep /flow3.txt --ep /flow4.txt --ep /flow5.txt --ep /flow6.txt --ep /flow7.txt --ep /flow8.txt`
++ pos_sync --tag unreliable_lowrtt_delay-5ms_rate-10mbit_run-01_client_finished
++ pos_energy_stop

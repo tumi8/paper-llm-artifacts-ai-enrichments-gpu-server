@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Implementation Performance Evaluation Across Multiple Configurations and
+  Nodes
+abstract: This dataset documents an experiment evaluating the performance of several
+  QUIC implementations under varying network conditions. The methodology involved
+  automated setup of nodes, disabling time synchronization, installing dependencies,
+  compiling multiple QUIC libraries (lsquic, picoquic, quic-go, quiche, tquic, aioquic),
+  and executing client-server transfer tests with bandwidth limiting.  Evaluation
+  scripts aggregated results from repeated runs to generate reports and plots of goodput
+  versus bandwidth limit for each implementation across different file sizes and configurations.
+  Per-run logs and checksums are included alongside evaluation outputs.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC
+- apt
+- lsquic
+- tquic
+- goodput
+license: CC-BY-SA-4.0

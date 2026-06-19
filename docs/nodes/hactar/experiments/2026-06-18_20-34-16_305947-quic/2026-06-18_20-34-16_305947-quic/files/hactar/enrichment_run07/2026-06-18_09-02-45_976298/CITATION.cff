@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Protocol Implementation Performance Evaluation Under Varying Bandwidth
+  and File Size Constraints
+abstract: This dataset evaluates QUIC protocol implementations across multiple configurations,
+  measuring performance metrics such as goodput, latency, and success rates under
+  controlled bandwidth limits and file sizes. Server and client workloads were executed
+  on two nodes, capturing logs, energy usage, and cryptographic handshake data. Evaluation
+  scripts aggregate results, generating statistical summaries, boxplots, and TSV files
+  to compare implementation behavior. Artifacts include per-run server/client logs,
+  compiled binaries, and metrics from 72 repetitions across configurations.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC protocol
+- network benchmarking
+- bandwidth limitation
+- implementation comparison
+- performance metrics
+license: CC-BY-SA-4.0

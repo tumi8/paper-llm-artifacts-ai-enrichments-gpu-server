@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Performance Evaluation of MoonGen and L2 Forwarder Latency under Simulated
+  Network Load
+abstract: This dataset documents an experiment designed to assess network latency
+  performance using the MoonGen load generation tool and a libmoon L2 forwarder component.
+  The methodology involved establishing controlled environments on nodes nida and
+  cesis, utilizing scripts to configure DUTs and load generators with configurable
+  packet rates and sizes. Per-run logs captured timing data during simulated network
+  traffic through both tools, focusing on latency measurements. Evaluation outputs
+  included CSV log files of latencies and associated image plots generated from the
+  raw data, providing insights into system performance characteristics under varying
+  workload conditions.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- libmoon
+- latency
+- network testing
+- MoonGen
+- digital front-end
+license: CC-BY-SA-4.0

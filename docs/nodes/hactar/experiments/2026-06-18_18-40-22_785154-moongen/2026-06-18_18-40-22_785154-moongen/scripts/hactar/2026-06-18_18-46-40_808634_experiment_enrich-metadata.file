@@ -1,0 +1,389 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+timestamp() {
+  date +"%Y-%m-%d %H:%M:%S"
+}
+
+log() {
+  if [ "$#" -eq 0 ] || [ -z "${*// }" ]; then
+    echo
+  else
+    printf '%s  %s\n' "$(timestamp)" "$*"
+  fi
+}
+
+upload_recursive_folder() {
+  local source_path="$1"
+  local upload_label="$2"
+
+  log "Uploading folder '$source_path' as '$upload_label' with loop suffixing"
+  if ! pos_upload --loop --recursive --outfile "$upload_label" --timeout 240 "$source_path"; then
+    log "WARN: failed to upload recursive folder '$source_path' as '$upload_label'"
+    return 1
+  fi
+
+  return 0
+}
+
+PROJECT_DIR="${PROJECT_DIR:-/root/ai-metadata-enricher}"
+PACKAGE_DIR="${PACKAGE_DIR:-$PROJECT_DIR/ai_metadata_enricher}"
+WORK_ROOT="/tmp/enricher"
+
+MODEL_PROFILE="$(pos_get_variable model_profile --from-loop 2>/dev/null || true)"
+MODEL="$(pos_get_variable model --from-loop 2>/dev/null || true)"
+CTX="$(pos_get_variable ctx --from-loop 2>/dev/null || true)"
+TEMPERATURE="$(pos_get_variable temperature --from-loop 2>/dev/null || true)"
+TOP_P="$(pos_get_variable top_p --from-loop 2>/dev/null || true)"
+NUM_PREDICT="$(pos_get_variable num_predict --from-loop 2>/dev/null || true)"
+THINK="$(pos_get_variable think --from-loop 2>/dev/null || true)"
+PEEK_CHARS="$(pos_get_variable peek_chars --from-loop)"
+BASELINE_RESULT_FOLDER="$(pos_get_variable baseline_result_folder --from-loop)"
+CRATE_BASENAME="$(pos_get_variable crate_basename --from-loop)"
+REFERENCE_LABEL="$(pos_get_variable reference_label --from-loop 2>/dev/null || true)"
+REFERENCE_PATH="$(pos_get_variable reference_path --from-loop 2>/dev/null || true)"
+
+if [ "$BASELINE_RESULT_FOLDER" != "/" ]; then
+  BASELINE_RESULT_FOLDER="${BASELINE_RESULT_FOLDER%/}"
+fi
+
+ARTIFACT_BASELINE_LABEL="${CRATE_BASENAME}_original"
+ARTIFACT_ENRICHED_LABEL="$CRATE_BASENAME"
+MANIFEST_PATH="/tmp/llm-enrichment-manifest.json"
+GPU_METRICS_PATH="/tmp/llm-enrichment-gpu-metrics.csv"
+PROMPT_LOG_PATH="/tmp/llm-enrichment-prompts.jsonl"
+WORKING_RESULT_FOLDER="$WORK_ROOT/$CRATE_BASENAME"
+BERTSCORE_RESULTS_PATH="$WORK_ROOT/bertscore_results.json"
+BERTSCORE_RESULTS_MD_PATH="$WORK_ROOT/bertscore_results.md"
+STAGING_FOLDER="/tmp/enricher-staging"
+enrich_rc=0
+evaluation_status="skipped"
+evaluation_reason="not_started"
+
+rm -f "$MANIFEST_PATH"
+rm -f "$GPU_METRICS_PATH"
+rm -f "$PROMPT_LOG_PATH"
+rm -f "$BERTSCORE_RESULTS_PATH"
+rm -f "$BERTSCORE_RESULTS_MD_PATH"
+rm -rf "$STAGING_FOLDER"
+
+cleanup() {
+  rm -rf "$WORKING_RESULT_FOLDER"
+  rm -rf "$STAGING_FOLDER"
+  rm -f "$MANIFEST_PATH"
+  rm -f "$GPU_METRICS_PATH"
+  rm -f "$PROMPT_LOG_PATH"
+  rm -f "$BERTSCORE_RESULTS_PATH"
+  rm -f "$BERTSCORE_RESULTS_MD_PATH"
+}
+
+trap cleanup EXIT
+
+update_manifest_with_evaluation() {
+  local manifest_path="$1"
+  local report_json="$2"
+  local report_md="$3"
+  local status="$4"
+  local reason="$5"
+
+  if [ ! -f "$manifest_path" ]; then
+    return 0
+  fi
+
+  python3 - "$manifest_path" "$report_json" "$report_md" "$status" "$reason" <<'PY'
+import json
+import os
+import sys
+
+manifest_path, report_json, report_md, status, reason = sys.argv[1:6]
+
+with open(manifest_path, encoding="utf-8") as fh:
+    manifest = json.load(fh)
+
+evaluation = {
+    "status": status,
+    "reason": reason or None,
+    "report_json": report_json if os.path.isfile(report_json) else None,
+    "report_markdown": report_md if os.path.isfile(report_md) else None,
+}
+
+if os.path.isfile(report_json):
+    with open(report_json, encoding="utf-8") as fh:
+        report = json.load(fh)
+    evaluation["total_references"] = report.get("total_references")
+    evaluation["matched"] = report.get("matched", report.get("matched_pairs"))
+    evaluation["bertscore"] = report.get("bertscore")
+    evaluation["aggregated"] = report.get("aggregated")
+    evaluation["normalized_aggregated"] = report.get("normalized_aggregated")
+
+manifest["evaluation"] = evaluation
+
+with open(manifest_path, "w", encoding="utf-8") as fh:
+    json.dump(manifest, fh, indent=2, ensure_ascii=False)
+    fh.write("\n")
+PY
+}
+
+NUM_PREDICT_LOG_VALUE="${NUM_PREDICT:-<ollama-default>}"
+MODEL_PROFILE_LOG_VALUE="${MODEL_PROFILE:-<none>}"
+MODEL_LOG_VALUE="${MODEL:-<profile-or-default>}"
+CTX_LOG_VALUE="${CTX:-<profile-or-default>}"
+TEMPERATURE_LOG_VALUE="${TEMPERATURE:-<profile-or-default>}"
+TOP_P_LOG_VALUE="${TOP_P:-<profile-or-default>}"
+THINK_LOG_VALUE="${THINK:-<profile-or-default-or-omitted>}"
+
+log "Loop params: model_profile=$MODEL_PROFILE_LOG_VALUE model=$MODEL_LOG_VALUE ctx=$CTX_LOG_VALUE temperature=$TEMPERATURE_LOG_VALUE top_p=$TOP_P_LOG_VALUE num_predict=$NUM_PREDICT_LOG_VALUE think=$THINK_LOG_VALUE peek_chars=$PEEK_CHARS"
+log "Run manifest path: $MANIFEST_PATH"
+log "GPU metrics CSV path: $GPU_METRICS_PATH"
+log "Immutable baseline folder: $BASELINE_RESULT_FOLDER"
+log "Working directory root: $WORK_ROOT"
+log "Per-run upload label: $ARTIFACT_ENRICHED_LABEL"
+
+if [ -z "$CRATE_BASENAME" ]; then
+  log "ERROR: crate_basename loop variable is empty."
+  enrich_rc=92
+elif [ ! -f "venv3/bin/activate" ]; then
+  log "ERROR: Python virtualenv not found at venv3/bin/activate."
+  enrich_rc=90
+elif [ ! -d "$PACKAGE_DIR" ]; then
+  log "ERROR: ai_metadata_enricher package not found at $PACKAGE_DIR."
+  enrich_rc=91
+elif [ ! -d "$BASELINE_RESULT_FOLDER" ]; then
+  log "ERROR: immutable baseline result folder not found: $BASELINE_RESULT_FOLDER"
+  enrich_rc=93
+else
+  mkdir -p "$WORK_ROOT"
+  rm -rf "$WORKING_RESULT_FOLDER"
+  cp -a "$BASELINE_RESULT_FOLDER" "$WORKING_RESULT_FOLDER"
+  log "Created fresh working copy for this loop run: $WORKING_RESULT_FOLDER"
+
+  # shellcheck disable=SC1091
+  source venv3/bin/activate
+  export PYTHONPATH="$PROJECT_DIR${PYTHONPATH:+:$PYTHONPATH}"
+  export HF_HUB_DISABLE_XET=1
+
+  RESOLVED_MODEL=""
+  if [ -n "$MODEL_PROFILE" ] || [ -n "$MODEL" ]; then
+    if RESOLVED_MODEL="$(
+      MODEL_PROFILE="$MODEL_PROFILE" MODEL="$MODEL" python3 - <<'PY'
+import os
+from ai_metadata_enricher.model_profiles import resolve_model_settings
+
+resolved = resolve_model_settings(
+    model_profile=os.environ.get("MODEL_PROFILE") or None,
+    model_profile_file=None,
+    model=os.environ.get("MODEL") or None,
+    ctx=None,
+    temperature=None,
+    top_p=None,
+    num_predict=None,
+    think=None,
+)
+print(resolved["model"])
+PY
+    )"; then
+      log "Resolved Ollama model for cleanup: $RESOLVED_MODEL"
+    else
+      RESOLVED_MODEL="${MODEL:-}"
+      log "WARN: failed to resolve effective model for cleanup; falling back to direct model value: ${RESOLVED_MODEL:-<none>}"
+    fi
+  fi
+
+  NUM_PREDICT_ARGS=()
+  if [ -n "$NUM_PREDICT" ]; then
+    NUM_PREDICT_ARGS=(--num-predict "$NUM_PREDICT")
+  fi
+  MODEL_PROFILE_ARGS=()
+  if [ -n "$MODEL_PROFILE" ]; then
+    MODEL_PROFILE_ARGS=(--model-profile "$MODEL_PROFILE")
+  fi
+  MODEL_ARGS=()
+  if [ -n "$MODEL" ]; then
+    MODEL_ARGS=(--model "$MODEL")
+  fi
+  CTX_ARGS=()
+  if [ -n "$CTX" ]; then
+    CTX_ARGS=(--ctx "$CTX")
+  fi
+  TEMPERATURE_ARGS=()
+  if [ -n "$TEMPERATURE" ]; then
+    TEMPERATURE_ARGS=(--temperature "$TEMPERATURE")
+  fi
+  TOP_P_ARGS=()
+  if [ -n "$TOP_P" ]; then
+    TOP_P_ARGS=(--top-p "$TOP_P")
+  fi
+  THINK_ARGS=()
+  if [ -n "$THINK" ]; then
+    THINK_ARGS=(--think "$THINK")
+  fi
+  REFERENCE_LABEL_ARGS=()
+  if [ -n "$REFERENCE_LABEL" ]; then
+    REFERENCE_LABEL_ARGS=(--artifact-reference-label "$REFERENCE_LABEL")
+  fi
+  REFERENCE_PATH_ARGS=()
+  if [ -n "$REFERENCE_PATH" ]; then
+    REFERENCE_PATH_ARGS=(--artifact-reference-path "$REFERENCE_PATH")
+  fi
+
+  set +e
+  python3 -m ai_metadata_enricher.cli "$WORKING_RESULT_FOLDER" \
+    "${MODEL_PROFILE_ARGS[@]}" \
+    "${MODEL_ARGS[@]}" \
+    "${CTX_ARGS[@]}" \
+    "${TEMPERATURE_ARGS[@]}" \
+    "${TOP_P_ARGS[@]}" \
+    "${NUM_PREDICT_ARGS[@]}" \
+    "${THINK_ARGS[@]}" \
+    --peek-chars "$PEEK_CHARS" \
+    --summary-json "$MANIFEST_PATH" \
+    --gpu-metrics-csv "$GPU_METRICS_PATH" \
+    --artifact-baseline-path "$BASELINE_RESULT_FOLDER" \
+    --artifact-baseline-label "$ARTIFACT_BASELINE_LABEL" \
+    --artifact-working-copy-path "$WORKING_RESULT_FOLDER" \
+    --artifact-enriched-label "$ARTIFACT_ENRICHED_LABEL" \
+    "${REFERENCE_LABEL_ARGS[@]}" \
+    "${REFERENCE_PATH_ARGS[@]}" \
+    --seed 42 \
+    --overwrite \
+    --force-title \
+    --force-description \
+    --force-keywords \
+    --verbose
+  enrich_rc=$?
+  set -e
+
+  if [ -n "$RESOLVED_MODEL" ]; then
+    if ollama stop "$RESOLVED_MODEL" >/dev/null 2>&1; then
+      log "Unloaded Ollama model after run: $RESOLVED_MODEL"
+    else
+      log "WARN: failed to unload Ollama model after run: $RESOLVED_MODEL"
+    fi
+  else
+    log "INFO: skipping Ollama unload because no resolved model name was available."
+  fi
+
+  if [ "$enrich_rc" -eq 0 ] && [ -n "$REFERENCE_PATH" ]; then
+    log "Running autoscore using reference crate: $REFERENCE_PATH"
+    set +e
+    python3 -m ai_metadata_enricher.evaluate -v autoscore \
+      --reference-folder "$REFERENCE_PATH" \
+      --enriched-folder "$WORKING_RESULT_FOLDER" \
+      --bertscore-device auto \
+      --output "$BERTSCORE_RESULTS_PATH"
+    autoscore_rc=$?
+    set -e
+    if [ "$autoscore_rc" -ne 0 ]; then
+      log "WARN: reference autoscore failed with exit code $autoscore_rc"
+      evaluation_status="failed"
+      evaluation_reason="autoscore_failed"
+    else
+      log "Reference autoscore completed successfully."
+      evaluation_status="completed"
+      evaluation_reason=""
+      set +e
+      python3 -m ai_metadata_enricher.evaluate -v report \
+        --compare "$BERTSCORE_RESULTS_PATH" \
+        --output "$BERTSCORE_RESULTS_MD_PATH"
+      report_rc=$?
+      set -e
+      if [ "$report_rc" -ne 0 ]; then
+        log "WARN: evaluation markdown report generation failed with exit code $report_rc"
+      else
+        log "Evaluation markdown report written to $BERTSCORE_RESULTS_MD_PATH"
+      fi
+    fi
+  else
+    log "INFO: no reference crate provided or enrichment failed; skipping autoscore."
+    if [ "$enrich_rc" -ne 0 ]; then
+      evaluation_status="skipped"
+      evaluation_reason="enrichment_failed"
+    else
+      evaluation_status="skipped"
+      evaluation_reason="missing_references"
+    fi
+  fi
+fi
+
+if [ "$enrich_rc" -ne 0 ]; then
+  log "WARN: enrichment failed with exit code $enrich_rc; creating fallback manifest and continuing."
+  cat >"$MANIFEST_PATH" <<EOF
+{
+  "status": "error",
+  "error": "enrich_cli_failed",
+  "exit_code": "$enrich_rc",
+  "model_profile": "$MODEL_PROFILE",
+  "model": "$MODEL",
+  "ctx": "$CTX",
+  "temperature": "$TEMPERATURE",
+  "top_p": "$TOP_P",
+  "num_predict": "$NUM_PREDICT_LOG_VALUE",
+  "think": "$THINK",
+  "peek_chars": "$PEEK_CHARS",
+  "result_folder": "$WORKING_RESULT_FOLDER",
+  "artifact_provenance": {
+    "baseline_path": "$BASELINE_RESULT_FOLDER",
+    "baseline_label": "$ARTIFACT_BASELINE_LABEL",
+    "working_copy_path": "$WORKING_RESULT_FOLDER",
+    "enriched_label": "$ARTIFACT_ENRICHED_LABEL",
+    "raw_baseline_uploaded_this_run": null,
+    "reference_label": "$REFERENCE_LABEL",
+    "reference_path": "$REFERENCE_PATH"
+  },
+  "timestamp_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+}
+EOF
+fi
+
+update_manifest_with_evaluation \
+  "$MANIFEST_PATH" \
+  "$BERTSCORE_RESULTS_PATH" \
+  "$BERTSCORE_RESULTS_MD_PATH" \
+  "$evaluation_status" \
+  "$evaluation_reason"
+
+# --- Stage all artifacts into a single submission folder ---
+rm -rf "$STAGING_FOLDER"
+mkdir -p "$STAGING_FOLDER"
+
+if [ -f "$MANIFEST_PATH" ]; then
+  cp "$MANIFEST_PATH" "$STAGING_FOLDER/"
+else
+  log "WARN: no manifest file found for staging: $MANIFEST_PATH"
+fi
+
+if [ -f "$GPU_METRICS_PATH" ]; then
+  cp "$GPU_METRICS_PATH" "$STAGING_FOLDER/"
+else
+  log "INFO: no GPU metrics CSV to stage; likely a CPU run or unavailable nvidia-smi."
+fi
+
+## Prompt JSONL log disabled in production pipeline.
+## Re-enable for debugging by adding: --log-prompts "$PROMPT_LOG_PATH"
+## to the enrich CLI invocation above.
+if [ -f "$PROMPT_LOG_PATH" ]; then
+  cp "$PROMPT_LOG_PATH" "$STAGING_FOLDER/"
+fi
+
+if [ -d "$WORKING_RESULT_FOLDER" ]; then
+  cp -a "$WORKING_RESULT_FOLDER" "$STAGING_FOLDER/"
+else
+  log "WARN: enriched working copy not found for staging: $WORKING_RESULT_FOLDER"
+fi
+
+if [ -f "$BERTSCORE_RESULTS_PATH" ]; then
+  cp "$BERTSCORE_RESULTS_PATH" "$STAGING_FOLDER/"
+fi
+if [ -f "$BERTSCORE_RESULTS_MD_PATH" ]; then
+  cp "$BERTSCORE_RESULTS_MD_PATH" "$STAGING_FOLDER/"
+fi
+
+# Single recursive upload for all run artifacts
+if ! upload_recursive_folder "$STAGING_FOLDER" "enrichment"; then
+  log "WARN: failed to upload bundled submission folder: $STAGING_FOLDER"
+fi
+
+if [ "$enrich_rc" -ne 0 ]; then
+  log "Loop run finished with non-fatal enrichment error (exit code $enrich_rc)."
+fi

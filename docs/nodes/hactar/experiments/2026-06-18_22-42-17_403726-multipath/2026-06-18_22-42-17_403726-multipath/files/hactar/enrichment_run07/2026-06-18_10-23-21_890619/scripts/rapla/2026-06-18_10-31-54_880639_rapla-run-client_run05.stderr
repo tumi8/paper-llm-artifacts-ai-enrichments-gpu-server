@@ -1,0 +1,370 @@
+++ pos_get_variable results_dir -r
++ RESULTS_DIR=/root/results
+++ pos_get_variable scheduler --from-loop
++ SCHEDULER_CONFIG=reliable:lowrtt
+++ pos_get_variable slow_path_profile --from-loop
++ SLOW_PATH_PROFILE=10:5
++ IFS=:
++ read -r SLOW_PATH_RATE SLOW_PATH_DELAY
+++ pos_get_variable tbf_latency -r
++ TBF_LATENCY=10
+++ pos_get_variable tbf_burst -r
++ TBF_BURST=64000
+++ pos_get_variable iteration --from-loop
++ ITERATION=03
+++ pos_get_variable cc_algorithm -r
++ CC_ALGORITHM=cubic
++ RELIABLE_FLAG=
++ SCHEDULER=reliable:lowrtt
++ case "$SCHEDULER_CONFIG" in
++ RELIABLE_FLAG=--reliable
++ SCHEDULER=lowrtt
++ PATH_PROPERTIES=delay-5ms_rate-10mbit
++ SCHEDULER_DIR_NAME=reliable_lowrtt
++ RUN_NAME=reliable_lowrtt_delay-5ms_rate-10mbit_run-03
++ RUN_DIR=/root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-03
++ mkdir -p /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-03
+++ pos_get_variable client_ip -r
++ CLIENT_IP=fd00:0:0:1::1
+++ pos_get_variable client_extra_ip -r
++ CLIENT_EXTRA_IP=fd00:0:0:2::1
+++ pos_get_variable client_extra_interface -r
++ CLIENT_EXTRA_INTERFACE=enp133s0f0
+++ pos_get_variable proxy_ip -r
++ PROXY_IP=fd00:0:0:3::1
+++ pos_get_variable proxy_port -r
++ PROXY_PORT=443
+++ pos_get_variable server_ip -r
++ TARGET_IP=fd00:0:0:4::1
+++ pos_get_variable server_port -r
++ TARGET_PORT=25565
++ PROXY_ADDRESS='[fd00:0:0:3::1]:443'
++ TUNNEL_PRIO_LIST=(" --op u=0,i" " --op u=0,i" " --op u=3,i" " --op u=3,i" " --op u=3,i" " --op u=5,i" " --op u=5,i" " --op u=5,i")
++ REQUEST_FLAGS=("--endpoint /flow0.txt" " --ep /flow1.txt" " --ep /flow2.txt" " --ep /flow3.txt" " --ep /flow4.txt" " --ep /flow5.txt" " --ep /flow6.txt" " --ep /flow7.txt" " --ep /flow8.txt")
++ echo '...Set slow path parameters'
++ tc qdisc replace dev enp133s0f0 root handle 1: tbf rate 10mbit latency 10ms burst 64000
++ tc qdisc replace dev enp133s0f0 parent 1: handle 10: netem delay 5ms
++ SYNC_TAG=reliable_lowrtt_delay-5ms_rate-10mbit_run-03_services_ready
++ FINISH_TAG=reliable_lowrtt_delay-5ms_rate-10mbit_run-03_client_finished
++ pos_sync --tag reliable_lowrtt_delay-5ms_rate-10mbit_run-03_services_ready
++ RUN_FLAGS='--reliable --outer-prio u=0,i,sched=lowrtt --op u=0,i  --op u=0,i  --op u=3,i  --op u=3,i  --op u=3,i  --op u=5,i  --op u=5,i  --op u=5,i --endpoint /flow0.txt  --ep /flow1.txt  --ep /flow2.txt  --ep /flow3.txt  --ep /flow4.txt  --ep /flow5.txt  --ep /flow6.txt  --ep /flow7.txt  --ep /flow8.txt'
++ echo 'Starting client iteration 03: /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-03'
++ pos_energy_start --loop --filename client
++ cd /root/mp-nada/tokio-quiche/nada
++ cargo run --release --bin masque-client -- --results-dir /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-03 --proxy-address '[fd00:0:0:3::1]:443' --target-ip fd00:0:0:4::1 --target-port 25565 --multipath --probe-timeout 3 --client-address '[fd00:0:0:1::1]:0' --extra-address '[fd00:0:0:2::1]:0' --log-stats --qlog --log-keys --cc-algorithm cubic --scheduler lowrtt --reliable --outer-prio u=0,i,sched=lowrtt --op u=0,i --op u=0,i --op u=3,i --op u=3,i --op u=3,i --op u=5,i --op u=5,i --op u=5,i --endpoint /flow0.txt --ep /flow1.txt --ep /flow2.txt --ep /flow3.txt --ep /flow4.txt --ep /flow5.txt --ep /flow6.txt --ep /flow7.txt --ep /flow8.txt
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:474:22
+    |
+474 |     pub fn get_bytes(&mut self, len: usize) -> Result<Octets> {
+    |                      ^^^^^^^^^                        ^^^^^^ the same lifetime is hidden here
+    |                      |
+    |                      the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+474 |     pub fn get_bytes(&mut self, len: usize) -> Result<Octets<'_>> {
+    |                                                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:491:26
+    |
+491 |     pub fn get_bytes_mut(&mut self, len: usize) -> Result<OctetsMut> {
+    |                          ^^^^^^^^^                        ^^^^^^^^^ the same lifetime is hidden here
+    |                          |
+    |                          the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+491 |     pub fn get_bytes_mut(&mut self, len: usize) -> Result<OctetsMut<'_>> {
+    |                                                                    ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:508:37
+    |
+508 |     pub fn get_bytes_with_u8_length(&mut self) -> Result<Octets> {
+    |                                     ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                     |
+    |                                     the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+508 |     pub fn get_bytes_with_u8_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:516:38
+    |
+516 |     pub fn get_bytes_with_u16_length(&mut self) -> Result<Octets> {
+    |                                      ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                      |
+    |                                      the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+516 |     pub fn get_bytes_with_u16_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:524:41
+    |
+524 |     pub fn get_bytes_with_varint_length(&mut self) -> Result<Octets> {
+    |                                         ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                         |
+    |                                         the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+524 |     pub fn get_bytes_with_varint_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                    ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:531:23
+    |
+531 |     pub fn peek_bytes(&mut self, len: usize) -> Result<Octets> {
+    |                       ^^^^^^^^^                        ^^^^^^ the same lifetime is hidden here
+    |                       |
+    |                       the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+531 |     pub fn peek_bytes(&mut self, len: usize) -> Result<Octets<'_>> {
+    |                                                              ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:546:27
+    |
+546 |     pub fn peek_bytes_mut(&mut self, len: usize) -> Result<OctetsMut> {
+    |                           ^^^^^^^^^                        ^^^^^^^^^ the same lifetime is hidden here
+    |                           |
+    |                           the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+546 |     pub fn peek_bytes_mut(&mut self, len: usize) -> Result<OctetsMut<'_>> {
+    |                                                                     ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/octets/src/lib.rs:580:21
+    |
+580 |     pub fn split_at(&mut self, off: usize) -> Result<(OctetsMut, OctetsMut)> {
+    |                     ^^^^^^^^^                         ^^^^^^^^^  ^^^^^^^^^ the same lifetime is hidden here
+    |                     |                                 |
+    |                     |                                 the same lifetime is hidden here
+    |                     the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+580 |     pub fn split_at(&mut self, off: usize) -> Result<(OctetsMut<'_>, OctetsMut<'_>)> {
+    |                                                                ++++           ++++
+
+warning: `octets` (lib) generated 8 warnings (run `cargo fix --lib -p octets` to apply 8 suggestions)
+warning: unnecessary parentheses around closure body
+   --> /root/mp-nada/quiche/src/ranges.rs:316:29
+    |
+316 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+316 -             .map(|(&s, &e)| (s..e))
+316 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: unnecessary parentheses around closure body
+   --> /root/mp-nada/quiche/src/ranges.rs:332:29
+    |
+332 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+help: remove these parentheses
+    |
+332 -             .map(|(&s, &e)| (s..e))
+332 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: unnecessary parentheses around closure body
+   --> /root/mp-nada/quiche/src/ranges.rs:339:29
+    |
+339 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+help: remove these parentheses
+    |
+339 -             .map(|(&s, &e)| (s..e))
+339 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7492:30
+     |
+7492 |     pub fn source_id_on_path(&self, path_id: PathId) -> Option<ConnectionId> {
+     |                              ^^^^^ the lifetime is elided here ^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+7492 |     pub fn source_id_on_path(&self, path_id: PathId) -> Option<ConnectionId<'_>> {
+     |                                                                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7506:22
+     |
+7506 |     pub fn source_id(&self) -> ConnectionId {
+     |                      ^^^^^     ^^^^^^^^^^^^ the same lifetime is hidden here
+     |                      |
+     |                      the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7506 |     pub fn source_id(&self) -> ConnectionId<'_> {
+     |                                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7524:23
+     |
+7524 |     pub fn source_ids(&self) -> impl Iterator<Item = &ConnectionId> {
+     |                       ^^^^^                          ^^^^^^^^^^^^^
+     |                       |                              ||
+     |                       |                              |the same lifetime is hidden here
+     |                       |                              the same lifetime is elided here
+     |                       the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7524 |     pub fn source_ids(&self) -> impl Iterator<Item = &ConnectionId<'_>> {
+     |                                                                   ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7538:9
+     |
+7538 |         &self, path_id: PathId,
+     |         ^^^^^ the lifetime is elided here
+7539 |     ) -> Option<ConnectionId> {
+     |                 ^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7539 |     ) -> Option<ConnectionId<'_>> {
+     |                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/lib.rs:7550:27
+     |
+7550 |     pub fn destination_id(&self) -> ConnectionId {
+     |                           ^^^^^     ^^^^^^^^^^^^ the same lifetime is hidden here
+     |                           |
+     |                           the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7550 |     pub fn destination_id(&self) -> ConnectionId<'_> {
+     |                                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> /root/mp-nada/quiche/src/cid.rs:1168:23
+     |
+1168 |     pub fn scids_iter(&self) -> impl Iterator<Item = &ConnectionId> {
+     |                       ^^^^^                          ^^^^^^^^^^^^^
+     |                       |                              ||
+     |                       |                              |the same lifetime is hidden here
+     |                       |                              the same lifetime is elided here
+     |                       the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+1168 |     pub fn scids_iter(&self) -> impl Iterator<Item = &ConnectionId<'_>> {
+     |                                                                   ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/quiche/src/stream/mod.rs:600:20
+    |
+600 |     pub fn blocked(&self) -> hash_map::Iter<u64, u64> {
+    |                    ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                    |
+    |                    the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+600 |     pub fn blocked(&self) -> hash_map::Iter<'_, u64, u64> {
+    |                                             +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/quiche/src/stream/mod.rs:605:18
+    |
+605 |     pub fn reset(&self) -> hash_map::Iter<u64, (u64, u64)> {
+    |                  ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                  |
+    |                  the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+605 |     pub fn reset(&self) -> hash_map::Iter<'_, u64, (u64, u64)> {
+    |                                           +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/quiche/src/stream/mod.rs:610:20
+    |
+610 |     pub fn stopped(&self) -> hash_map::Iter<u64, u64> {
+    |                    ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                    |
+    |                    the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+610 |     pub fn stopped(&self) -> hash_map::Iter<'_, u64, u64> {
+    |                                             +++
+
+warning: `quiche` (lib) generated 12 warnings (run `cargo fix --lib -p quiche` to apply 12 suggestions)
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> /root/mp-nada/tokio-quiche/src/quic/io/gso.rs:83:19
+   |
+83 |     fn make_cmsg(&'_ self) -> ControlMessage {
+   |                   ^^          ^^^^^^^^^^^^^^ the same lifetime is hidden here
+   |                   |
+   |                   the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+   |
+83 |     fn make_cmsg(&'_ self) -> ControlMessage<'_> {
+   |                                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /root/mp-nada/tokio-quiche/src/socket/listener.rs:100:14
+    |
+100 |     fn as_fd(&self) -> BorrowedFd {
+    |              ^^^^^     ^^^^^^^^^^ the same lifetime is hidden here
+    |              |
+    |              the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+100 |     fn as_fd(&self) -> BorrowedFd<'_> {
+    |                                  ++++
+
+warning: `tokio-quiche` (lib) generated 2 warnings (run `cargo fix --lib -p tokio-quiche` to apply 2 suggestions)
+    Finished `release` profile [optimized] target(s) in 0.29s
+     Running `target/release/masque-client --results-dir /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-03 --proxy-address '[fd00:0:0:3::1]:443' --target-ip 'fd00:0:0:4::1' --target-port 25565 --multipath --probe-timeout 3 --client-address '[fd00:0:0:1::1]:0' --extra-address '[fd00:0:0:2::1]:0' --log-stats --qlog --log-keys --cc-algorithm cubic --scheduler lowrtt --reliable --outer-prio u=0,i,sched=lowrtt --op u=0,i --op u=0,i --op u=3,i --op u=3,i --op u=3,i --op u=5,i --op u=5,i --op u=5,i --endpoint /flow0.txt --ep /flow1.txt --ep /flow2.txt --ep /flow3.txt --ep /flow4.txt --ep /flow5.txt --ep /flow6.txt --ep /flow7.txt --ep /flow8.txt`
++ pos_sync --tag reliable_lowrtt_delay-5ms_rate-10mbit_run-03_client_finished
++ pos_energy_stop

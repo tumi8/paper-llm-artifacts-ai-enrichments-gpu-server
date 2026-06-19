@@ -1,0 +1,470 @@
+2026-06-18 22:48:03  Loop params: model_profile=gemma3_4b model=<profile-or-default> ctx=15000 temperature=0.0 top_p=0.9 num_predict=<ollama-default> think=<profile-or-default-or-omitted> peek_chars=100
+2026-06-18 22:48:03  Run manifest path: /tmp/llm-enrichment-manifest.json
+2026-06-18 22:48:03  GPU metrics CSV path: /tmp/llm-enrichment-gpu-metrics.csv
+2026-06-18 22:48:03  Immutable baseline folder: /srv/testbed/results/warmuth/default/2026-06-18_10-23-21_890619
+2026-06-18 22:48:03  Working directory root: /tmp/enricher
+2026-06-18 22:48:03  Per-run upload label: 2026-06-18_10-23-21_890619
+2026-06-18 22:48:04  Created fresh working copy for this loop run: /tmp/enricher/2026-06-18_10-23-21_890619
+2026-06-18 22:48:04  Resolved Ollama model for cleanup: gemma3:4b
+2026-06-18 22:48 INFO: Resolved model profile 'gemma3_4b' from /root/ai-metadata-enricher/config/model_profiles.yml -> model=gemma3:4b think=<omitted>
+2026-06-18 22:48 INFO: Started GPU metrics monitor: /tmp/llm-enrichment-gpu-metrics.csv (interval=1000 ms)
+2026-06-18 22:48 INFO: Pulling model 'gemma3:4b'...
+2026-06-18 22:48 INFO: Model 'gemma3:4b' is ready.
+2026-06-18 22:48 INFO: Warming up model 'gemma3:4b'...
+2026-06-18 22:49 INFO: Model ready.
+2026-06-18 22:49 INFO: Starting enrichment for result folder: /tmp/enricher/2026-06-18_10-23-21_890619
+2026-06-18 22:49 INFO: Processing experiment: config/allocation.json
+2026-06-18 22:49 INFO: Found 24 executed command(s)
+2026-06-18 22:49 INFO: Skipping pre-described entity: scripts/valga/2026-06-18_10-25-36_101980_bootstrap.file (type: {'CommandFileBootstrap'})
+2026-06-18 22:49 INFO: Skipping pre-described entity: scripts/valga/2026-06-18_10-23-22_457303_reset.command (type: {'CommandFileReset'})
+2026-06-18 22:49 INFO: Skipping pre-described entity: scripts/tapa/2026-06-18_10-25-48_322395_bootstrap.file (type: {'CommandFileBootstrap'})
+2026-06-18 22:49 INFO: Skipping pre-described entity: scripts/tapa/2026-06-18_10-23-22_384834_reset.command (type: {'CommandFileReset'})
+2026-06-18 22:49 INFO: Skipping pre-described entity: scripts/rapla/2026-06-18_10-29-42_901522_bootstrap.file (type: {'CommandFileBootstrap'})
+2026-06-18 22:49 INFO: Skipping pre-described entity: scripts/rapla/2026-06-18_10-23-22_246373_reset.command (type: {'CommandFileReset'})
+2026-06-18 22:49 INFO: -----------------------------------------------------------
+Processing command entity: scripts/rapla/2026-06-18_10-29-47_159316_rapla-env.file
+  name    : 2026-06-18_10-29-47_159316_rapla-env.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/rapla/2026-06-18_10-29-47_159316_rapla-env.file
+  filetype: script
+2026-06-18 22:49 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:49 INFO: LLM usage | entity=scripts/rapla/2026-06-18_10-29-47_159316_rapla-env.file | context=command | prompt_tokens=498 | output_tokens=54 | prompt_eval_s=7.226 | eval_s=0.974 | total_s=9.751 | load_s=1.216 | prompt_tps=68.92 | output_tps=55.45
+2026-06-18 22:49 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-29-47_159316_rapla-env.file [command]
+2026-06-18 22:49 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tapa/2026-06-18_10-29-49_268246_tapa-env.file
+  name    : 2026-06-18_10-29-49_268246_tapa-env.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/tapa/2026-06-18_10-29-49_268246_tapa-env.file
+  filetype: script
+2026-06-18 22:49 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:49 INFO: LLM usage | entity=scripts/tapa/2026-06-18_10-29-49_268246_tapa-env.file | context=command | prompt_tokens=498 | output_tokens=64 | prompt_eval_s=0.520 | eval_s=1.162 | total_s=2.895 | load_s=1.198 | prompt_tps=958.21 | output_tps=55.05
+2026-06-18 22:49 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-29-49_268246_tapa-env.file [command]
+2026-06-18 22:49 INFO: -----------------------------------------------------------
+Processing command entity: scripts/valga/2026-06-18_10-29-51_596719_valga-env.file
+  name    : 2026-06-18_10-29-51_596719_valga-env.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/valga/2026-06-18_10-29-51_596719_valga-env.file
+  filetype: script
+2026-06-18 22:49 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:49 INFO: LLM usage | entity=scripts/valga/2026-06-18_10-29-51_596719_valga-env.file | context=command | prompt_tokens=498 | output_tokens=59 | prompt_eval_s=0.520 | eval_s=1.072 | total_s=2.831 | load_s=1.225 | prompt_tps=957.04 | output_tps=55.02
+2026-06-18 22:49 DEBUG:   -> description set for scripts/valga/2026-06-18_10-29-51_596719_valga-env.file [command]
+2026-06-18 22:49 INFO: -----------------------------------------------------------
+Processing command entity: scripts/valga/2026-06-18_10-29-53_572738_valga-install-dependencies.file
+  name    : 2026-06-18_10-29-53_572738_valga-install-dependencies.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/valga/2026-06-18_10-29-53_572738_valga-install-dependencies.file
+  filetype: script
+2026-06-18 22:49 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:49 INFO: LLM usage | entity=scripts/valga/2026-06-18_10-29-53_572738_valga-install-dependencies.file | context=command | prompt_tokens=666 | output_tokens=66 | prompt_eval_s=0.848 | eval_s=1.211 | total_s=3.290 | load_s=1.216 | prompt_tps=785.16 | output_tps=54.50
+2026-06-18 22:49 DEBUG:   -> description set for scripts/valga/2026-06-18_10-29-53_572738_valga-install-dependencies.file [command]
+2026-06-18 22:49 INFO: -----------------------------------------------------------
+Processing command entity: scripts/rapla/2026-06-18_10-29-53_517386_rapla-install-dependencies.file
+  name    : 2026-06-18_10-29-53_517386_rapla-install-dependencies.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/rapla/2026-06-18_10-29-53_517386_rapla-install-dependencies.file
+  filetype: script
+2026-06-18 22:49 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:49 INFO: LLM usage | entity=scripts/rapla/2026-06-18_10-29-53_517386_rapla-install-dependencies.file | context=command | prompt_tokens=666 | output_tokens=57 | prompt_eval_s=0.739 | eval_s=1.044 | total_s=3.032 | load_s=1.234 | prompt_tps=901.76 | output_tps=54.58
+2026-06-18 22:49 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-29-53_517386_rapla-install-dependencies.file [command]
+2026-06-18 22:49 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tapa/2026-06-18_10-29-53_550948_tapa-install-dependencies.file
+  name    : 2026-06-18_10-29-53_550948_tapa-install-dependencies.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/tapa/2026-06-18_10-29-53_550948_tapa-install-dependencies.file
+  filetype: script
+2026-06-18 22:49 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:49 INFO: LLM usage | entity=scripts/tapa/2026-06-18_10-29-53_550948_tapa-install-dependencies.file | context=command | prompt_tokens=666 | output_tokens=65 | prompt_eval_s=0.715 | eval_s=1.194 | total_s=3.136 | load_s=1.210 | prompt_tps=931.65 | output_tps=54.43
+2026-06-18 22:49 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-29-53_550948_tapa-install-dependencies.file [command]
+2026-06-18 22:49 INFO: -----------------------------------------------------------
+Processing command entity: scripts/rapla/2026-06-18_10-31-28_887548_rapla-topology.file
+  name    : 2026-06-18_10-31-28_887548_rapla-topology.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/rapla/2026-06-18_10-31-28_887548_rapla-topology.file
+  filetype: script
+2026-06-18 22:49 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:49 INFO: LLM usage | entity=scripts/rapla/2026-06-18_10-31-28_887548_rapla-topology.file | context=command | prompt_tokens=952 | output_tokens=84 | prompt_eval_s=1.116 | eval_s=1.548 | total_s=3.883 | load_s=1.203 | prompt_tps=853.28 | output_tps=54.28
+2026-06-18 22:49 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-28_887548_rapla-topology.file [command]
+2026-06-18 22:49 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tapa/2026-06-18_10-31-35_069256_tapa-topology.file
+  name    : 2026-06-18_10-31-35_069256_tapa-topology.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/tapa/2026-06-18_10-31-35_069256_tapa-topology.file
+  filetype: script
+2026-06-18 22:49 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/tapa/2026-06-18_10-31-35_069256_tapa-topology.file | context=command | prompt_tokens=1098 | output_tokens=85 | prompt_eval_s=1.195 | eval_s=1.634 | total_s=4.499 | load_s=1.228 | prompt_tps=918.81 | output_tps=52.03
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-35_069256_tapa-topology.file [command]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing command entity: scripts/valga/2026-06-18_10-31-41_901319_valga-topology.file
+  name    : 2026-06-18_10-31-41_901319_valga-topology.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/valga/2026-06-18_10-31-41_901319_valga-topology.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/valga/2026-06-18_10-31-41_901319_valga-topology.file | context=command | prompt_tokens=608 | output_tokens=68 | prompt_eval_s=0.702 | eval_s=1.253 | total_s=3.645 | load_s=1.224 | prompt_tps=866.62 | output_tps=54.27
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-41_901319_valga-topology.file [command]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing command entity: scripts/valga/2026-06-18_10-31-44_826364_valga-generate-files.file
+  name    : 2026-06-18_10-31-44_826364_valga-generate-files.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/valga/2026-06-18_10-31-44_826364_valga-generate-files.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/valga/2026-06-18_10-31-44_826364_valga-generate-files.file | context=command | prompt_tokens=910 | output_tokens=76 | prompt_eval_s=0.855 | eval_s=1.433 | total_s=3.518 | load_s=1.216 | prompt_tps=1063.90 | output_tps=53.03
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-44_826364_valga-generate-files.file [command]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing looped command entity: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client.file
+  name    : 2026-06-18_10-31-54_880639_rapla-run-client.file
+  type    : {'CommandFileLooped'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client.file | context=command | prompt_tokens=1521 | output_tokens=51 | prompt_eval_s=1.474 | eval_s=0.993 | total_s=4.121 | load_s=1.252 | prompt_tps=1032.04 | output_tps=51.33
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client.file [command]
+2026-06-18 22:50 INFO: Found 10 loop run(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client.file
+2026-06-18 22:50 DEBUG:     Loop run 1/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run00.loop
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run00.loop | context=loop run | prompt_tokens=1564 | output_tokens=52 | prompt_eval_s=1.697 | eval_s=1.008 | total_s=4.605 | load_s=1.223 | prompt_tps=921.37 | output_tps=51.59
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run00.loop [loop run (new)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run00.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run00.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 2/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run01.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run01.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run01.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run01.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 3/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run02.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run02.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run02.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run02.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 4/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run03.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run03.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run03.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run03.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 5/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run04.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run04.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run04.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run04.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 6/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run05.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run05.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run05.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run05.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 7/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run06.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run06.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run06.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run06.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 8/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run07.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run07.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run07.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run07.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 9/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run08.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run08.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run08.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run08.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 10/10: scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run09.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run09.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/rapla/2026-06-18_10-31-54_880639_rapla-run-client_run09.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run09.csv [loop run energy measurement]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing looped command entity: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server.file
+  name    : 2026-06-18_10-31-54_801727_valga-run-server.file
+  type    : {'CommandFileLooped'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/valga/2026-06-18_10-31-54_801727_valga-run-server.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/valga/2026-06-18_10-31-54_801727_valga-run-server.file | context=command | prompt_tokens=1175 | output_tokens=58 | prompt_eval_s=1.242 | eval_s=1.100 | total_s=4.446 | load_s=1.202 | prompt_tps=946.21 | output_tps=52.72
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server.file [command]
+2026-06-18 22:50 INFO: Found 10 loop run(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server.file
+2026-06-18 22:50 DEBUG:     Loop run 1/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run00.loop
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run00.loop | context=loop run | prompt_tokens=1219 | output_tokens=67 | prompt_eval_s=1.296 | eval_s=1.276 | total_s=4.147 | load_s=1.156 | prompt_tps=940.75 | output_tps=52.51
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run00.loop [loop run (new)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run00.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run00.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 2/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run01.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run01.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run01.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run01.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 3/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run02.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run02.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run02.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run02.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 4/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run03.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run03.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run03.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run03.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 5/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run04.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run04.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run04.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run04.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 6/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run05.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run05.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run05.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run05.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 7/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run06.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run06.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run06.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run06.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 8/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run07.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run07.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run07.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run07.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 9/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run08.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run08.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run08.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run08.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 10/10: scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run09.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run09.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/valga/2026-06-18_10-31-54_801727_valga-run-server_run09.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run09.csv [loop run energy measurement]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing looped command entity: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy.file
+  name    : 2026-06-18_10-31-54_847664_tapa-run-proxy.file
+  type    : {'CommandFileLooped'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy.file | context=command | prompt_tokens=1639 | output_tokens=60 | prompt_eval_s=1.758 | eval_s=1.162 | total_s=4.803 | load_s=1.210 | prompt_tps=932.55 | output_tps=51.63
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy.file [command]
+2026-06-18 22:50 INFO: Found 10 loop run(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy.file
+2026-06-18 22:50 DEBUG:     Loop run 1/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run00.loop
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run00.loop | context=loop run | prompt_tokens=1682 | output_tokens=54 | prompt_eval_s=1.761 | eval_s=1.047 | total_s=4.858 | load_s=1.163 | prompt_tps=955.04 | output_tps=51.59
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run00.loop [loop run (new)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run00.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run00.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 2/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run01.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run01.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run01.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run01.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 3/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run02.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run02.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run02.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run02.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 4/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run03.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run03.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run03.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run03.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 5/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run04.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run04.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run04.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run04.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 6/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run05.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run05.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run05.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run05.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 7/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run06.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run06.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run06.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run06.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 8/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run07.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run07.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run07.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run07.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 9/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run08.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run08.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run08.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run08.csv [loop run energy measurement]
+2026-06-18 22:50 DEBUG:     Loop run 10/10: scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run09.loop
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run09.loop [loop run (cached)]
+2026-06-18 22:50 INFO: Processing 1 loop run energy measurement(s) for scripts/tapa/2026-06-18_10-31-54_847664_tapa-run-proxy_run09.loop
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run09.csv [loop run energy measurement]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing command entity: scripts/rapla/2026-06-18_10-39-48_738943_rapla-setup-masque-vis.file
+  name    : 2026-06-18_10-39-48_738943_rapla-setup-masque-vis.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/rapla/2026-06-18_10-39-48_738943_rapla-setup-masque-vis.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/rapla/2026-06-18_10-39-48_738943_rapla-setup-masque-vis.file | context=command | prompt_tokens=560 | output_tokens=60 | prompt_eval_s=0.670 | eval_s=1.099 | total_s=3.811 | load_s=1.160 | prompt_tps=836.16 | output_tps=54.58
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-39-48_738943_rapla-setup-masque-vis.file [command]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing command entity: scripts/rapla/2026-06-18_10-40-29_076614_rapla-run-visualization.file
+  name    : 2026-06-18_10-40-29_076614_rapla-run-visualization.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/rapla/2026-06-18_10-40-29_076614_rapla-run-visualization.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/rapla/2026-06-18_10-40-29_076614_rapla-run-visualization.file | context=command | prompt_tokens=534 | output_tokens=58 | prompt_eval_s=0.643 | eval_s=1.071 | total_s=2.908 | load_s=1.180 | prompt_tps=830.26 | output_tps=54.15
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-40-29_076614_rapla-run-visualization.file [command]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing command entity: scripts/rapla/2026-06-18_10-40-32_881802_rapla-upload_results.file
+  name    : 2026-06-18_10-40-32_881802_rapla-upload_results.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/rapla/2026-06-18_10-40-32_881802_rapla-upload_results.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/rapla/2026-06-18_10-40-32_881802_rapla-upload_results.file | context=command | prompt_tokens=458 | output_tokens=49 | prompt_eval_s=0.597 | eval_s=0.885 | total_s=2.663 | load_s=1.171 | prompt_tps=767.70 | output_tps=55.38
+2026-06-18 22:50 DEBUG:   -> description set for scripts/rapla/2026-06-18_10-40-32_881802_rapla-upload_results.file [command]
+2026-06-18 22:50 INFO:   Processing resultData 1: files/rapla/results/ (normalized: files/rapla/results/)
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=files/rapla/results/ | context=result data | prompt_tokens=486 | output_tokens=43 | prompt_eval_s=0.616 | eval_s=0.777 | total_s=2.588 | load_s=1.184 | prompt_tps=789.41 | output_tps=55.35
+2026-06-18 22:50 DEBUG:   -> description set for files/rapla/results/ [result data (new)]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tapa/2026-06-18_10-40-36_724434_tapa-upload_results.file
+  name    : 2026-06-18_10-40-36_724434_tapa-upload_results.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/tapa/2026-06-18_10-40-36_724434_tapa-upload_results.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/tapa/2026-06-18_10-40-36_724434_tapa-upload_results.file | context=command | prompt_tokens=458 | output_tokens=57 | prompt_eval_s=0.596 | eval_s=1.034 | total_s=2.886 | load_s=1.245 | prompt_tps=767.95 | output_tps=55.12
+2026-06-18 22:50 DEBUG:   -> description set for scripts/tapa/2026-06-18_10-40-36_724434_tapa-upload_results.file [command]
+2026-06-18 22:50 INFO:   Processing resultData 1: files/tapa/results/ (normalized: files/tapa/results/)
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=files/tapa/results/ | context=result data | prompt_tokens=482 | output_tokens=37 | prompt_eval_s=0.641 | eval_s=0.669 | total_s=2.558 | load_s=1.236 | prompt_tps=752.50 | output_tps=55.27
+2026-06-18 22:50 DEBUG:   -> description set for files/tapa/results/ [result data (new)]
+2026-06-18 22:50 INFO: -----------------------------------------------------------
+Processing command entity: scripts/valga/2026-06-18_10-40-40_243698_valga-upload_results.file
+  name    : 2026-06-18_10-40-40_243698_valga-upload_results.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_10-23-21_890619/scripts/valga/2026-06-18_10-40-40_243698_valga-upload_results.file
+  filetype: script
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=scripts/valga/2026-06-18_10-40-40_243698_valga-upload_results.file | context=command | prompt_tokens=458 | output_tokens=51 | prompt_eval_s=0.624 | eval_s=0.917 | total_s=2.705 | load_s=1.152 | prompt_tps=734.41 | output_tps=55.62
+2026-06-18 22:50 DEBUG:   -> description set for scripts/valga/2026-06-18_10-40-40_243698_valga-upload_results.file [command]
+2026-06-18 22:50 INFO:   Processing resultData 1: files/valga/results/ (normalized: files/valga/results/)
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:50 INFO: LLM usage | entity=files/valga/results/ | context=result data | prompt_tokens=482 | output_tokens=39 | prompt_eval_s=0.615 | eval_s=0.706 | total_s=2.578 | load_s=1.246 | prompt_tps=784.22 | output_tps=55.22
+2026-06-18 22:50 DEBUG:   -> description set for files/valga/results/ [result data (new)]
+2026-06-18 22:50 INFO: Scanning experiment-level result data...
+2026-06-18 22:50 DEBUG:   -> skip files/rapla/results/ (already covered)
+2026-06-18 22:50 DEBUG:   -> skip files/tapa/results/ (already covered)
+2026-06-18 22:50 DEBUG:   -> skip files/valga/results/ (already covered)
+2026-06-18 22:50 INFO: Processing 30 energy measurement(s) for config/allocation.json
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run00.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run00.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run00.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run01.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run01.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run01.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run02.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run02.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run02.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run03.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run03.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run03.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run04.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run04.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run04.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run05.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run05.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run05.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run06.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run06.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run06.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run07.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run07.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run07.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run08.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run08.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run08.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/valga/server_run09.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/rapla/client_run09.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> preserving trusted existing description for energy/tapa/proxy_run09.csv [energy measurement]
+2026-06-18 22:50 DEBUG:   -> no hardware.json for rapla.baltikum.net.cit.tum.de, skipping node
+2026-06-18 22:50 DEBUG:   -> no hardware.json for tapa.baltikum.net.cit.tum.de, skipping node
+2026-06-18 22:50 DEBUG:   -> no hardware.json for valga.baltikum.net.cit.tum.de, skipping node
+2026-06-18 22:50 INFO: Generating crate-level title and description...
+2026-06-18 22:50 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:51 INFO: LLM usage | entity=./ | context=crate summary | prompt_tokens=2904 | output_tokens=141 | prompt_eval_s=2.498 | eval_s=2.686 | total_s=6.774 | load_s=1.219 | prompt_tps=1162.31 | output_tps=52.49
+2026-06-18 22:51 DEBUG:   -> name replaced generic for ./ [crate summary]
+2026-06-18 22:51 DEBUG:   -> description refreshed existing for ./ [crate summary]
+2026-06-18 22:51 INFO: Sending prompt to model 'gemma3:4b' (attempt 1)
+2026-06-18 22:51 INFO: LLM usage | entity=./ | context=crate keywords | prompt_tokens=2817 | output_tokens=16 | prompt_eval_s=2.454 | eval_s=0.286 | total_s=4.512 | load_s=1.263 | prompt_tps=1147.81 | output_tps=55.93
+2026-06-18 22:51 DEBUG:   -> keywords refreshed existing for ./ [crate keywords]
+2026-06-18 22:51 INFO: Updated CITATION.cff at /tmp/enricher/2026-06-18_10-23-21_890619/CITATION.cff
+2026-06-18 22:51 INFO: LLM usage summary | calls=26 | calls_with_usage=26 | prompt_tokens=25499 | output_tokens=1571 | prompt_eval_s=33.616 | eval_s=29.243 | total_s=101.445 | load_s=31.431 | prompt_tps=758.54 | output_tps=53.72
+2026-06-18 22:51 INFO: Enrichment finished. Updated 54 entities.
+2026-06-18 22:51 INFO: Saved metadata. Updated 54 description(s).
+2026-06-18 22:51 INFO: Total time: 1m 41.6s
+2026-06-18 22:51 INFO: Wrote run summary JSON: /tmp/llm-enrichment-manifest.json
+2026-06-18 22:51:12  Unloaded Ollama model after run: gemma3:4b
+2026-06-18 22:51:12  Running autoscore using reference crate: /srv/testbed/results/warmuth/default/2026-06-18_10-23-21_890619_reference
+2026-06-18 22:51 INFO: Loaded 109 reference(s) from reference crate /srv/testbed/results/warmuth/default/2026-06-18_10-23-21_890619_reference
+2026-06-18 22:51 INFO: Matched 109 of 109 references (0 unmatched)
+2026-06-18 22:51 DEBUG: matplotlib data path: /root/venv3/lib/python3.11/site-packages/matplotlib/mpl-data
+2026-06-18 22:51 DEBUG: CONFIGDIR=/root/.config/matplotlib
+2026-06-18 22:51 DEBUG: interactive is False
+2026-06-18 22:51 DEBUG: platform is linux
+2026-06-18 22:51 DEBUG: CACHEDIR=/root/.cache/matplotlib
+2026-06-18 22:51 DEBUG: font search path [PosixPath('/root/venv3/lib/python3.11/site-packages/matplotlib/mpl-data/fonts/ttf'), PosixPath('/root/venv3/lib/python3.11/site-packages/matplotlib/mpl-data/fonts/afm'), PosixPath('/root/venv3/lib/python3.11/site-packages/matplotlib/mpl-data/fonts/pdfcorefonts')]
+2026-06-18 22:51 INFO: generated new fontManager
+2026-06-18 22:51 DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/tokenizer_config.json HTTP/1.1" 200 0
+2026-06-18 22:51 DEBUG: Attempting to acquire lock 139773577110928 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/efd16ae3cb656c5ffd4d21193daf24794aafb0d7.lock
+2026-06-18 22:51 DEBUG: Lock 139773577110928 acquired on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/efd16ae3cb656c5ffd4d21193daf24794aafb0d7.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/tokenizer_config.json HTTP/1.1" 200 52
+2026-06-18 22:51 DEBUG: Attempting to release lock 139773577110928 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/efd16ae3cb656c5ffd4d21193daf24794aafb0d7.lock
+2026-06-18 22:51 DEBUG: Lock 139773577110928 released on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/efd16ae3cb656c5ffd4d21193daf24794aafb0d7.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/config.json HTTP/1.1" 307 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/config.json HTTP/1.1" 200 0
+2026-06-18 22:51 DEBUG: Attempting to acquire lock 139773376724496 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/6c9d2ed40c51a61de316577d0defa29b2c6c2c3b.lock
+2026-06-18 22:51 DEBUG: Lock 139773376724496 acquired on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/6c9d2ed40c51a61de316577d0defa29b2c6c2c3b.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/config.json HTTP/1.1" 200 729
+2026-06-18 22:51 DEBUG: Attempting to release lock 139773376724496 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/6c9d2ed40c51a61de316577d0defa29b2c6c2c3b.lock
+2026-06-18 22:51 DEBUG: Lock 139773376724496 released on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/6c9d2ed40c51a61de316577d0defa29b2c6c2c3b.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /api/models/microsoft/deberta-large-mnli/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /api/models/microsoft/deberta-large-mnli/tree/main?recursive=True&expand=False HTTP/1.1" 200 None
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/vocab.json HTTP/1.1" 307 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/vocab.json HTTP/1.1" 200 0
+2026-06-18 22:51 DEBUG: Attempting to acquire lock 139773376457488 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/c3972d7e638fc3560500bc0bd5bd2d18291eb79e.lock
+2026-06-18 22:51 DEBUG: Lock 139773376457488 acquired on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/c3972d7e638fc3560500bc0bd5bd2d18291eb79e.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/vocab.json HTTP/1.1" 200 None
+2026-06-18 22:51 DEBUG: Attempting to release lock 139773376457488 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/c3972d7e638fc3560500bc0bd5bd2d18291eb79e.lock
+2026-06-18 22:51 DEBUG: Lock 139773376457488 released on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/c3972d7e638fc3560500bc0bd5bd2d18291eb79e.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/merges.txt HTTP/1.1" 307 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/merges.txt HTTP/1.1" 200 0
+2026-06-18 22:51 DEBUG: Attempting to acquire lock 139773376449744 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/226b0752cac7789c48f0cb3ec53eda48b7be36cc.lock
+2026-06-18 22:51 DEBUG: Lock 139773376449744 acquired on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/226b0752cac7789c48f0cb3ec53eda48b7be36cc.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/merges.txt HTTP/1.1" 200 None
+2026-06-18 22:51 DEBUG: Attempting to release lock 139773376449744 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/226b0752cac7789c48f0cb3ec53eda48b7be36cc.lock
+2026-06-18 22:51 DEBUG: Lock 139773376449744 released on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/226b0752cac7789c48f0cb3ec53eda48b7be36cc.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/special_tokens_map.json HTTP/1.1" 404 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/tokenizer.json HTTP/1.1" 404 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/config.json HTTP/1.1" 307 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/config.json HTTP/1.1" 200 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/model.safetensors HTTP/1.1" 404 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/model.safetensors.index.json HTTP/1.1" 404 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+2026-06-18 22:51 DEBUG: Attempting to acquire lock 139773589902800 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/3abd875c9e6dd137a689a1fa1a433f0c2d6bc7462afc42a0095878f88f23be87.lock
+2026-06-18 22:51 DEBUG: Lock 139773589902800 acquired on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/3abd875c9e6dd137a689a1fa1a433f0c2d6bc7462afc42a0095878f88f23be87.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /microsoft/deberta-large-mnli/resolve/main/pytorch_model.bin HTTP/1.1" 302 1059
+2026-06-18 22:51 DEBUG: Starting new HTTPS connection (1): cas-bridge.xethub.hf.co:443
+2026-06-18 22:51 DEBUG: https://cas-bridge.xethub.hf.co:443 "GET /xet-bridge-us/621ffdc136468d709f17dede/7e40e5d5a25cc3305ebb66126114a7751c8a8e320e45603afbf06d7e5695eb7f?Expires=1781819479&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYXMtYnJpZGdlLnhldGh1Yi5oZi5jby94ZXQtYnJpZGdlLXVzLzYyMWZmZGMxMzY0NjhkNzA5ZjE3ZGVkZS83ZTQwZTVkNWEyNWNjMzMwNWViYjY2MTI2MTE0YTc3NTFjOGE4ZTMyMGU0NTYwM2FmYmYwNmQ3ZTU2OTVlYjdmKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4MTgxOTQ3OX19fV19&Signature=MEUCIAqopAkKJfCLuPFQAkJRVE78O3ldQrr33HtcTpS8tjeDAiEAwX-cW978H1BhprLjTc1uTvkbqvoD8QOiGJy8bXRyvms_&Key-Pair-Id=K1LYXO563TGWFU&response-content-type=application%2Foctet-stream&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27pytorch_model.bin%3B+filename%3D%22pytorch_model.bin%22%3B&X-Xet-Cas-Uid=public&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=cas%2F20260618%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260618T205119Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ad8e60ed51497d23663e261d156ba3f9eaf22fe3a8c53167f040b666e63bcfd4 HTTP/1.1" 200 1624928186
+2026-06-18 22:51 DEBUG: Attempting to release lock 139773589902800 on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/3abd875c9e6dd137a689a1fa1a433f0c2d6bc7462afc42a0095878f88f23be87.lock
+2026-06-18 22:51 DEBUG: Lock 139773589902800 released on /root/.cache/huggingface/hub/.locks/models--microsoft--deberta-large-mnli/3abd875c9e6dd137a689a1fa1a433f0c2d6bc7462afc42a0095878f88f23be87.lock
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/model.safetensors HTTP/1.1" 404 0
+2026-06-18 22:51 WARNING: BERTScore CUDA execution failed with an incompatible kernel image; retrying on CPU.
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/tokenizer_config.json HTTP/1.1" 200 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /api/models/microsoft/deberta-large-mnli/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "GET /api/models/microsoft/deberta-large-mnli/tree/main?recursive=True&expand=False HTTP/1.1" 200 None
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/config.json HTTP/1.1" 307 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/config.json HTTP/1.1" 200 0
+2026-06-18 22:51 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/model.safetensors HTTP/1.1" 404 0
+2026-06-18 22:51 INFO: Computed BERTScore for 109 pairs (requested=auto, actual=cpu)
+2026-06-18 22:51 INFO: BERTScore retried on CPU after CUDA failure: CUDA error: no kernel image is available for execution on the device
+Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+2026-06-18 22:51 INFO: Wrote autoscore report to /tmp/enricher/bertscore_results.json
+
+=== Autoscore: 109/109 matched ===
+  ROUGE-L F1 mean:      0.5696  (sd=0.4441)
+  Token overlap mean:   0.5493  (sd=0.4641)
+  Raw BERTScore F1:     0.5927  (sd=0.4208)
+  BERTScore P mean:     0.5671
+  BERTScore R mean:     0.6213
+  [description] n=108  ROUGE-L=0.5748  overlap=0.5544
+  [name] n=1  ROUGE-L=0.0  overlap=0.0
+  Normalized BERTScore: 0.2012  (sd=0.066)
+  Normalized groups:    26 from 53 filtered pairs
+
+2026-06-18 22:51:48  Reference autoscore completed successfully.
+2026-06-18 22:51 INFO: Wrote markdown report to /tmp/enricher/bertscore_results.md
+Report written to /tmp/enricher/bertscore_results.md
+2026-06-18 22:51:48  Evaluation markdown report written to /tmp/enricher/bertscore_results.md
+2026-06-18 22:51:48  Uploading folder '/tmp/enricher-staging' as 'enrichment' with loop suffixing

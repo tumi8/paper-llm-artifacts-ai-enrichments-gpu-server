@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Protocol Performance Evaluation Dataset
+abstract: This dataset contains results from an experiment designed to evaluate the
+  performance characteristics of various QUIC protocol implementations under different
+  bandwidth constraints. The methodology involved establishing a server and client
+  environment across two nodes (tartu and tallinn) using automated scripts for system
+  configuration, time synchronization, and package installation. Measurements focused
+  on goodput performance, captured through server energy monitoring and client-side
+  execution timing, alongside associated metrics like mean and standard deviation.
+  The data includes generated plots visualizing goodput variations and tabular results
+  documenting the raw experiment output, facilitating detailed analysis of QUIC protocol
+  behavior.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- Quiche
+- TQuic
+- AioQuic
+- Network Benchmarking
+- Packet Transport
+license: CC-BY-SA-4.0

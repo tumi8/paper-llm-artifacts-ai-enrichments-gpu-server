@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Packet‑Rate and Size Dependent L2 Latency and Energy Measurements on a DUT
+abstract: The dataset records packet‑rate and packet‑size controlled Layer‑2 latency
+  tests performed with MoonGen against a device‑under‑test, capturing per‑packet latency,
+  energy consumption, and process logs. Multiple experimental runs vary packet rate
+  and size to evaluate throughput‑latency trade‑offs under consistent system conditions,
+  including disabled CPU turbo boost and configured huge pages. Evaluation involves
+  generating latency histograms and comparing energy traces across configurations,
+  providing a comprehensive view of performance and power characteristics for the
+  DUT.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- libmoon
+- L2 latency
+- packet rate
+- energy consumption
+license: CC-BY-SA-4.0

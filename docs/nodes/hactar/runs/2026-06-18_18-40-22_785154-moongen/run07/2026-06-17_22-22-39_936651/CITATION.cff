@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network Latency and L2 Forwarding Performance Tests with Variable Packet Rates
+  and Sizes on nida and cesis Nodes
+abstract: This dataset captures Layer 2 network latency and forwarding performance
+  measurements under varying packet rates and sizes, using Moongen-based load generation
+  and Lua-driven workload execution. The experiment evaluates hardware response times,
+  energy consumption, and synchronization accuracy across six runs per configuration.
+  Setup scripts ensure consistent environments for testing, while looped commands
+  generate traffic, capture latency histograms, and produce synchronized timing logs.
+  Results include CSV and PNG files for analyzing throughput, latency distributions,
+  and power metrics under different workload conditions.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- network latency
+- energy consumption
+- packet rate
+- L2 forwarding
+license: CC-BY-SA-4.0

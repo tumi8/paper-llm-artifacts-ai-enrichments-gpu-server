@@ -1,0 +1,44 @@
+...Set slow path parameters
+Jun 18 10:39:25.610 INFO Multipath enabled on proxy with 1 listen sockets, initial_max_path_id=1, pid: 11941, version: 0.1.0, module: masque_proxy:61
+Proxy is ready
+Jun 18 10:39:27.937 INFO 2232817423066794947: Seen new path ([fd00:0:0:3::1]:443, [fd00:0:0:2::1]:59022) with ID 1 for connection 8fae6ed4b3d963f813f3525a98c5c3b314a3a4c4, pid: 11941, version: 0.1.0, module: tokio_quiche::quic::io::worker:774
+Jun 18 10:39:27.948 INFO 2232817423066794947: Path ([fd00:0:0:3::1]:443, [fd00:0:0:2::1]:59022) with ID 1 is now validated for connection 8fae6ed4b3d963f813f3525a98c5c3b314a3a4c4, pid: 11941, version: 0.1.0, module: tokio_quiche::quic::io::worker:802
+Jun 18 10:39:29.911 INFO HTTP/3 DATAGRAM flow created, flow_id: 0, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.911 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=0,i,sched=lowrtt"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.911 INFO Parsed EPS scheduler hint for outer connection, sched: lowrtt, pid: 11941, version: 0.1.0, module: masque_proxy:209
+Jun 18 10:39:29.911 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:29.911 INFO HTTP/3 DATAGRAM flow created, flow_id: 1, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.911 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=0,i"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.911 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:29.912 INFO Applying runtime packet scheduler update, scheduler: lowrtt, pid: 11941, version: 0.1.0, module: tokio_quiche::quic::io::worker:217
+Jun 18 10:39:29.913 INFO HTTP/3 DATAGRAM flow created, flow_id: 2, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.913 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=0,i"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.913 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:29.913 INFO HTTP/3 DATAGRAM flow created, flow_id: 3, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.913 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=3,i"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.913 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:29.913 INFO HTTP/3 DATAGRAM flow created, flow_id: 4, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.913 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=3,i"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.913 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:29.913 INFO HTTP/3 DATAGRAM flow created, flow_id: 5, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.913 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=3,i"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.913 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:29.913 INFO HTTP/3 DATAGRAM flow created, flow_id: 6, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.913 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=5,i"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.913 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:29.913 INFO HTTP/3 DATAGRAM flow created, flow_id: 7, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.913 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=5,i"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.913 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:29.913 INFO HTTP/3 DATAGRAM flow created, flow_id: 8, pid: 11941, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:39:29.913 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?0", "priority: u=5,i"], pid: 11941, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:39:29.913 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 11941, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 4, pid: 11941, version: 0.1.0, module: masque_proxy:362
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 0, pid: 11941, version: 0.1.0, module: masque_proxy:362
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 6, pid: 11941, version: 0.1.0, module: masque_proxy:362
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 1, pid: 11941, version: 0.1.0, module: masque_proxy:362
+Jun 18 10:39:35.067 INFO Connection stats written to /root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-02/outer-connection-stats-8fae6ed4b3d963f813f3525a98c5c3b314a3a4c4.json, pid: 11941, version: 0.1.0, module: masque:107
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 2, pid: 11941, version: 0.1.0, module: masque_proxy:362
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 7, pid: 11941, version: 0.1.0, module: masque_proxy:362
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 3, pid: 11941, version: 0.1.0, module: masque_proxy:362
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 5, pid: 11941, version: 0.1.0, module: masque_proxy:362
+Jun 18 10:39:35.067 INFO Closed tunnel to the proxy, flow_id: 8, pid: 11941, version: 0.1.0, module: masque_proxy:362

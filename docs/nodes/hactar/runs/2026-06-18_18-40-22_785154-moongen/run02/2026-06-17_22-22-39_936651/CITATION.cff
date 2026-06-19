@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Layer 2 Network Latency and Energy Consumption Measurements under Variable
+  Packet Rates and Sizes in System-Level Experiment
+abstract: This dataset captures latency and energy consumption metrics from Layer
+  2 forwarding workloads executed on two nodes under varying packet rates and sizes.
+  The experiment uses a Lua-based forwarding application and Moongen load generator
+  to synchronize traffic generation, measurement periods, and remote port configuration.
+  It evaluates performance through controlled traffic scenarios, logging process outputs,
+  energy metrics, and post-test visualizations. The collection includes setup scripts,
+  per-run logs, and evaluation artifacts for analyzing deterministic execution conditions
+  and network stress responses.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- Lua
+- latency
+- energy consumption
+- pkt_rate
+license: CC-BY-SA-4.0

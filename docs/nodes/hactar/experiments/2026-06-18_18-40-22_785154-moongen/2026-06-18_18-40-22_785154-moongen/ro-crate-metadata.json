@@ -1,0 +1,2063 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.2/context",
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-6328-1047"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5378-3905"
+        }
+      ],
+      "conformsTo": {
+        "@id": "https://tumi8.github.io/rise-ro-crate-profile/1.0.0/"
+      },
+      "contributor": [
+        {
+          "@id": "https://credit.niso.org/contributor-roles/investigation/"
+        },
+        {
+          "@id": "https://credit.niso.org/contributor-roles/project-administration/"
+        }
+      ],
+      "dateCreated": "2026-06-18T18:40:22.801225",
+      "dateModified": "2026-06-18T19:36:10.633253",
+      "datePublished": "2026-06-18T16:40:22+00:00",
+      "description": "This experiment enriches an existing RO-Crate artifact with generated titles, descriptions, and keywords using locally hosted LLMs through Ollama. Different models and prompt context budgets are combined to evaluate how model choice and available artifact context influence metadata quality. Each run produces an enriched RO-Crate artifact together with run manifests, including token and runtime statistics, GPU and energy measurements, and automated comparisons against a human-written reference using BERTScore metric.",
+      "hasPart": [
+        {
+          "@id": "config/hactar/hardware.json"
+        },
+        {
+          "@id": "config/allocation.json"
+        },
+        {
+          "@id": "config/hactar/topology.pdf"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.file"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.status"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.status"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.file"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.status"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.status"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.status"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.status"
+        },
+        {
+          "@id": "files/hactar/2026-06-17_22-22-39_936651_original/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.status"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.status"
+        },
+        {
+          "@id": "files/hactar/2026-06-17_22-22-39_936651_reference/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.status"
+        },
+        {
+          "@id": "config/2026-06-18_18-46-40_305432_variables.json"
+        },
+        {
+          "@id": "files/hactar/enrichment_run00/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run01/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run02/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run03/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run04/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run05/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run06/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run07/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run08/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.status"
+        },
+        {
+          "@id": "files/hactar/enrichment_run09/"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.stdout"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.stderr"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.status"
+        },
+        {
+          "@id": "CITATION.cff"
+        }
+      ],
+      "keywords": [
+        "RO-Crate",
+        "Metadata Enrichment",
+        "Large Language Models",
+        "Ollama",
+        "BERTScore"
+      ],
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by-sa/4.0/legalcode"
+      },
+      "mainEntity": {
+        "@id": "config/allocation.json"
+      },
+      "name": "Evaluation of Local LLMs for RO-Crate Metadata Enrichment"
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
+    },
+    {
+      "@id": "https://doi.org/10.1145/3485983.3494841",
+      "@type": "CreativeWork",
+      "alternateName": "pos",
+      "citation": "https://doi.org/10.1145/3485983.3494841",
+      "description": "The pos Framework: A Methodology and Toolchain for Reproducible Network Experiments",
+      "name": "Plain Orchestrating Service",
+      "version": "3.0.0"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/817",
+      "@type": [
+        "WebPage",
+        "Standard"
+      ],
+      "name": "JSON Data Format"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19",
+      "@type": [
+        "WebPage",
+        "Standard"
+      ],
+      "name": "Acrobat PDF 1.5"
+    },
+    {
+      "@id": "https://tumi8.github.io/rise-ro-crate-profile/1.0.0/",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "alternateName": "RISE RO-Crate Profile",
+      "name": "Research Infrastructure Shareable Experiments RO-Crate Profile",
+      "version": "1.0.0"
+    },
+    {
+      "@id": "https://ror.org/02kkvpp62",
+      "@type": "Organization",
+      "location": "Munich, Germany",
+      "name": "Technical University of Munich",
+      "url": "https://www.tum.de"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6328-1047",
+      "@type": "Person",
+      "affiliation": {
+        "@id": "https://ror.org/02kkvpp62"
+      },
+      "alternateName": "warmuth",
+      "familyName": "Warmuth",
+      "givenName": "Kilian",
+      "name": "Kilian Warmuth"
+    },
+    {
+      "@id": "https://credit.niso.org/contributor-roles/investigation/",
+      "@type": "Role",
+      "contributor": [
+        {
+          "@id": "https://orcid.org/0000-0001-6328-1047"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5378-3905"
+        }
+      ],
+      "description": "Conducting a research and investigation process, specifically performing the experiments, or data/evidence collection.",
+      "roleName": "Investigation",
+      "url": "https://credit.niso.org/contributor-roles/investigation/"
+    },
+    {
+      "@id": "config/hactar/hardware.json",
+      "@type": "File",
+      "contentSize": "20537",
+      "dateCreated": "2026-06-18T18:40:24.347513",
+      "dateModified": "2026-06-18T18:40:24.347513",
+      "description": "Hardware metadata for testbed node hactar.",
+      "encodingFormat": {
+        "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/817"
+      },
+      "name": "Hardware of testbed node hactar"
+    },
+    {
+      "@id": "config/allocation.json",
+      "@type": "Experiment",
+      "dateCreated": "2026-06-18T18:40:22.785630",
+      "dateModified": "2026-06-18T19:36:07.041931",
+      "encodingFormat": "application/json",
+      "executedCommands": [
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.file"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.file"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.command"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+        }
+      ],
+      "experimentController": [
+        {
+          "@id": "https://doi.org/10.1145/3485983.3494841"
+        }
+      ],
+      "experimentNodes": [
+        {
+          "@id": "hactar.blockchain.net.cit.tum.de"
+        }
+      ],
+      "includedOSImages": [
+        {
+          "@id": "staging/debian-bookworm-nvidia-cuda-toolkit@2025-09-05T08:54:41+00:00"
+        }
+      ],
+      "name": "warmuth_260618_184022_785154",
+      "resultData": [
+        {
+          "@id": "files/hactar/2026-06-17_22-22-39_936651_original/"
+        },
+        {
+          "@id": "files/hactar/2026-06-17_22-22-39_936651_reference/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run00/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run01/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run02/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run03/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run04/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run05/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run06/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run07/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run08/"
+        },
+        {
+          "@id": "files/hactar/enrichment_run09/"
+        }
+      ]
+    },
+    {
+      "@id": "config/hactar/topology.pdf",
+      "@type": "File",
+      "contentSize": "22667",
+      "dateCreated": "2026-06-18T18:40:24.384893",
+      "dateModified": "2026-06-18T18:40:24.384893",
+      "description": "Network topology figure for testbed node hactar.",
+      "encodingFormat": {
+        "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/19"
+      },
+      "name": "Network topology of testbed node hactar"
+    },
+    {
+      "@id": "hactar.blockchain.net.cit.tum.de",
+      "@type": "ExperimentNode",
+      "description": "This entity describes testbed node hactar.",
+      "hardware": {
+        "@id": "config/hactar/hardware.json"
+      },
+      "name": "hactar",
+      "visualizedTopology": {
+        "@id": "config/hactar/topology.pdf"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.file",
+      "@type": "CommandFileBootstrap",
+      "contentSize": "10561",
+      "dateCreated": "2026-06-18T18:44:04.792041",
+      "dateModified": "2026-06-18T18:44:07.437053",
+      "description": "Script executed to set up the environment and install pos tools on node hactar",
+      "duration": "PT2S",
+      "endTime": "2026-06-18T18:44:07.389928",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "script",
+        "bootstrap"
+      ],
+      "name": "bootstrap",
+      "startTime": "2026-06-18T18:44:04.792041",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.stdout",
+      "@type": "File",
+      "contentSize": "10796",
+      "dateCreated": "2026-06-18T18:44:04.792041",
+      "dateModified": "2026-06-18T18:44:04.792041",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.file"
+      },
+      "name": "bootstrap"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.stderr",
+      "@type": "File",
+      "contentSize": "2065",
+      "dateCreated": "2026-06-18T18:44:04.792041",
+      "dateModified": "2026-06-18T18:44:04.792041",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.file"
+      },
+      "name": "bootstrap"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:44:04.792041",
+      "dateModified": "2026-06-18T18:44:04.792041",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-44-04_791982_bootstrap.file"
+      },
+      "name": "bootstrap"
+    },
+    {
+      "@id": "staging/debian-bookworm-nvidia-cuda-toolkit@2025-09-05T08:54:41+00:00",
+      "@type": "OSImage",
+      "description": "This image was generated automatically by mandelstamm on 2025-09-05T08:54:41+00:00 using the modules/debian-bookworm-nvidia-cuda-toolkit.sh module. Please see the GitLab project for more information: https://gitlab.lrz.de/I8-testbeds/mandelstamm/",
+      "fileSize": "4812963840",
+      "name": "debian-bookworm-nvidia-cuda-toolkit@2025-09-05T08:54:41+00:00"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.command",
+      "@type": "CommandFileReset",
+      "bootParameters": [
+        "iommu=pt"
+      ],
+      "bootedImage": {
+        "@id": "staging/debian-bookworm-nvidia-cuda-toolkit@2025-09-05T08:54:41+00:00"
+      },
+      "contentSize": "700",
+      "dateCreated": "2026-06-18T18:40:25.334111",
+      "dateModified": "2026-06-18T18:44:09.177000",
+      "description": "Node reset to boot the specified live image and restore a clean system state.",
+      "duration": "PT223S",
+      "endTime": "2026-06-18T18:44:09.024338",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "reset"
+      ],
+      "name": "reset",
+      "startTime": "2026-06-18T18:40:25.334457",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.stdout",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T18:40:25.334111",
+      "dateModified": "2026-06-18T18:40:25.334111",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.command"
+      },
+      "name": "reset"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.stderr",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T18:40:25.334111",
+      "dateModified": "2026-06-18T18:40:25.334111",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.command"
+      },
+      "name": "reset"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:40:25.334111",
+      "dateModified": "2026-06-18T18:40:25.334111",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-40-25_334111_reset.command"
+      },
+      "name": "reset"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.file",
+      "@type": "CommandFile",
+      "contentSize": "2416",
+      "dateCreated": "2026-06-18T18:44:09.720889",
+      "dateModified": "2026-06-18T18:46:25.812611",
+      "duration": "PT136S",
+      "endTime": "2026-06-18T18:46:25.749391",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "script"
+      ],
+      "name": "setup_enrich-metadata",
+      "startTime": "2026-06-18T18:44:09.721298",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.stdout",
+      "@type": "File",
+      "contentSize": "21468",
+      "dateCreated": "2026-06-18T18:44:09.720889",
+      "dateModified": "2026-06-18T18:44:09.720889",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.file"
+      },
+      "name": "setup_enrich-metadata"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.stderr",
+      "@type": "File",
+      "contentSize": "12115",
+      "dateCreated": "2026-06-18T18:44:09.720889",
+      "dateModified": "2026-06-18T18:44:09.720889",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.file"
+      },
+      "name": "setup_enrich-metadata"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:44:09.720889",
+      "dateModified": "2026-06-18T18:44:09.720889",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-44-09_720889_setup_enrich-metadata.file"
+      },
+      "name": "setup_enrich-metadata"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.command",
+      "@type": "CommandFileCopy",
+      "contentSize": "113",
+      "dateCreated": "2026-06-18T18:46:26.346915",
+      "dateModified": "2026-06-18T18:46:28.855767",
+      "description": "Recursive folder copy from /home/warmuth/experiments/ai-metadata-enricher to /root/ai-metadata-enricher on node hactar.",
+      "destinationPath": "/root/ai-metadata-enricher",
+      "duration": "PT2S",
+      "endTime": "2026-06-18T18:46:28.804017",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "copy"
+      ],
+      "name": "copy_files",
+      "recursiveCopy": true,
+      "sourcePath": "/home/warmuth/experiments/ai-metadata-enricher",
+      "startTime": "2026-06-18T18:46:26.347342",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.stdout",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T18:46:26.346915",
+      "dateModified": "2026-06-18T18:46:26.346915",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.command"
+      },
+      "name": "copy_ai-metadata-enricher"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.stderr",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T18:46:26.346915",
+      "dateModified": "2026-06-18T18:46:26.346915",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.command"
+      },
+      "name": "copy_ai-metadata-enricher"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:26.346915",
+      "dateModified": "2026-06-18T18:46:26.346915",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-26_346915_copy_ai-metadata-enricher.command"
+      },
+      "name": "copy_ai-metadata-enricher"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.command",
+      "@type": "CommandFile",
+      "contentSize": "140",
+      "dateCreated": "2026-06-18T18:46:29.350536",
+      "dateModified": "2026-06-18T18:46:30.913694",
+      "duration": "PT1S",
+      "endTime": "2026-06-18T18:46:30.877773",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command"
+      ],
+      "name": "prepare_ro-crate-target",
+      "startTime": "2026-06-18T18:46:29.350966",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.stdout",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T18:46:29.350536",
+      "dateModified": "2026-06-18T18:46:29.350536",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.command"
+      },
+      "name": "prepare_ro-crate-target"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.stderr",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T18:46:29.350536",
+      "dateModified": "2026-06-18T18:46:29.350536",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.command"
+      },
+      "name": "prepare_ro-crate-target"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:29.350536",
+      "dateModified": "2026-06-18T18:46:29.350536",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-29_350536_prepare_ro-crate-target.command"
+      },
+      "name": "prepare_ro-crate-target"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.command",
+      "@type": "CommandFileCopy",
+      "contentSize": "170",
+      "dateCreated": "2026-06-18T18:46:31.369844",
+      "dateModified": "2026-06-18T18:46:32.504789",
+      "description": "Recursive folder copy from /srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/moongen/2026-06-17_22-22-39_936651 to /srv/testbed/results/warmuth/default on node hactar.",
+      "destinationPath": "/srv/testbed/results/warmuth/default",
+      "duration": "PT1S",
+      "endTime": "2026-06-18T18:46:32.470877",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "copy"
+      ],
+      "name": "copy_result_folder",
+      "recursiveCopy": true,
+      "sourcePath": "/srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/moongen/2026-06-17_22-22-39_936651",
+      "startTime": "2026-06-18T18:46:31.370482",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.stdout",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T18:46:31.369844",
+      "dateModified": "2026-06-18T18:46:31.369844",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.command"
+      },
+      "name": "copy_2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.stderr",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T18:46:31.369844",
+      "dateModified": "2026-06-18T18:46:31.369844",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.command"
+      },
+      "name": "copy_2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:31.369844",
+      "dateModified": "2026-06-18T18:46:31.369844",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-31_369844_copy_2026-06-17_22-22-39_936651.command"
+      },
+      "name": "copy_2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "files/hactar/2026-06-17_22-22-39_936651_original/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T18:46:35.030033",
+      "dateModified": "2026-06-18T18:46:35.031559",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.command"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "2026-06-17_22-22-39_936651_original",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/original/#/open/2026-06-17_22-22-39_936651_original"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.command",
+      "@type": "CommandFile",
+      "contentSize": "165",
+      "dateCreated": "2026-06-18T18:46:33.004685",
+      "dateModified": "2026-06-18T18:46:35.220495",
+      "duration": "PT2S",
+      "endTime": "2026-06-18T18:46:35.185726",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command"
+      ],
+      "name": "upload_original_ro_crate",
+      "resultData": [
+        {
+          "@id": "files/hactar/2026-06-17_22-22-39_936651_original/"
+        }
+      ],
+      "startTime": "2026-06-18T18:46:33.004975",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.stdout",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T18:46:33.004685",
+      "dateModified": "2026-06-18T18:46:33.004685",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.command"
+      },
+      "name": "upload_original_ro_crate"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.stderr",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T18:46:33.004685",
+      "dateModified": "2026-06-18T18:46:33.004685",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.command"
+      },
+      "name": "upload_original_ro_crate"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:33.004685",
+      "dateModified": "2026-06-18T18:46:33.004685",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-33_004685_upload_original_ro_crate.command"
+      },
+      "name": "upload_original_ro_crate"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.command",
+      "@type": "CommandFileCopy",
+      "contentSize": "180",
+      "dateCreated": "2026-06-18T18:46:35.701574",
+      "dateModified": "2026-06-18T18:46:36.885428",
+      "description": "Recursive folder copy from /srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/moongen/2026-06-17_22-22-39_936651_reference to /srv/testbed/results/warmuth/default on node hactar.",
+      "destinationPath": "/srv/testbed/results/warmuth/default",
+      "duration": "PT1S",
+      "endTime": "2026-06-18T18:46:36.852201",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "copy"
+      ],
+      "name": "copy_reference_folder",
+      "recursiveCopy": true,
+      "sourcePath": "/srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/moongen/2026-06-17_22-22-39_936651_reference",
+      "startTime": "2026-06-18T18:46:35.702062",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.stdout",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T18:46:35.701574",
+      "dateModified": "2026-06-18T18:46:35.701574",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.command"
+      },
+      "name": "copy_2026-06-17_22-22-39_936651_reference"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.stderr",
+      "@type": "File",
+      "contentSize": "4",
+      "dateCreated": "2026-06-18T18:46:35.701574",
+      "dateModified": "2026-06-18T18:46:35.701574",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.command"
+      },
+      "name": "copy_2026-06-17_22-22-39_936651_reference"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:35.701574",
+      "dateModified": "2026-06-18T18:46:35.701574",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-35_701574_copy_2026-06-17_22-22-39_936651_reference.command"
+      },
+      "name": "copy_2026-06-17_22-22-39_936651_reference"
+    },
+    {
+      "@id": "files/hactar/2026-06-17_22-22-39_936651_reference/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T18:46:39.551073",
+      "dateModified": "2026-06-18T18:46:39.554575",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.command"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "2026-06-17_22-22-39_936651_reference",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/reference/#/open/2026-06-17_22-22-39_936651_reference"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.command",
+      "@type": "CommandFile",
+      "contentSize": "176",
+      "dateCreated": "2026-06-18T18:46:37.418106",
+      "dateModified": "2026-06-18T18:46:39.777327",
+      "duration": "PT2S",
+      "endTime": "2026-06-18T18:46:39.743410",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command"
+      ],
+      "name": "upload_reference_ro_crate",
+      "resultData": [
+        {
+          "@id": "files/hactar/2026-06-17_22-22-39_936651_reference/"
+        }
+      ],
+      "startTime": "2026-06-18T18:46:37.418566",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.stdout"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.stdout",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T18:46:37.418106",
+      "dateModified": "2026-06-18T18:46:37.418106",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.command"
+      },
+      "name": "upload_reference_ro_crate"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.stderr",
+      "@type": "File",
+      "contentSize": "0",
+      "dateCreated": "2026-06-18T18:46:37.418106",
+      "dateModified": "2026-06-18T18:46:37.418106",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.command"
+      },
+      "name": "upload_reference_ro_crate"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:37.418106",
+      "dateModified": "2026-06-18T18:46:37.418106",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-37_418106_upload_reference_ro_crate.command"
+      },
+      "name": "upload_reference_ro_crate"
+    },
+    {
+      "@id": "config/2026-06-18_18-46-40_305432_variables.json",
+      "@type": "File",
+      "contentSize": "865",
+      "dateCreated": "2026-06-18T18:46:40.305432",
+      "dateModified": "2026-06-18T18:46:40.305432",
+      "description": "Variable set metadata for the allocation at 2026-06-18_18-46-40_305432.",
+      "encodingFormat": {
+        "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/817"
+      },
+      "keywords": [
+        "variables"
+      ],
+      "name": "VariableSet"
+    },
+    {
+      "@id": "files/hactar/enrichment_run00/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T18:50:08.926527",
+      "dateModified": "2026-06-18T18:50:08.928953",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run00",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run00/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file",
+      "@type": "CommandFileLooped",
+      "contentSize": "12506",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:36:07.511906",
+      "duration": "PT2966S",
+      "endTime": "2026-06-18T19:36:07.478559",
+      "executedOn": {
+        "@id": "hactar.blockchain.net.cit.tum.de"
+      },
+      "keywords": [
+        "command",
+        "script",
+        "looped"
+      ],
+      "loopRuns": [
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.loop"
+        },
+        {
+          "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.loop"
+        }
+      ],
+      "name": "experiment_enrich-metadata",
+      "startTime": "2026-06-18T18:46:40.811625",
+      "variableSet": {
+        "@id": "config/2026-06-18_18-46-40_305432_variables.json"
+      }
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.loop",
+      "@type": "LoopRun",
+      "contentSize": "412",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:50:09.294388",
+      "duration": "PT208S",
+      "endTime": "2026-06-18T18:50:09.228569",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run00",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run00/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T18:46:40.811625",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run00/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.stdout",
+      "@type": "File",
+      "contentSize": "38530",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.loop"
+      },
+      "name": "experiment_enrich-metadata_run00"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.loop"
+      },
+      "name": "experiment_enrich-metadata_run00"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run00.loop"
+      },
+      "name": "experiment_enrich-metadata_run00"
+    },
+    {
+      "@id": "files/hactar/enrichment_run01/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T18:53:57.141071",
+      "dateModified": "2026-06-18T18:53:57.145100",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run01",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run01/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.loop",
+      "@type": "LoopRun",
+      "contentSize": "413",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:53:57.491763",
+      "duration": "PT228S",
+      "endTime": "2026-06-18T18:53:57.452094",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run01",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run01/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T18:50:09.228569",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run01/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.stdout",
+      "@type": "File",
+      "contentSize": "30574",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.loop"
+      },
+      "name": "experiment_enrich-metadata_run01"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.loop"
+      },
+      "name": "experiment_enrich-metadata_run01"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run01.loop"
+      },
+      "name": "experiment_enrich-metadata_run01"
+    },
+    {
+      "@id": "files/hactar/enrichment_run02/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:00:01.591385",
+      "dateModified": "2026-06-18T19:00:01.595616",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run02",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run02/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.loop",
+      "@type": "LoopRun",
+      "contentSize": "412",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:00:02.228197",
+      "duration": "PT364S",
+      "endTime": "2026-06-18T19:00:02.183317",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run02",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run02/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T18:53:57.452094",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run02/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.stdout",
+      "@type": "File",
+      "contentSize": "30585",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.loop"
+      },
+      "name": "experiment_enrich-metadata_run02"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.loop"
+      },
+      "name": "experiment_enrich-metadata_run02"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run02.loop"
+      },
+      "name": "experiment_enrich-metadata_run02"
+    },
+    {
+      "@id": "files/hactar/enrichment_run03/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:05:03.923613",
+      "dateModified": "2026-06-18T19:05:03.927421",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run03",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run03/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.loop",
+      "@type": "LoopRun",
+      "contentSize": "417",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:05:04.569762",
+      "duration": "PT302S",
+      "endTime": "2026-06-18T19:05:04.524435",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run03",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run03/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:00:02.183317",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run03/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.stdout",
+      "@type": "File",
+      "contentSize": "30688",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.loop"
+      },
+      "name": "experiment_enrich-metadata_run03"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.loop"
+      },
+      "name": "experiment_enrich-metadata_run03"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run03.loop"
+      },
+      "name": "experiment_enrich-metadata_run03"
+    },
+    {
+      "@id": "files/hactar/enrichment_run04/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:18:25.569665",
+      "dateModified": "2026-06-18T19:18:25.575468",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run04",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run04/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.loop",
+      "@type": "LoopRun",
+      "contentSize": "414",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:18:26.225021",
+      "duration": "PT801S",
+      "endTime": "2026-06-18T19:18:26.173791",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run04",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run04/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:05:04.524435",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run04/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.stdout",
+      "@type": "File",
+      "contentSize": "30594",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.loop"
+      },
+      "name": "experiment_enrich-metadata_run04"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.loop"
+      },
+      "name": "experiment_enrich-metadata_run04"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run04.loop"
+      },
+      "name": "experiment_enrich-metadata_run04"
+    },
+    {
+      "@id": "files/hactar/enrichment_run05/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:19:51.715796",
+      "dateModified": "2026-06-18T19:19:51.721340",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run05",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run05/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.loop",
+      "@type": "LoopRun",
+      "contentSize": "414",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:19:52.117853",
+      "duration": "PT85S",
+      "endTime": "2026-06-18T19:19:52.065591",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run05",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run05/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:18:26.173791",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run05/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.stdout",
+      "@type": "File",
+      "contentSize": "30554",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.loop"
+      },
+      "name": "experiment_enrich-metadata_run05"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.loop"
+      },
+      "name": "experiment_enrich-metadata_run05"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run05.loop"
+      },
+      "name": "experiment_enrich-metadata_run05"
+    },
+    {
+      "@id": "files/hactar/enrichment_run06/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:22:18.726612",
+      "dateModified": "2026-06-18T19:22:18.729852",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run06",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run06/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.loop",
+      "@type": "LoopRun",
+      "contentSize": "415",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:22:19.117902",
+      "duration": "PT147S",
+      "endTime": "2026-06-18T19:22:19.077190",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run06",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run06/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:19:52.065591",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run06/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.stdout",
+      "@type": "File",
+      "contentSize": "30582",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.loop"
+      },
+      "name": "experiment_enrich-metadata_run06"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.loop"
+      },
+      "name": "experiment_enrich-metadata_run06"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run06.loop"
+      },
+      "name": "experiment_enrich-metadata_run06"
+    },
+    {
+      "@id": "files/hactar/enrichment_run07/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:27:12.383891",
+      "dateModified": "2026-06-18T19:27:12.390087",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run07",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run07/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.loop",
+      "@type": "LoopRun",
+      "contentSize": "414",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:27:13.122003",
+      "duration": "PT293S",
+      "endTime": "2026-06-18T19:27:13.069333",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run07",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run07/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:22:19.077190",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run07/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.stdout",
+      "@type": "File",
+      "contentSize": "30591",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.loop"
+      },
+      "name": "experiment_enrich-metadata_run07"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.loop"
+      },
+      "name": "experiment_enrich-metadata_run07"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run07.loop"
+      },
+      "name": "experiment_enrich-metadata_run07"
+    },
+    {
+      "@id": "files/hactar/enrichment_run08/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:34:19.707189",
+      "dateModified": "2026-06-18T19:34:19.714655",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run08",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run08/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.loop",
+      "@type": "LoopRun",
+      "contentSize": "419",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:34:20.487425",
+      "duration": "PT427S",
+      "endTime": "2026-06-18T19:34:20.433756",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run08",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run08/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:27:13.069333",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run08/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.stdout",
+      "@type": "File",
+      "contentSize": "30694",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.loop"
+      },
+      "name": "experiment_enrich-metadata_run08"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.loop"
+      },
+      "name": "experiment_enrich-metadata_run08"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run08.loop"
+      },
+      "name": "experiment_enrich-metadata_run08"
+    },
+    {
+      "@id": "files/hactar/enrichment_run09/",
+      "@type": "Dataset",
+      "dateCreated": "2026-06-18T19:36:07.033853",
+      "dateModified": "2026-06-18T19:36:07.041413",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.loop"
+      },
+      "keywords": [
+        "pos_run",
+        "upload"
+      ],
+      "name": "enrichment_run09",
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run09/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.loop",
+      "@type": "LoopRun",
+      "contentSize": "416",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T19:36:07.535846",
+      "duration": "PT107S",
+      "endTime": "2026-06-18T19:36:07.478559",
+      "keywords": [
+        "variables",
+        "loop_run"
+      ],
+      "name": "experiment_enrich-metadata_run09",
+      "resultData": [
+        {
+          "@id": "files/hactar/enrichment_run09/"
+        }
+      ],
+      "runOfLoopedCommand": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata.file"
+      },
+      "startTime": "2026-06-18T19:34:20.433756",
+      "status": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.status"
+      },
+      "stderr": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.stderr"
+      },
+      "stdout": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.stdout"
+      },
+      "description": "Inspect visualized run here: https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/nodes/hactar/runs/2026-06-18_18-40-22_785154-moongen/run09/#/open/2026-06-17_22-22-39_936651"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.stdout",
+      "@type": "File",
+      "contentSize": "30599",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.loop"
+      },
+      "name": "experiment_enrich-metadata_run09"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.stderr",
+      "@type": "File",
+      "contentSize": "4074",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.loop"
+      },
+      "name": "experiment_enrich-metadata_run09"
+    },
+    {
+      "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.status",
+      "@type": "File",
+      "contentSize": "8",
+      "dateCreated": "2026-06-18T18:46:40.808634",
+      "dateModified": "2026-06-18T18:46:40.808634",
+      "exampleOfWork": {
+        "@id": "scripts/hactar/2026-06-18_18-46-40_808634_experiment_enrich-metadata_run09.loop"
+      },
+      "name": "experiment_enrich-metadata_run09"
+    },
+    {
+      "@id": "CITATION.cff",
+      "@type": "File",
+      "contentSize": "978",
+      "dateCreated": "2026-06-18T19:36:10.631077",
+      "dateModified": "2026-06-18T19:36:10.631077",
+      "description": "Citation metadata for this RO-Crate. See: https://citation-file-format.github.io/",
+      "name": "Citation metadata file"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5378-3905",
+      "@type": "Person",
+      "affiliation": {
+        "@id": "https://ror.org/02kkvpp62"
+      },
+      "alternateName": "erhauser",
+      "familyName": "Hauser",
+      "givenName": "Eric",
+      "name": "Eric Hauser"
+    },
+    {
+      "@id": "https://credit.niso.org/contributor-roles/project-administration/",
+      "@type": "Role",
+      "contributor": [
+        {
+          "@id": "https://orcid.org/0000-0001-6328-1047"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-5378-3905"
+        }
+      ],
+      "description": "Management and coordination responsibility for the research activity planning and execution.",
+      "roleName": "Project administration",
+      "url": "https://credit.niso.org/contributor-roles/project-administration/"
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by-sa/4.0/legalcode",
+      "@type": "CreativeWork",
+      "alternateName": "CC-BY-SA-4.0",
+      "name": "Creative Commons Attribution Share Alike 4.0 International",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode"
+    }
+  ]
+}

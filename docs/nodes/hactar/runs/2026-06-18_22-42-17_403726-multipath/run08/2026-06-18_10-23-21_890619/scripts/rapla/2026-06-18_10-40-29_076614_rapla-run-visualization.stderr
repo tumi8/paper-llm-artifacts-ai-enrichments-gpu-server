@@ -1,0 +1,49 @@
+++ pos_get_variable results_dir -r
++ RESULTS_DIR=/root/results
++ cd /root/masque-vis
++ source .venv/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ '[' -n /bin/bash -o -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/root/masque-vis/.venv
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH=/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/root/masque-vis/.venv/bin:/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(.venv) '
+++ export PS1
+++ VIRTUAL_ENV_PROMPT='(.venv) '
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -n /bin/bash -o -n '' ']'
+++ hash -r
++ shopt -s nullglob
++ for path_dir in "$RESULTS_DIR"/*
++ '[' '!' -d /root/results/delay-5ms_rate-10mbit ']'
++ echo 'Plotting results in /root/results/delay-5ms_rate-10mbit'
++ python3 plot.py --results-dir /root/results/delay-5ms_rate-10mbit
+INFO: unreliable_lowrtt: wrote summary
+INFO: reliable_lowrtt: wrote summary
+INFO: Generating boxplot of end-to-end completion times...
+INFO: Saved boxplot to /root/results/delay-5ms_rate-10mbit/out/boxplot.pdf
++ deactivate
++ '[' -n /root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
++ PATH=/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ export PATH
++ unset _OLD_VIRTUAL_PATH
++ '[' -n '' ']'
++ '[' -n /bin/bash -o -n '' ']'
++ hash -r
++ '[' -n '' ']'
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ '[' '!' '' = nondestructive ']'
++ unset -f deactivate

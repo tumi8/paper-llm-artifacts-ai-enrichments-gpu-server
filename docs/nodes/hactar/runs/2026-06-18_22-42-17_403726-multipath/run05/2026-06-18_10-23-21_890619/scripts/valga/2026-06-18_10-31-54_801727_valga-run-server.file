@@ -1,0 +1,64 @@
+#!/bin/bash
+set -eux
+
+RESULTS_DIR=$(pos_get_variable results_dir -r)
+SCHEDULER_CONFIG=$(pos_get_variable scheduler --from-loop)
+SLOW_PATH_PROFILE=$(pos_get_variable slow_path_profile --from-loop)
+IFS=':' read -r SLOW_PATH_RATE SLOW_PATH_DELAY <<< "$SLOW_PATH_PROFILE"
+ITERATION=$(pos_get_variable iteration --from-loop)
+CC_ALGORITHM=$(pos_get_variable cc_algorithm -r)
+
+PATH_PROPERTIES="delay-${SLOW_PATH_DELAY}ms_rate-${SLOW_PATH_RATE}mbit"
+SCHEDULER_DIR_NAME=${SCHEDULER_CONFIG//[^[:alnum:]_-]/_}
+RUN_NAME="${SCHEDULER_DIR_NAME}_${PATH_PROPERTIES}_run-${ITERATION}"
+RUN_DIR="$RESULTS_DIR/$PATH_PROPERTIES/$SCHEDULER_DIR_NAME/run-$ITERATION"
+mkdir -p "$RUN_DIR"
+
+SERVER_IP=$(pos_get_variable server_ip -r)
+SERVER_PORT=$(pos_get_variable server_port -r)
+SERVER_ADDRESS="[$SERVER_IP]:$SERVER_PORT"
+
+cleanup() {
+    local pids
+    pids=$(pgrep -f "quiche-server" || true)
+    if [ -z "$pids" ]; then
+        return
+    fi
+
+    kill -INT $pids || true
+    timeout 10 bash -c "while pgrep -f \"quiche-server\" >/dev/null; do sleep 0.2; done" || true
+
+    pids=$(pgrep -f "quiche-server" || true)
+    if [ -n "$pids" ]; then
+        kill -TERM $pids || true
+        timeout 5 bash -c "while pgrep -f \"quiche-server\" >/dev/null; do sleep 0.2; done" || true
+    fi
+}
+
+trap cleanup EXIT
+
+pos_energy_start --loop --filename "server"
+
+cd /root/mp-nada && RUST_LOG=info QLOGDIR="$RUN_DIR" SSLKEYLOGFILE="$RUN_DIR/ssl-server.key" \
+    cargo run --release --bin quiche-server -- \
+    --listen "$SERVER_ADDRESS" \
+    --cert /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.crt \
+    --key /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.key \
+    --root /root/mp-nada/apps/src/bin/root \
+    --cc-algorithm "$CC_ALGORITHM" \
+    --no-retry &
+
+if timeout 180 bash -c "until ss -tuln | grep -q \":$SERVER_PORT\"; do sleep 0.5; done"; then
+    echo "Server is ready"
+else
+    echo "Timeout when starting the server"
+    exit 1
+fi
+
+SYNC_TAG="${RUN_NAME}_services_ready"
+FINISH_TAG="${RUN_NAME}_client_finished"
+
+pos_sync --tag "$SYNC_TAG"
+pos_sync --tag "$FINISH_TAG"
+
+pos_energy_stop

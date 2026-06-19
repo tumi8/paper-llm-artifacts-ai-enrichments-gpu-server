@@ -1,0 +1,106 @@
+#!/bin/bash
+set -eux
+
+RESULTS_DIR=$(pos_get_variable results_dir -r)
+SCHEDULER_CONFIG=$(pos_get_variable scheduler --from-loop)
+SLOW_PATH_PROFILE=$(pos_get_variable slow_path_profile --from-loop)
+IFS=':' read -r SLOW_PATH_RATE SLOW_PATH_DELAY <<< "$SLOW_PATH_PROFILE"
+TBF_LATENCY=$(pos_get_variable tbf_latency -r)
+TBF_BURST=$(pos_get_variable tbf_burst -r)
+ITERATION=$(pos_get_variable iteration --from-loop)
+CAPTURE_ENABLED=$(pos_get_variable proxy_capture_enabled -r)
+CC_ALGORITHM=$(pos_get_variable cc_algorithm -r)
+
+PATH_PROPERTIES="delay-${SLOW_PATH_DELAY}ms_rate-${SLOW_PATH_RATE}mbit"
+SCHEDULER_DIR_NAME=${SCHEDULER_CONFIG//[^[:alnum:]_-]/_}
+RUN_NAME="${SCHEDULER_DIR_NAME}_${PATH_PROPERTIES}_run-${ITERATION}"
+RUN_DIR="$RESULTS_DIR/$PATH_PROPERTIES/$SCHEDULER_DIR_NAME/run-$ITERATION"
+mkdir -p "$RUN_DIR"
+
+PROXY_IP=$(pos_get_variable proxy_ip -r)
+PROXY_PORT=$(pos_get_variable proxy_port -r)
+PROXY_ADDRESS="[$PROXY_IP]:$PROXY_PORT"
+PROXY_TO_CLIENT_INTERFACE=$(pos_get_variable proxy_to_client_interface -r)
+PROXY_TO_CLIENT_EXTRA_INTERFACE=$(pos_get_variable proxy_to_client_extra_interface -r)
+PROXY_TO_SERVER_INTERFACE=$(pos_get_variable proxy_to_server_interface -r)
+CAPTURE_PID=""
+
+start_capture() {
+    local capture_file="$RUN_DIR/proxy.pcapng"
+
+    if [ "$CAPTURE_ENABLED" = "True" ] || [ "$CAPTURE_ENABLED" = "true" ]; then
+        echo "Starting proxy capture: $capture_file"
+        nohup tshark \
+            --interface "$PROXY_TO_CLIENT_INTERFACE" \
+            --interface "$PROXY_TO_CLIENT_EXTRA_INTERFACE" \
+            --interface "$PROXY_TO_SERVER_INTERFACE" \
+            -q \
+            -f "udp" \
+            -w "$capture_file" \
+            >/dev/null 2>&1 &
+        CAPTURE_PID=$!
+    fi
+}
+
+stop_capture() {
+    if [ -z "$CAPTURE_PID" ] || ! kill -0 "$CAPTURE_PID" 2>/dev/null; then
+        return
+    fi
+
+    echo "Stopping proxy capture: $CAPTURE_PID"
+    kill -INT "$CAPTURE_PID" || true
+    timeout 10 bash -c "while kill -0 $CAPTURE_PID 2>/dev/null; do sleep 0.2; done" || kill -TERM "$CAPTURE_PID" || true
+}
+
+cleanup() {
+    local pids
+    stop_capture
+    pids=$(pgrep -f "masque-proxy" || true)
+    if [ -z "$pids" ]; then
+        return
+    fi
+
+    kill -INT $pids || true
+    timeout 10 bash -c "while pgrep -f \"masque-proxy\" >/dev/null; do sleep 0.2; done" || true
+
+    pids=$(pgrep -f "masque-proxy" || true)
+    if [ -n "$pids" ]; then
+        kill -TERM $pids || true
+        timeout 5 bash -c "while pgrep -f \"masque-proxy\" >/dev/null; do sleep 0.2; done" || true
+    fi
+}
+
+trap cleanup EXIT
+
+echo "...Set slow path parameters"
+tc qdisc replace dev "$PROXY_TO_CLIENT_EXTRA_INTERFACE" root handle 1: tbf rate "${SLOW_PATH_RATE}mbit" latency "${TBF_LATENCY}ms" burst "${TBF_BURST}"
+tc qdisc replace dev "$PROXY_TO_CLIENT_EXTRA_INTERFACE" parent 1: handle 10: netem delay "${SLOW_PATH_DELAY}ms"
+
+pos_energy_start --loop --filename "proxy"
+
+cd /root/mp-nada/tokio-quiche/nada && cargo run --release --bin masque-proxy -- \
+    --results-dir "$RUN_DIR" \
+    --log-keys \
+    --log-stats \
+    --qlog \
+    --multipath \
+    --initial-max-path-id 1 \
+    --cc-algorithm "$CC_ALGORITHM" \
+    --proxy-address "$PROXY_ADDRESS" &
+
+if timeout 180 bash -c "until ss -tuln | grep -q \":$PROXY_PORT\"; do sleep 0.5; done"; then
+    echo "Proxy is ready"
+else
+    echo "Timeout when starting the proxy"
+    exit 1
+fi
+
+start_capture
+
+SYNC_TAG="${RUN_NAME}_services_ready"
+FINISH_TAG="${RUN_NAME}_client_finished"
+
+pos_sync --tag "$SYNC_TAG"
+pos_sync --tag "$FINISH_TAG"
+
+pos_energy_stop

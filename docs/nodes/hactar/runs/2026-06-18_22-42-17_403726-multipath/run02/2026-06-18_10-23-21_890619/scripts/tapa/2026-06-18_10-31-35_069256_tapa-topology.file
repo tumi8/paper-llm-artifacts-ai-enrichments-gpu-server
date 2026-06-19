@@ -1,0 +1,51 @@
+#!/bin/bash
+set -eux
+
+PREFIX_LENGTH=$(pos_get_variable prefix_length -r)
+
+CLIENT_IP=$(pos_get_variable client_ip -r)
+CLIENT_EXTRA_IP=$(pos_get_variable client_extra_ip -r)
+SERVER_IP=$(pos_get_variable server_ip -r)
+
+PROXY_IP=$(pos_get_variable proxy_ip -r)
+
+PROXY_TO_CLIENT_INTERFACE=$(pos_get_variable proxy_to_client_interface -r)
+PROXY_TO_CLIENT_EXTRA_INTERFACE=$(pos_get_variable proxy_to_client_extra_interface -r)
+PROXY_TO_SERVER_INTERFACE=$(pos_get_variable proxy_to_server_interface -r)
+
+
+FAST_PATH_RATE=$(pos_get_variable fast_path_rate -r)     # mbit
+FAST_PATH_DELAY=$(pos_get_variable fast_path_delay -r)   # ms
+TBF_LATENCY=$(pos_get_variable tbf_latency -r)
+TBF_BURST=$(pos_get_variable tbf_burst -r)
+PROXY_TO_SERVER_DELAY=$(pos_get_variable proxy_server_delay -r) # ms
+
+echo "Configuring the proxy network"
+
+sysctl -w net.ipv6.conf.all.forwarding=0
+
+echo "...Set IFs up"
+ip link set dev "$PROXY_TO_CLIENT_INTERFACE" up
+ip link set dev "$PROXY_TO_CLIENT_EXTRA_INTERFACE" up
+ip link set dev "$PROXY_TO_SERVER_INTERFACE" up
+
+echo "...Assign per-link addresses"
+ip addr add dev "$PROXY_TO_CLIENT_INTERFACE" "$PROXY_IP"/"$PREFIX_LENGTH"
+ip addr add dev "$PROXY_TO_CLIENT_EXTRA_INTERFACE" "$PROXY_IP"/"$PREFIX_LENGTH"
+ip addr add dev "$PROXY_TO_SERVER_INTERFACE" "$PROXY_IP"/"$PREFIX_LENGTH"
+
+echo "...Add client routes"
+ip -6 route add "$CLIENT_IP"/"$PREFIX_LENGTH" dev "$PROXY_TO_CLIENT_INTERFACE"
+ip -6 route add "$CLIENT_EXTRA_IP"/"$PREFIX_LENGTH" dev "$PROXY_TO_CLIENT_EXTRA_INTERFACE"
+
+echo "...Add server route"
+ip -6 route add "$SERVER_IP"/"$PREFIX_LENGTH" dev "$PROXY_TO_SERVER_INTERFACE"
+
+echo "...Set fixed path parameters"
+
+# Fast path to the client
+tc qdisc replace dev "$PROXY_TO_CLIENT_INTERFACE" root handle 1: tbf rate "${FAST_PATH_RATE}mbit" latency "${TBF_LATENCY}ms" burst "${TBF_BURST}"
+tc qdisc replace dev "$PROXY_TO_CLIENT_INTERFACE" parent 1: handle 10: netem delay "${FAST_PATH_DELAY}ms"
+
+# To server (no bandwidth constraint, delay only)
+tc qdisc add dev "$PROXY_TO_SERVER_INTERFACE" root netem delay "${PROXY_TO_SERVER_DELAY}ms"

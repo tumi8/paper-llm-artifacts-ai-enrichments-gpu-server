@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Implementation Performance Evaluation Across Multiple Server and Client
+  Configurations
+abstract: This dataset documents an experiment evaluating the performance of several
+  QUIC implementations under varying network conditions. The methodology involved
+  configuring and running both server and client software with different values for
+  bandwidth limits, file sizes, and QUIC implementation types across two nodes.  Performance
+  was assessed through measurements of elapsed time and energy consumption during
+  data transfers, along with verification of downloaded files via checksums. Evaluation
+  scripts aggregated results from multiple runs to generate performance reports and
+  visualizations.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC
+- apt
+- lsquic
+- energy
+- build
+license: CC-BY-SA-4.0

@@ -1,0 +1,40 @@
+#!/bin/bash
+set -eux
+
+CLIENT_INTERFACE=$(pos_get_variable client_interface -r)
+CLIENT_IP=$(pos_get_variable client_ip -r)
+CLIENT_EXTRA_IP=$(pos_get_variable client_extra_ip -r)
+CLIENT_EXTRA_INTERFACE=$(pos_get_variable client_extra_interface -r)
+
+PROXY_IP=$(pos_get_variable proxy_ip -r)
+
+PREFIX_LENGTH=$(pos_get_variable prefix_length -r)
+
+CLIENT_TABLE_ID=$(pos_get_variable client_table_id -r)
+CLIENT_EXTRA_TABLE_ID=$(pos_get_variable client_extra_table_id -r)
+
+FAST_PATH_RATE=$(pos_get_variable fast_path_rate -r)   # mbit
+FAST_PATH_DELAY=$(pos_get_variable fast_path_delay -r) # ms
+TBF_LATENCY=$(pos_get_variable tbf_latency -r)
+TBF_BURST=$(pos_get_variable tbf_burst -r)
+
+echo "Configuring the client's network"
+
+echo "...Set IFs up"
+ip link set dev "$CLIENT_INTERFACE" up
+ip link set dev "$CLIENT_EXTRA_INTERFACE" up
+
+echo "...Configure first path"
+ip addr add dev "$CLIENT_INTERFACE" "$CLIENT_IP"/"$PREFIX_LENGTH"
+ip -6 route add "$PROXY_IP"/"$PREFIX_LENGTH" dev "$CLIENT_INTERFACE" table "$CLIENT_TABLE_ID"
+ip -6 rule add from "$CLIENT_IP" lookup "$CLIENT_TABLE_ID"
+
+echo "...Configure second path"
+ip addr add dev "$CLIENT_EXTRA_INTERFACE" "$CLIENT_EXTRA_IP"/"$PREFIX_LENGTH"
+ip -6 route add "$PROXY_IP"/"$PREFIX_LENGTH" dev "$CLIENT_EXTRA_INTERFACE" table "$CLIENT_EXTRA_TABLE_ID"
+ip -6 rule add from "$CLIENT_EXTRA_IP" lookup "$CLIENT_EXTRA_TABLE_ID"
+
+echo "...Set fast path parameters"
+
+tc qdisc add dev "$CLIENT_INTERFACE" root handle 1: tbf rate "${FAST_PATH_RATE}mbit" latency "${TBF_LATENCY}ms" burst "${TBF_BURST}"
+tc qdisc add dev "$CLIENT_INTERFACE" parent 1: handle 10: netem delay "${FAST_PATH_DELAY}ms"

@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Server Performance Data Under Controlled Network Conditions
+abstract: ' This dataset contains results from experiments measuring QUIC server performance
+  metrics under various controlled network conditions using IPv6. These measurements
+  were conducted through multiple runs across three nodes with different configurations
+  of network profiles and schedulers. Scripts provided the methodology for environment
+  setup, traffic shaping, execution control, and result uploading to facilitate understanding.'
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- QUIC Server
+- Traffic Control
+- SSH Keys Setup
+- Slow Path Profile
+- Performance Measurement
+license: CC-BY-SA-4.0

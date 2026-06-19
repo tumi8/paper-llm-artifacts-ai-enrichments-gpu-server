@@ -1,0 +1,1 @@
+scp /home/warmuth/experiments/experiments/loop-experiment-llm/evaluation/plot_latency.py cesis.baltikum.net.cit.tum.de:MoonGen/plot_latency.py

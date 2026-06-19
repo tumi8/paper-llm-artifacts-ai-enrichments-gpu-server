@@ -1,0 +1,12 @@
+{
+  "recv": 1543,
+  "recv_bytes": 177933,
+  "sent": 8359,
+  "sent_bytes": 10655591,
+  "lost": 659,
+  "lost_bytes": 800768,
+  "retrans": 632,
+  "stream_retrans_bytes": 774084,
+  "dgram_recv": 0,
+  "dgram_sent": 0
+}

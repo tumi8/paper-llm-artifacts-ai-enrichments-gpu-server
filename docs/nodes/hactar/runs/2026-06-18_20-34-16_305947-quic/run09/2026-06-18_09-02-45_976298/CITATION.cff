@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Inter‑Protocol QUIC Performance and Energy Benchmarking Dataset
+abstract: This dataset documents a systematic inter‑protocol benchmark of seven QUIC
+  reference implementations, measuring file transfer throughput, energy consumption,
+  and data integrity across multiple bandwidth limits and file sizes. The methodology
+  involved synchronized client–server runs on two nodes, with each run recording timestamps,
+  SHA‑1 checksums, and power usage during the transfer. Evaluation scripts aggregated
+  per‑run logs to compute goodput in megabits per second, compare hash consistency,
+  and generate statistical summaries and visualizations for cross‑implementation analysis.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC interoperability
+- Quiche
+- throughput
+- energy consumption
+- LSQUIC
+license: CC-BY-SA-4.0

@@ -1,0 +1,15 @@
+EAL: Detected CPU lcores: 16
+EAL: Detected NUMA nodes: 1
+EAL: Static memory layout is selected, amount of reserved memory can be adjusted with -m or --socket-mem
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: Probe PCI driver: net_ixgbe (8086:1528) device: 0000:01:00.1 (socket -1)
+EAL: Probe PCI driver: net_e1000_igb (8086:1536) device: 0000:03:00.0 (socket -1)
+EAL: Probe PCI driver: net_ixgbe (8086:1528) device: 0000:05:00.0 (socket -1)
+EAL: Probe PCI driver: net_ixgbe (8086:1528) device: 0000:05:00.1 (socket -1)
+EAL: Probe PCI driver: net_e1000_igb (8086:150e) device: 0000:08:00.0 (socket -1)
+EAL: Probe PCI driver: net_e1000_igb (8086:150e) device: 0000:08:00.1 (socket -1)
+EAL: Probe PCI driver: net_e1000_igb (8086:150e) device: 0000:08:00.2 (socket -1)
+EAL: Probe PCI driver: net_e1000_igb (8086:150e) device: 0000:08:00.3 (socket -1)
+TELEMETRY: No legacy callbacks, legacy socket not created

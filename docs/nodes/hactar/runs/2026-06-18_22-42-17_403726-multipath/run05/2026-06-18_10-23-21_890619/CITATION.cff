@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network Performance Measurement and Analysis Experiment
+abstract: This dataset comprises the results of an experiment designed to characterize
+  network performance characteristics under controlled conditions. The research involved
+  configuring multiple compute nodes (rapla, tapa, valga) with specific network topologies
+  utilizing Time-Based Flow Control and NetEm emulation for latency manipulation.
+  Scripts were executed to establish secure remote access via SSH key configuration,
+  install dependencies, and generate synthetic data streams. Measurements included
+  interface configurations, routing tables, QoS parameters, and energy consumption
+  metrics captured during synchronized client-server interactions. The experiment
+  generated multiple iterations of network traffic simulation and data transfer processes,
+  culminating in the creation of pcapng files for detailed analysis.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- Quiche
+- TBF
+- NETEM
+- Latency Measurement
+license: CC-BY-SA-4.0

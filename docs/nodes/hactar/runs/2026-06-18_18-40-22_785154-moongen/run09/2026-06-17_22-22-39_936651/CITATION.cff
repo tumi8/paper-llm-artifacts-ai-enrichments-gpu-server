@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Packet‑Rate and Size Dependent Latency and Energy Measurements for L2 Forwarding
+abstract: The dataset records packet‑rate and packet‑size sweeps performed with MoonGen
+  to generate L2 traffic between two ports while measuring per‑packet latency histograms
+  and device‑under‑test energy consumption. A libmoon‑based forwarder script captures
+  the same metrics during forwarding, synchronizing start/stop across nodes. Multiple
+  runs explore different rate and size configurations, producing raw CSV data and
+  plotted PNGs for downstream analysis of latency distributions and power usage. The
+  experiment employs a reproducible build environment with huge page support and disabled
+  CPU turbo boost to ensure consistent performance.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- libmoon
+- packet rate
+- energy consumption
+- L2 forwarding
+license: CC-BY-SA-4.0

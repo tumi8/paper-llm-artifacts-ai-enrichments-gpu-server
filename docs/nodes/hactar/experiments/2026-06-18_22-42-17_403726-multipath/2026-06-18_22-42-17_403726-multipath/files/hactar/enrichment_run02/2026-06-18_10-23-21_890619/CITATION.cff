@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network congestion control experiment results with QUIC, proxy, and topology
+  evaluation under varied latency and bandwidth constraints
+abstract: This dataset captures network performance measurements from experiments
+  evaluating congestion control algorithms, QUIC protocol behavior, and proxy performance
+  under synthetic latency and bandwidth constraints. Three nodes (rapla, tapa, valga)
+  executed client-server workloads with configurable scheduler settings, slow-path
+  profiles, and traffic shaping rules. Large file transfers and energy metrics were
+  logged alongside per-run network traces. Archive contents include environment setup
+  scripts, topology configuration files, and structured result logs organized by experimental
+  parameters.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- QUIC
+- network protocol testing
+- congestion control
+- IPv6 traffic shaping
+- SSH key deployment
+license: CC-BY-SA-4.0

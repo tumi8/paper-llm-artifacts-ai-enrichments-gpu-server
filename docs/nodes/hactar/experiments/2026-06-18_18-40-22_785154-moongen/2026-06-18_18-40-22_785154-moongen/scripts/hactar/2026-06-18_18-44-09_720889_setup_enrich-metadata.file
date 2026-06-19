@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+export PATH="/usr/local/bin:/usr/bin:/bin:${PATH:-}"
+
+# ---------------------------
+# Offload Ollama model storage to a larger disk
+# ---------------------------
+# Large models (e.g. gpt_oss_120b) overflow the root filesystem's default
+# ~/.ollama/models. Point OLLAMA_MODELS at a partition instead.
+# The device is mounted only if it exists and
+# /data isn't already a mountpoint, and a failed mount never aborts setup.
+DATA_MOUNT_DEV="${DATA_MOUNT_DEV:-/dev/nvme0n1p3}"
+DATA_MOUNT_DIR="${DATA_MOUNT_DIR:-/data}"
+OLLAMA_DATA_DIR="${OLLAMA_DATA_DIR:-$DATA_MOUNT_DIR/ollama}"
+
+mkdir -p "$DATA_MOUNT_DIR"
+if ! mountpoint -q "$DATA_MOUNT_DIR" && [ -b "$DATA_MOUNT_DEV" ]; then
+  if mount "$DATA_MOUNT_DEV" "$DATA_MOUNT_DIR"; then
+    echo "Mounted $DATA_MOUNT_DEV at $DATA_MOUNT_DIR for model storage."
+  else
+    echo "WARN: could not mount $DATA_MOUNT_DEV at $DATA_MOUNT_DIR; using existing $DATA_MOUNT_DIR." >&2
+  fi
+fi
+mkdir -p "$OLLAMA_DATA_DIR"
+export OLLAMA_MODELS="$OLLAMA_DATA_DIR"
+echo "Ollama models will be stored in: $OLLAMA_MODELS"
+
+echo "### Updating package lists ###"
+# apt update -y
+apt install -y git python3-venv
+
+echo "### Installing required packages ###"
+python3 -m venv venv3
+source venv3/bin/activate
+pip install ollama pyyaml "rocrate @ git+https://github.com/ResearchObject/ro-crate-py.git@ce636014a58f24fa2d2eda05850ea0ea065f9f8c"
+
+echo "### Installing evaluation dependencies (bert-score) ###"
+pip install "bert-score>=0.3.13" "transformers>=4.39,<5.0"
+
+echo "### Checking Ollama installation ###"
+
+if ollama ps >/dev/null 2>&1; then
+  echo "Ollama is already installed and working."
+else
+  echo "Ollama not found. Installing now..."
+  curl -fsSL https://ollama.com/install.sh | sudo bash
+
+  echo "### Verifying Ollama installation ###"
+  ready=0
+  for i in {1..30}; do
+    if ollama ps >/dev/null 2>&1; then
+      ready=1
+      break
+    fi
+
+    if [ "$i" -eq 5 ] && ! pgrep -f "ollama serve" >/dev/null 2>&1; then
+      echo "Ollama service not up yet; starting a detached fallback server."
+      setsid ollama serve >/tmp/ollama.log 2>&1 </dev/null &
+      disown
+    fi
+    sleep 1
+  done
+
+  if [ "$ready" -eq 1 ]; then
+    echo "Ollama installed successfully."
+  else
+    echo "Ollama installation failed (ollama ps returned non-zero)." >&2
+    echo "If this host has no systemd, check /tmp/ollama.log for startup errors." >&2
+    exit 1
+  fi
+fi

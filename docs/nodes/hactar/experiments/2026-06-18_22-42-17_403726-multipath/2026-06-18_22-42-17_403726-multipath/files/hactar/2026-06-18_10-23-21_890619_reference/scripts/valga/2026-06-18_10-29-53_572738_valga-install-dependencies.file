@@ -1,0 +1,30 @@
+#!/bin/bash
+RESULTS_DIR=$(pos_get_variable results_dir -r)
+mkdir -p "$RESULTS_DIR"
+
+set -e
+
+echo "Installing dependencies"
+
+apt -o Acquire::Check-Valid-Until=false \
+    -o Acquire::Check-Date=false \
+    update -yqq
+DEBIAN_FRONTEND=noninteractive apt-get install -y tshark libclang-dev libfontconfig1-dev pkg-config iperf3
+
+echo "Installing rust"
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# Configure shell
+source "$HOME/.cargo/env"
+
+echo "Checking if Rust and cargo are properly installed"
+rustc --version
+cargo --version
+
+echo "Cloning mp-nada"
+REPO="https://github.com/danielpetri1/quiche.git"
+QUICDIR="mp-nada"
+NADA_BRANCH=$(pos_get_variable nada_branch -r)
+
+git clone --recursive "$REPO" "$QUICDIR"
+git -C "$QUICDIR" checkout "$NADA_BRANCH"

@@ -1,0 +1,4 @@
+#!/bin/bash
+set -eux
+RESULTS_DIR=$(pos_get_variable results_dir -r)
+pos_upload -r "$RESULTS_DIR" --timeout 300

@@ -1,0 +1,16 @@
+++ pos_get_variable username -r
++ USERNAME=ga53xus
+++ pos_get_variable masque-vis-pat -r
++ MASQUE_VIS_PAT=glpat-EATHTcvJZX4qbEtZjgTfj286MQp1OjF2N2sK.01.101he61rm
++ git clone https://ga53xus:glpat-EATHTcvJZX4qbEtZjgTfj286MQp1OjF2N2sK.01.101he61rm@gitlab.lrz.de/guru/masque-vis.git /root/masque-vis
+Cloning into '/root/masque-vis'...
++ apt-get install -y python3.11-venv
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
++ python3 -m venv /root/masque-vis/.venv
++ /root/masque-vis/.venv/bin/pip install -r /root/masque-vis/config/requirements.txt

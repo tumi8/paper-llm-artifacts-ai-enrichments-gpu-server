@@ -1,0 +1,1 @@
+scp -r /srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/moongen/2026-06-17_22-22-39_936651_reference hactar.blockchain.net.cit.tum.de:/srv/testbed/results/warmuth/default

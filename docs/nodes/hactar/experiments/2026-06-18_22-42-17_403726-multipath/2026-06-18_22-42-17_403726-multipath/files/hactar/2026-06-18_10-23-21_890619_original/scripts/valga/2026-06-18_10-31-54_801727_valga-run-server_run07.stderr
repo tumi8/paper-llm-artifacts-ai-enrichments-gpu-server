@@ -1,0 +1,351 @@
+++ pos_get_variable results_dir -r
++ RESULTS_DIR=/root/results
+++ pos_get_variable scheduler --from-loop
++ SCHEDULER_CONFIG=reliable:lowrtt
+++ pos_get_variable slow_path_profile --from-loop
++ SLOW_PATH_PROFILE=10:5
++ IFS=:
++ read -r SLOW_PATH_RATE SLOW_PATH_DELAY
+++ pos_get_variable iteration --from-loop
++ ITERATION=04
+++ pos_get_variable cc_algorithm -r
++ CC_ALGORITHM=cubic
++ PATH_PROPERTIES=delay-5ms_rate-10mbit
++ SCHEDULER_DIR_NAME=reliable_lowrtt
++ RUN_NAME=reliable_lowrtt_delay-5ms_rate-10mbit_run-04
++ RUN_DIR=/root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-04
++ mkdir -p /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-04
+++ pos_get_variable server_ip -r
++ SERVER_IP=fd00:0:0:4::1
+++ pos_get_variable server_port -r
++ SERVER_PORT=25565
++ SERVER_ADDRESS='[fd00:0:0:4::1]:25565'
++ trap cleanup EXIT
++ pos_energy_start --loop --filename server
++ timeout 180 bash -c 'until ss -tuln | grep -q ":25565"; do sleep 0.5; done'
++ cd /root/mp-nada
++ RUST_LOG=info
++ QLOGDIR=/root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-04
++ SSLKEYLOGFILE=/root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-04/ssl-server.key
++ cargo run --release --bin quiche-server -- --listen '[fd00:0:0:4::1]:25565' --cert /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.crt --key /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.key --root /root/mp-nada/apps/src/bin/root --cc-algorithm cubic --no-retry
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:474:22
+    |
+474 |     pub fn get_bytes(&mut self, len: usize) -> Result<Octets> {
+    |                      ^^^^^^^^^                        ^^^^^^ the same lifetime is hidden here
+    |                      |
+    |                      the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+474 |     pub fn get_bytes(&mut self, len: usize) -> Result<Octets<'_>> {
+    |                                                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:491:26
+    |
+491 |     pub fn get_bytes_mut(&mut self, len: usize) -> Result<OctetsMut> {
+    |                          ^^^^^^^^^                        ^^^^^^^^^ the same lifetime is hidden here
+    |                          |
+    |                          the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+491 |     pub fn get_bytes_mut(&mut self, len: usize) -> Result<OctetsMut<'_>> {
+    |                                                                    ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:508:37
+    |
+508 |     pub fn get_bytes_with_u8_length(&mut self) -> Result<Octets> {
+    |                                     ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                     |
+    |                                     the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+508 |     pub fn get_bytes_with_u8_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:516:38
+    |
+516 |     pub fn get_bytes_with_u16_length(&mut self) -> Result<Octets> {
+    |                                      ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                      |
+    |                                      the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+516 |     pub fn get_bytes_with_u16_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:524:41
+    |
+524 |     pub fn get_bytes_with_varint_length(&mut self) -> Result<Octets> {
+    |                                         ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                         |
+    |                                         the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+524 |     pub fn get_bytes_with_varint_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                    ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:531:23
+    |
+531 |     pub fn peek_bytes(&mut self, len: usize) -> Result<Octets> {
+    |                       ^^^^^^^^^                        ^^^^^^ the same lifetime is hidden here
+    |                       |
+    |                       the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+531 |     pub fn peek_bytes(&mut self, len: usize) -> Result<Octets<'_>> {
+    |                                                              ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:546:27
+    |
+546 |     pub fn peek_bytes_mut(&mut self, len: usize) -> Result<OctetsMut> {
+    |                           ^^^^^^^^^                        ^^^^^^^^^ the same lifetime is hidden here
+    |                           |
+    |                           the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+546 |     pub fn peek_bytes_mut(&mut self, len: usize) -> Result<OctetsMut<'_>> {
+    |                                                                     ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:580:21
+    |
+580 |     pub fn split_at(&mut self, off: usize) -> Result<(OctetsMut, OctetsMut)> {
+    |                     ^^^^^^^^^                         ^^^^^^^^^  ^^^^^^^^^ the same lifetime is hidden here
+    |                     |                                 |
+    |                     |                                 the same lifetime is hidden here
+    |                     the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+580 |     pub fn split_at(&mut self, off: usize) -> Result<(OctetsMut<'_>, OctetsMut<'_>)> {
+    |                                                                ++++           ++++
+
+warning: `octets` (lib) generated 8 warnings (run `cargo fix --lib -p octets` to apply 8 suggestions)
+warning: unnecessary parentheses around closure body
+   --> quiche/src/ranges.rs:316:29
+    |
+316 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+316 -             .map(|(&s, &e)| (s..e))
+316 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: unnecessary parentheses around closure body
+   --> quiche/src/ranges.rs:332:29
+    |
+332 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+help: remove these parentheses
+    |
+332 -             .map(|(&s, &e)| (s..e))
+332 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: unnecessary parentheses around closure body
+   --> quiche/src/ranges.rs:339:29
+    |
+339 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+help: remove these parentheses
+    |
+339 -             .map(|(&s, &e)| (s..e))
+339 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7492:30
+     |
+7492 |     pub fn source_id_on_path(&self, path_id: PathId) -> Option<ConnectionId> {
+     |                              ^^^^^ the lifetime is elided here ^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+7492 |     pub fn source_id_on_path(&self, path_id: PathId) -> Option<ConnectionId<'_>> {
+     |                                                                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7506:22
+     |
+7506 |     pub fn source_id(&self) -> ConnectionId {
+     |                      ^^^^^     ^^^^^^^^^^^^ the same lifetime is hidden here
+     |                      |
+     |                      the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7506 |     pub fn source_id(&self) -> ConnectionId<'_> {
+     |                                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7524:23
+     |
+7524 |     pub fn source_ids(&self) -> impl Iterator<Item = &ConnectionId> {
+     |                       ^^^^^                          ^^^^^^^^^^^^^
+     |                       |                              ||
+     |                       |                              |the same lifetime is hidden here
+     |                       |                              the same lifetime is elided here
+     |                       the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7524 |     pub fn source_ids(&self) -> impl Iterator<Item = &ConnectionId<'_>> {
+     |                                                                   ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7538:9
+     |
+7538 |         &self, path_id: PathId,
+     |         ^^^^^ the lifetime is elided here
+7539 |     ) -> Option<ConnectionId> {
+     |                 ^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7539 |     ) -> Option<ConnectionId<'_>> {
+     |                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7550:27
+     |
+7550 |     pub fn destination_id(&self) -> ConnectionId {
+     |                           ^^^^^     ^^^^^^^^^^^^ the same lifetime is hidden here
+     |                           |
+     |                           the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7550 |     pub fn destination_id(&self) -> ConnectionId<'_> {
+     |                                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/cid.rs:1168:23
+     |
+1168 |     pub fn scids_iter(&self) -> impl Iterator<Item = &ConnectionId> {
+     |                       ^^^^^                          ^^^^^^^^^^^^^
+     |                       |                              ||
+     |                       |                              |the same lifetime is hidden here
+     |                       |                              the same lifetime is elided here
+     |                       the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+1168 |     pub fn scids_iter(&self) -> impl Iterator<Item = &ConnectionId<'_>> {
+     |                                                                   ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> quiche/src/stream/mod.rs:600:20
+    |
+600 |     pub fn blocked(&self) -> hash_map::Iter<u64, u64> {
+    |                    ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                    |
+    |                    the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+600 |     pub fn blocked(&self) -> hash_map::Iter<'_, u64, u64> {
+    |                                             +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> quiche/src/stream/mod.rs:605:18
+    |
+605 |     pub fn reset(&self) -> hash_map::Iter<u64, (u64, u64)> {
+    |                  ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                  |
+    |                  the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+605 |     pub fn reset(&self) -> hash_map::Iter<'_, u64, (u64, u64)> {
+    |                                           +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> quiche/src/stream/mod.rs:610:20
+    |
+610 |     pub fn stopped(&self) -> hash_map::Iter<u64, u64> {
+    |                    ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                    |
+    |                    the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+610 |     pub fn stopped(&self) -> hash_map::Iter<'_, u64, u64> {
+    |                                             +++
+
+warning: `quiche` (lib) generated 12 warnings (run `cargo fix --lib -p quiche` to apply 12 suggestions)
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.21s
+     Running `target/release/quiche-server --listen '[fd00:0:0:4::1]:25565' --cert /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.crt --key /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.key --root /root/mp-nada/apps/src/bin/root --cc-algorithm cubic --no-retry`
+[2026-06-18T08:36:18.080909943Z INFO  quiche_server] listening on [fd00:0:0:4::1]:25565
++ echo 'Server is ready'
++ SYNC_TAG=reliable_lowrtt_delay-5ms_rate-10mbit_run-04_services_ready
++ FINISH_TAG=reliable_lowrtt_delay-5ms_rate-10mbit_run-04_client_finished
++ pos_sync --tag reliable_lowrtt_delay-5ms_rate-10mbit_run-04_services_ready
++ pos_sync --tag reliable_lowrtt_delay-5ms_rate-10mbit_run-04_client_finished
+[2026-06-18T08:36:27.796711792Z INFO  quiche_apps::common] 901a551cdc9e666eb9a47025075278151080c9ed got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow2.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.798170576Z INFO  quiche_apps::common] 901a551cdc9e666eb9a47025075278151080c9ed prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:36:27.806361237Z INFO  quiche_apps::common] f689f4c32a83ea92e8b0603cfb9accb3ad91bc58 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow5.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.807744515Z INFO  quiche_apps::common] f689f4c32a83ea92e8b0603cfb9accb3ad91bc58 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:36:27.807904185Z INFO  quiche_apps::common] 2d917716c70f9f10c95b7f7b0b0cccd9d4dce06f got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow3.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.809285380Z INFO  quiche_apps::common] 2d917716c70f9f10c95b7f7b0b0cccd9d4dce06f prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:36:27.809440790Z INFO  quiche_apps::common] 967eeb0ef45ebc2eed034028c721f19d1bc4ec2c got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow6.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.810798674Z INFO  quiche_apps::common] 967eeb0ef45ebc2eed034028c721f19d1bc4ec2c prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:36:27.810940928Z INFO  quiche_apps::common] 5b7ace0fa7d02c89f9dd7b5075084cd4e6de8ba5 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow4.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.812293122Z INFO  quiche_apps::common] 5b7ace0fa7d02c89f9dd7b5075084cd4e6de8ba5 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:36:27.812451299Z INFO  quiche_apps::common] c0177951eaf42d82e1ae772714074ebe3d7c9075 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow8.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.813834397Z INFO  quiche_apps::common] c0177951eaf42d82e1ae772714074ebe3d7c9075 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:36:27.813985584Z INFO  quiche_apps::common] ae3be3b56f181260e47e8e7d51746c46c08bcff7 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow0.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.815351195Z INFO  quiche_apps::common] ae3be3b56f181260e47e8e7d51746c46c08bcff7 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:36:27.815494902Z INFO  quiche_apps::common] a8f385bcf791fd1763ae63e4de11351803391a51 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow1.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.816869580Z INFO  quiche_apps::common] a8f385bcf791fd1763ae63e4de11351803391a51 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:36:27.817008757Z INFO  quiche_apps::common] 841ebee7bf8e60b2e3a445943a9a44db2e872fcb got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow7.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:36:27.818335258Z INFO  quiche_apps::common] 841ebee7bf8e60b2e3a445943a9a44db2e872fcb prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
++ pos_energy_stop
++ cleanup
++ local pids
+++ pgrep -f quiche-server
++ pids=10049
++ '[' -z 10049 ']'
++ kill -INT 10049
++ timeout 10 bash -c 'while pgrep -f "quiche-server" >/dev/null; do sleep 0.2; done'
++ true
+++ pgrep -f quiche-server
+++ true
++ pids=
++ '[' -n '' ']'

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Protocol Performance Evaluation Across Seven Implementations
+abstract: The dataset documents a systematic measurement campaign comparing seven
+  distinct QUIC protocol libraries under controlled network conditions. For each library,
+  client‑server transfers of varying file sizes were executed with optional bandwidth
+  limits while recording transfer duration, energy consumption, and integrity checksums.
+  An evaluation script aggregated per‑run logs to compute goodput, statistical summaries,
+  and success rates, producing JSON reports, visualizations, and tabular data for
+  further analysis. The collection provides reproducible performance metrics and methodological
+  details for QUIC implementation benchmarking.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC
+- POS
+- bandwidth limit
+- goodput
+- matplotlib
+license: CC-BY-SA-4.0

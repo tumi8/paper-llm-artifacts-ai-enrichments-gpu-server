@@ -1,0 +1,791 @@
+++ pos_get_variable results_dir -r
++ RESULTS_DIR=/root/results
+++ pos_get_variable scheduler --from-loop
++ SCHEDULER_CONFIG=unreliable:lowrtt
+++ pos_get_variable slow_path_profile --from-loop
++ SLOW_PATH_PROFILE=10:5
++ IFS=:
++ read -r SLOW_PATH_RATE SLOW_PATH_DELAY
+++ pos_get_variable iteration --from-loop
++ ITERATION=01
+++ pos_get_variable cc_algorithm -r
++ CC_ALGORITHM=cubic
++ PATH_PROPERTIES=delay-5ms_rate-10mbit
++ SCHEDULER_DIR_NAME=unreliable_lowrtt
++ RUN_NAME=unreliable_lowrtt_delay-5ms_rate-10mbit_run-01
++ RUN_DIR=/root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01
++ mkdir -p /root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01
+++ pos_get_variable server_ip -r
++ SERVER_IP=fd00:0:0:4::1
+++ pos_get_variable server_port -r
++ SERVER_PORT=25565
++ SERVER_ADDRESS='[fd00:0:0:4::1]:25565'
++ trap cleanup EXIT
++ pos_energy_start --loop --filename server
++ timeout 180 bash -c 'until ss -tuln | grep -q ":25565"; do sleep 0.5; done'
++ cd /root/mp-nada
++ RUST_LOG=info
++ QLOGDIR=/root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01
++ SSLKEYLOGFILE=/root/results/delay-5ms_rate-10mbit/unreliable_lowrtt/run-01/ssl-server.key
++ cargo run --release --bin quiche-server -- --listen '[fd00:0:0:4::1]:25565' --cert /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.crt --key /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.key --root /root/mp-nada/apps/src/bin/root --cc-algorithm cubic --no-retry
+    Updating crates.io index
+     Locking 371 packages to latest compatible versions
+      Adding boring v4.22.0 (available: v5.1.0)
+      Adding clap v3.2.25 (available: v4.6.1)
+      Adding env_logger v0.10.2 (available: v0.11.10)
+      Adding foundations v4.5.0 (available: v5.7.3)
+      Adding inquire v0.6.2 (available: v0.9.4)
+      Adding intrusive-collections v0.9.7 (available: v0.10.2)
+      Adding ipnetwork v0.20.0 (available: v0.21.1)
+      Adding itertools v0.10.5 (available: v0.15.0)
+      Adding mio v0.8.11 (available: v1.2.1)
+      Adding nix v0.26.4 (available: v0.31.3)
+      Adding rand v0.8.6 (available: v0.10.1)
+      Adding sfv v0.9.4 (available: v0.15.0)
+      Adding thiserror v1.0.69 (available: v2.0.18)
+      Adding windows-sys v0.59.0 (available: v0.61.2)
+ Downloading crates ...
+  Downloaded anstyle v1.0.14
+  Downloaded addr2line v0.25.1
+  Downloaded adler2 v2.0.1
+  Downloaded anstream v1.0.0
+  Downloaded cexpr v0.6.0
+  Downloaded foreign-types-shared v0.3.1
+  Downloaded async-stream-impl v0.3.6
+  Downloaded form_urlencoded v1.2.2
+  Downloaded futures-macro v0.3.32
+  Downloaded errno v0.3.14
+  Downloaded futures-io v0.3.32
+  Downloaded getset v0.1.7
+  Downloaded foundations-macros v4.5.0
+  Downloaded futures-executor v0.3.32
+  Downloaded hex v0.4.3
+  Downloaded bytes v1.11.1
+  Downloaded anyhow v1.0.102
+  Downloaded glob v0.3.3
+  Downloaded getrandom v0.4.3
+  Downloaded hyper-timeout v0.4.1
+  Downloaded icu_locale_core v2.2.0
+  Downloaded icu_properties v2.2.0
+  Downloaded intrusive-collections v0.9.7
+  Downloaded indexmap v1.9.3
+  Downloaded idna_adapter v1.2.2
+  Downloaded ident_case v1.0.1
+  Downloaded icu_provider v2.2.0
+  Downloaded inquire v0.6.2
+  Downloaded lazycell v1.3.0
+  Downloaded lock_api v0.4.14
+  Downloaded local-ip-address v0.6.13
+  Downloaded litemap v0.8.2
+  Downloaded libc v0.2.186
+  Downloaded jiff v0.2.28
+  Downloaded linked-hash-map v0.5.6
+  Downloaded scopeguard v1.2.0
+  Downloaded rustversion v1.0.22
+  Downloaded serde_derive v1.0.228
+  Downloaded serde_path_to_error v0.1.20
+  Downloaded slog-stdlog v4.1.1
+  Downloaded slog v2.8.2
+  Downloaded slog-term v2.9.2
+  Downloaded smallvec v1.15.2
+  Downloaded portable-atomic v1.13.1
+  Downloaded utf8_iter v1.0.4
+  Downloaded serde_with v3.21.0
+  Downloaded zerofrom-derive v0.1.7
+  Downloaded yoke-derive v0.8.2
+  Downloaded writeable v0.6.3
+  Downloaded regex-automata v0.4.14
+  Downloaded zerovec-derive v0.11.3
+  Downloaded zmij v1.0.21
+  Downloaded yoke v0.8.3
+  Downloaded zerotrie v0.2.4
+  Downloaded linux-raw-sys v0.4.15
+  Downloaded zerovec v0.11.6
+  Downloaded time-core v0.1.9
+  Downloaded time-macros v0.2.29
+  Downloaded untrusted v0.9.0
+  Downloaded tokio-stream v0.1.18
+  Downloaded triomphe v0.1.15
+  Downloaded unicode-ident v1.0.24
+  Downloaded tonic v0.11.0
+  Downloaded tinyvec v1.11.0
+  Downloaded zerocopy v0.8.52
+  Downloaded unicode-segmentation v1.13.3
+  Downloaded tokio-util v0.7.18
+  Downloaded tower v0.4.13
+  Downloaded syn v2.0.118
+  Downloaded tracing-core v0.1.36
+  Downloaded tracing-attributes v0.1.31
+  Downloaded time v0.3.49
+  Downloaded gimli v0.32.3
+  Downloaded try-lock v0.2.5
+  Downloaded unicode-width v0.1.14
+  Downloaded trackable_derive v1.0.0
+  Downloaded trackable v1.3.0
+  Downloaded tower-service v0.3.3
+  Downloaded tower-layer v0.3.3
+  Downloaded tokio-macros v2.7.0
+  Downloaded tokio-io-timeout v1.2.1
+  Downloaded tinyvec_macros v0.1.1
+  Downloaded tinystr v0.8.3
+  Downloaded tracing v0.1.44
+  Downloaded thiserror v1.0.69
+  Downloaded syn v1.0.109
+  Downloaded linux-raw-sys v0.12.1
+  Downloaded thiserror-impl v1.0.69
+  Downloaded termcolor v1.4.1
+  Downloaded tikv-jemallocator v0.5.4
+  Downloaded tikv-jemalloc-ctl v0.5.4
+  Downloaded thrift_codec v0.3.2
+  Downloaded thread_local v1.1.9
+  Downloaded textwrap v0.16.2
+  Downloaded term v1.2.1
+  Downloaded tempfile v3.27.0
+  Downloaded take_mut v0.2.2
+  Downloaded synstructure v0.13.2
+  Downloaded sync_wrapper v0.1.2
+  Downloaded strsim v0.11.1
+  Downloaded strsim v0.10.0
+  Downloaded stable_deref_trait v1.2.1
+  Downloaded spinning_top v0.3.0
+  Downloaded tikv-jemalloc-sys v0.5.4+5.3.0-patched
+  Downloaded socket2 v0.6.4
+  Downloaded tokio v1.52.3
+  Downloaded socket2 v0.5.10
+  Downloaded ring v0.17.14
+  Downloaded url v2.5.8
+  Downloaded yaml-rust v0.4.5
+  Downloaded urlencoding v2.1.3
+  Downloaded zerofrom v0.1.8
+  Downloaded yaml-merge-keys v0.5.1
+  Downloaded want v0.3.1
+  Downloaded utf8parse v0.2.2
+  Downloaded rustix v1.1.4
+  Downloaded rustix v0.38.44
+  Downloaded regex-syntax v0.8.11
+  Downloaded object v0.37.3
+  Downloaded nix v0.26.4
+  Downloaded serde_json v1.0.150
+  Downloaded signal-hook v0.3.18
+  Downloaded rust_decimal v1.42.1
+  Downloaded regex v1.12.4
+  Downloaded slog-scope v4.4.1
+  Downloaded slog-json v2.6.1
+  Downloaded slog-async v2.8.0
+  Downloaded slab v0.4.12
+  Downloaded signal-hook-registry v1.4.8
+  Downloaded signal-hook-mio v0.2.5
+  Downloaded shlex v2.0.1
+  Downloaded shlex v1.3.0
+  Downloaded sfv v0.9.4
+  Downloaded serde_yaml v0.8.26
+  Downloaded serde_with_macros v3.21.0
+  Downloaded raw-cpuid v11.6.0
+  Downloaded rand v0.10.1
+  Downloaded opentelemetry-proto v0.5.0
+  Downloaded serde_core v1.0.228
+  Downloaded serde v1.0.228
+  Downloaded schemars v1.2.1
+  Downloaded schemars v0.9.0
+  Downloaded ryu v1.0.23
+  Downloaded rand v0.8.6
+  Downloaded prometheus v0.13.4
+  Downloaded procfs-core v0.16.0
+  Downloaded procfs v0.16.0
+  Downloaded proc-macro2 v1.0.106
+  Downloaded opentelemetry_sdk v0.22.1
+  Downloaded nom v7.1.3
+  Downloaded mio v1.2.1
+  Downloaded mio v0.8.11
+  Downloaded minimal-lexical v0.2.1
+  Downloaded memchr v2.8.2
+  Downloaded rustc-demangle v0.1.27
+  Downloaded rand_core v0.10.1
+  Downloaded rand_core v0.6.4
+  Downloaded quote v1.0.45
+  Downloaded quanta v0.12.6
+  Downloaded prost-derive v0.12.6
+  Downloaded prost v0.12.6
+  Downloaded prometheus-client v0.18.1
+  Downloaded ppv-lite86 v0.2.21
+  Downloaded powerfmt v0.2.0
+  Downloaded potential_utf v0.1.5
+  Downloaded pin-project v1.1.13
+  Downloaded peeking_take_while v0.1.2
+  Downloaded parking_lot v0.12.5
+  Downloaded os_str_bytes v6.6.1
+  Downloaded opentelemetry v0.22.0
+  Downloaded once_cell v1.21.4
+  Downloaded num-traits v0.2.19
+  Downloaded neli v0.7.4
+  Downloaded miniz_oxide v0.8.9
+  Downloaded log v0.4.32
+  Downloaded rustc-hash v2.1.2
+  Downloaded rustc-hash v1.1.0
+  Downloaded ref-cast-impl v1.0.25
+  Downloaded ref-cast v1.0.25
+  Downloaded rand_chacha v0.3.1
+  Downloaded prometools v0.2.3
+  Downloaded boring-sys v4.22.0
+  Downloaded prometheus-client-derive-text-encode v0.3.0
+  Downloaded pin-utils v0.1.0
+  Downloaded pin-project-lite v0.2.17
+  Downloaded pin-project-internal v1.1.13
+  Downloaded percent-encoding v2.3.2
+  Downloaded paste v1.0.15
+  Downloaded parking_lot_core v0.9.12
+  Downloaded ordered-float v4.6.0
+  Downloaded openssl-macros v0.1.1
+  Downloaded num-conv v0.2.2
+  Downloaded nonzero_ext v0.3.0
+  Downloaded no-std-compat v0.4.1
+  Downloaded newline-converter v0.2.2
+  Downloaded neli-proc-macros v0.2.2
+  Downloaded multimap v0.10.1
+  Downloaded mime v0.3.17
+  Downloaded memoffset v0.9.1
+  Downloaded memoffset v0.7.1
+  Downloaded matchit v0.7.3
+  Downloaded libm v0.2.16
+  Downloaded libloading v0.8.9
+  Downloaded itoa v1.0.18
+  Downloaded itertools v0.13.0
+  Downloaded itertools v0.12.1
+  Downloaded itertools v0.10.5
+  Downloaded lazy_static v1.5.0
+  Downloaded is_terminal_polyfill v1.70.2
+  Downloaded is-terminal v0.4.17
+  Downloaded ipnetwork v0.20.0
+  Downloaded indexmap v2.14.0
+  Downloaded idna v1.1.0
+  Downloaded icu_properties_data v2.2.0
+  Downloaded foundations v4.5.0
+  Downloaded icu_normalizer_data v2.2.0
+  Downloaded icu_normalizer v2.2.0
+  Downloaded hyper v0.14.32
+  Downloaded http v0.2.12
+  Downloaded hashbrown v0.17.1
+  Downloaded hashbrown v0.14.5
+  Downloaded h2 v0.3.27
+  Downloaded futures-util v0.3.32
+  Downloaded clap_builder v4.6.0
+  Downloaded clap v3.2.25
+  Downloaded chrono v0.4.45
+  Downloaded boring v4.22.0
+  Downloaded bindgen v0.72.1
+  Downloaded bindgen v0.68.1
+  Downloaded axum v0.6.20
+  Downloaded icu_collections v2.2.0
+  Downloaded iana-time-zone v0.1.65
+  Downloaded humantime v2.3.0
+  Downloaded httparse v1.10.1
+  Downloaded hashbrown v0.12.3
+  Downloaded governor v0.6.3
+  Downloaded darling_core v0.23.0
+  Downloaded darling_core v0.20.11
+  Downloaded crossterm v0.25.0
+  Downloaded crossbeam-epoch v0.9.18
+  Downloaded crossbeam-channel v0.5.15
+  Downloaded cc v1.2.64
+  Downloaded bitflags v2.13.0
+  Downloaded base64 v0.22.1
+  Downloaded base64 v0.21.7
+  Downloaded backtrace v0.3.76
+  Downloaded httpdate v1.0.3
+  Downloaded http-body v0.4.6
+  Downloaded hostname v0.4.2
+  Downloaded heck v0.5.0
+  Downloaded futures v0.3.32
+  Downloaded env_logger v0.10.2
+  Downloaded dtoa v1.0.11
+  Downloaded getrandom v0.2.17
+  Downloaded futures-timer v3.0.4
+  Downloaded futures-channel v0.3.32
+  Downloaded fs_extra v1.3.0
+  Downloaded erased-serde v0.3.31
+  Downloaded env_logger v0.11.10
+  Downloaded docopt v1.1.1
+  Downloaded displaydoc v0.2.6
+  Downloaded derive_builder v0.20.2
+  Downloaded darling v0.23.0
+  Downloaded crossbeam-utils v0.8.21
+  Downloaded clap_derive v4.6.1
+  Downloaded chacha20 v0.10.0
+  Downloaded cf-rustracing v1.3.0
+  Downloaded axum-core v0.3.4
+  Downloaded find-msvc-tools v0.1.9
+  Downloaded fastrand v2.4.1
+  Downloaded either v1.16.0
+  Downloaded derive_builder_core v0.20.2
+  Downloaded data-encoding v2.11.0
+  Downloaded dashmap v5.5.3
+  Downloaded async-trait v0.1.89
+  Downloaded arc-swap v1.9.1
+  Downloaded deranged v0.5.8
+  Downloaded darling_macro v0.23.0
+  Downloaded colorchoice v1.0.5
+  Downloaded bs58 v0.5.1
+  Downloaded bitflags v1.3.2
+  Downloaded arrayvec v0.7.6
+  Downloaded anstyle-parse v1.0.0
+  Downloaded futures-task v0.3.32
+  Downloaded futures-sink v0.3.32
+  Downloaded futures-core v0.3.32
+  Downloaded fslock v0.2.1
+  Downloaded env_filter v1.0.1
+  Downloaded dyn-clone v1.0.20
+  Downloaded darling_macro v0.20.11
+  Downloaded crossbeam v0.8.4
+  Downloaded clap_lex v1.1.0
+  Downloaded clap_lex v0.2.4
+  Downloaded fnv v1.0.7
+  Downloaded equivalent v1.0.2
+  Downloaded derive_builder_macro v0.20.2
+  Downloaded darling v0.20.11
+  Downloaded clang-sys v1.8.1
+  Downloaded atty v0.2.14
+  Downloaded async-stream v0.3.6
+  Downloaded cfg-if v1.0.4
+  Downloaded anstyle-query v1.1.5
+  Downloaded foreign-types-macros v0.2.3
+  Downloaded crossbeam-queue v0.3.12
+  Downloaded cmake v0.1.58
+  Downloaded byteorder v1.5.0
+  Downloaded autocfg v1.5.1
+  Downloaded atomic_float v1.1.0
+  Downloaded foreign-types v0.5.0
+  Downloaded cpufeatures v0.3.0
+  Downloaded clap v4.6.1
+  Downloaded cf-rustracing-jaeger v1.3.0
+  Downloaded aho-corasick v1.1.4
+   Compiling proc-macro2 v1.0.106
+   Compiling quote v1.0.45
+   Compiling unicode-ident v1.0.24
+   Compiling serde_core v1.0.228
+   Compiling autocfg v1.5.1
+   Compiling stable_deref_trait v1.2.1
+   Compiling find-msvc-tools v0.1.9
+   Compiling shlex v2.0.1
+   Compiling libc v0.2.186
+   Compiling serde v1.0.228
+   Compiling glob v0.3.3
+   Compiling memchr v2.8.2
+   Compiling minimal-lexical v0.2.1
+   Compiling regex-syntax v0.8.11
+   Compiling cfg-if v1.0.4
+   Compiling strsim v0.11.1
+   Compiling litemap v0.8.2
+   Compiling writeable v0.6.3
+   Compiling either v1.16.0
+   Compiling bindgen v0.72.1
+   Compiling ident_case v1.0.1
+   Compiling utf8_iter v1.0.4
+   Compiling shlex v1.3.0
+   Compiling bitflags v2.13.0
+   Compiling rustc-hash v2.1.2
+   Compiling icu_properties_data v2.2.0
+   Compiling icu_normalizer_data v2.2.0
+   Compiling zmij v1.0.21
+   Compiling equivalent v1.0.2
+   Compiling hashbrown v0.17.1
+   Compiling fs_extra v1.3.0
+   Compiling rust_decimal v1.42.1
+   Compiling serde_json v1.0.150
+   Compiling foreign-types-shared v0.3.1
+   Compiling libm v0.2.16
+   Compiling arrayvec v0.7.6
+   Compiling log v0.4.32
+   Compiling itoa v1.0.18
+   Compiling cc v1.2.64
+   Compiling libloading v0.8.9
+   Compiling percent-encoding v2.3.2
+   Compiling data-encoding v2.11.0
+   Compiling pin-utils v0.1.0
+   Compiling bitflags v1.3.2
+   Compiling untrusted v0.9.0
+   Compiling octets v0.3.0 (/root/mp-nada/octets)
+   Compiling strsim v0.10.0
+   Compiling humantime v2.3.0
+   Compiling slab v0.4.12
+   Compiling termcolor v1.4.1
+   Compiling lazy_static v1.5.0
+   Compiling form_urlencoded v1.2.2
+   Compiling itertools v0.13.0
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:474:22
+    |
+474 |     pub fn get_bytes(&mut self, len: usize) -> Result<Octets> {
+    |                      ^^^^^^^^^                        ^^^^^^ the same lifetime is hidden here
+    |                      |
+    |                      the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+474 |     pub fn get_bytes(&mut self, len: usize) -> Result<Octets<'_>> {
+    |                                                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:491:26
+    |
+491 |     pub fn get_bytes_mut(&mut self, len: usize) -> Result<OctetsMut> {
+    |                          ^^^^^^^^^                        ^^^^^^^^^ the same lifetime is hidden here
+    |                          |
+    |                          the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+491 |     pub fn get_bytes_mut(&mut self, len: usize) -> Result<OctetsMut<'_>> {
+    |                                                                    ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:508:37
+    |
+508 |     pub fn get_bytes_with_u8_length(&mut self) -> Result<Octets> {
+    |                                     ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                     |
+    |                                     the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+508 |     pub fn get_bytes_with_u8_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:516:38
+    |
+516 |     pub fn get_bytes_with_u16_length(&mut self) -> Result<Octets> {
+    |                                      ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                      |
+    |                                      the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+516 |     pub fn get_bytes_with_u16_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:524:41
+    |
+524 |     pub fn get_bytes_with_varint_length(&mut self) -> Result<Octets> {
+    |                                         ^^^^^^^^^            ^^^^^^ the same lifetime is hidden here
+    |                                         |
+    |                                         the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+524 |     pub fn get_bytes_with_varint_length(&mut self) -> Result<Octets<'_>> {
+    |                                                                    ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:531:23
+    |
+531 |     pub fn peek_bytes(&mut self, len: usize) -> Result<Octets> {
+    |                       ^^^^^^^^^                        ^^^^^^ the same lifetime is hidden here
+    |                       |
+    |                       the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+531 |     pub fn peek_bytes(&mut self, len: usize) -> Result<Octets<'_>> {
+    |                                                              ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:546:27
+    |
+546 |     pub fn peek_bytes_mut(&mut self, len: usize) -> Result<OctetsMut> {
+    |                           ^^^^^^^^^                        ^^^^^^^^^ the same lifetime is hidden here
+    |                           |
+    |                           the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+546 |     pub fn peek_bytes_mut(&mut self, len: usize) -> Result<OctetsMut<'_>> {
+    |                                                                     ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> octets/src/lib.rs:580:21
+    |
+580 |     pub fn split_at(&mut self, off: usize) -> Result<(OctetsMut, OctetsMut)> {
+    |                     ^^^^^^^^^                         ^^^^^^^^^  ^^^^^^^^^ the same lifetime is hidden here
+    |                     |                                 |
+    |                     |                                 the same lifetime is hidden here
+    |                     the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+580 |     pub fn split_at(&mut self, off: usize) -> Result<(OctetsMut<'_>, OctetsMut<'_>)> {
+    |                                                                ++++           ++++
+
+   Compiling clang-sys v1.8.1
+   Compiling num-traits v0.2.19
+   Compiling memoffset v0.9.1
+   Compiling memoffset v0.7.1
+   Compiling itertools v0.10.5
+   Compiling nom v7.1.3
+   Compiling intrusive-collections v0.9.7
+warning: `octets` (lib) generated 8 warnings (run `cargo fix --lib -p octets` to apply 8 suggestions)
+   Compiling aho-corasick v1.1.4
+   Compiling cmake v0.1.58
+   Compiling syn v2.0.118
+   Compiling ring v0.17.14
+   Compiling quiche v0.23.4 (/root/mp-nada/quiche)
+   Compiling fslock v0.2.1
+   Compiling regex-automata v0.4.14
+   Compiling is-terminal v0.4.17
+   Compiling getrandom v0.2.17
+   Compiling mio v0.8.11
+   Compiling nix v0.26.4
+   Compiling cexpr v0.6.0
+   Compiling indexmap v2.14.0
+   Compiling regex v1.12.4
+   Compiling sfv v0.9.4
+   Compiling synstructure v0.13.2
+   Compiling darling_core v0.23.0
+   Compiling zerofrom-derive v0.1.7
+   Compiling yoke-derive v0.8.2
+   Compiling zerovec-derive v0.11.3
+   Compiling displaydoc v0.2.6
+   Compiling serde_derive v1.0.228
+   Compiling foreign-types-macros v0.2.3
+   Compiling openssl-macros v0.1.1
+   Compiling env_logger v0.10.2
+   Compiling foreign-types v0.5.0
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.6
+   Compiling zerotrie v0.2.4
+   Compiling darling_macro v0.23.0
+   Compiling darling v0.23.0
+   Compiling serde_with_macros v3.21.0
+   Compiling tinystr v0.8.3
+   Compiling potential_utf v0.1.5
+   Compiling icu_collections v2.2.0
+   Compiling icu_locale_core v2.2.0
+   Compiling serde_with v3.21.0
+   Compiling smallvec v1.15.2
+   Compiling docopt v1.1.1
+   Compiling icu_provider v2.2.0
+   Compiling icu_normalizer v2.2.0
+   Compiling icu_properties v2.2.0
+   Compiling boring-sys v4.22.0
+   Compiling idna_adapter v1.2.2
+   Compiling idna v1.1.0
+   Compiling qlog v0.15.1 (/root/mp-nada/qlog)
+   Compiling url v2.5.8
+   Compiling boring v4.22.0
+warning: unnecessary parentheses around closure body
+   --> quiche/src/ranges.rs:316:29
+    |
+316 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+    = note: `#[warn(unused_parens)]` (part of `#[warn(unused)]`) on by default
+help: remove these parentheses
+    |
+316 -             .map(|(&s, &e)| (s..e))
+316 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: unnecessary parentheses around closure body
+   --> quiche/src/ranges.rs:332:29
+    |
+332 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+help: remove these parentheses
+    |
+332 -             .map(|(&s, &e)| (s..e))
+332 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: unnecessary parentheses around closure body
+   --> quiche/src/ranges.rs:339:29
+    |
+339 |             .map(|(&s, &e)| (s..e))
+    |                             ^    ^
+    |
+help: remove these parentheses
+    |
+339 -             .map(|(&s, &e)| (s..e))
+339 +             .map(|(&s, &e)| s..e)
+    |
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7492:30
+     |
+7492 |     pub fn source_id_on_path(&self, path_id: PathId) -> Option<ConnectionId> {
+     |                              ^^^^^ the lifetime is elided here ^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+     = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+     |
+7492 |     pub fn source_id_on_path(&self, path_id: PathId) -> Option<ConnectionId<'_>> {
+     |                                                                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7506:22
+     |
+7506 |     pub fn source_id(&self) -> ConnectionId {
+     |                      ^^^^^     ^^^^^^^^^^^^ the same lifetime is hidden here
+     |                      |
+     |                      the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7506 |     pub fn source_id(&self) -> ConnectionId<'_> {
+     |                                            ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7524:23
+     |
+7524 |     pub fn source_ids(&self) -> impl Iterator<Item = &ConnectionId> {
+     |                       ^^^^^                          ^^^^^^^^^^^^^
+     |                       |                              ||
+     |                       |                              |the same lifetime is hidden here
+     |                       |                              the same lifetime is elided here
+     |                       the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7524 |     pub fn source_ids(&self) -> impl Iterator<Item = &ConnectionId<'_>> {
+     |                                                                   ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7538:9
+     |
+7538 |         &self, path_id: PathId,
+     |         ^^^^^ the lifetime is elided here
+7539 |     ) -> Option<ConnectionId> {
+     |                 ^^^^^^^^^^^^ the same lifetime is hidden here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7539 |     ) -> Option<ConnectionId<'_>> {
+     |                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/lib.rs:7550:27
+     |
+7550 |     pub fn destination_id(&self) -> ConnectionId {
+     |                           ^^^^^     ^^^^^^^^^^^^ the same lifetime is hidden here
+     |                           |
+     |                           the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+7550 |     pub fn destination_id(&self) -> ConnectionId<'_> {
+     |                                                 ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+    --> quiche/src/cid.rs:1168:23
+     |
+1168 |     pub fn scids_iter(&self) -> impl Iterator<Item = &ConnectionId> {
+     |                       ^^^^^                          ^^^^^^^^^^^^^
+     |                       |                              ||
+     |                       |                              |the same lifetime is hidden here
+     |                       |                              the same lifetime is elided here
+     |                       the lifetime is elided here
+     |
+     = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+     |
+1168 |     pub fn scids_iter(&self) -> impl Iterator<Item = &ConnectionId<'_>> {
+     |                                                                   ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> quiche/src/stream/mod.rs:600:20
+    |
+600 |     pub fn blocked(&self) -> hash_map::Iter<u64, u64> {
+    |                    ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                    |
+    |                    the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+600 |     pub fn blocked(&self) -> hash_map::Iter<'_, u64, u64> {
+    |                                             +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> quiche/src/stream/mod.rs:605:18
+    |
+605 |     pub fn reset(&self) -> hash_map::Iter<u64, (u64, u64)> {
+    |                  ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                  |
+    |                  the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+605 |     pub fn reset(&self) -> hash_map::Iter<'_, u64, (u64, u64)> {
+    |                                           +++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> quiche/src/stream/mod.rs:610:20
+    |
+610 |     pub fn stopped(&self) -> hash_map::Iter<u64, u64> {
+    |                    ^^^^^     ^^^^^^^^^^^^^^^^^^^^^^^^ the same lifetime is hidden here
+    |                    |
+    |                    the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+610 |     pub fn stopped(&self) -> hash_map::Iter<'_, u64, u64> {
+    |                                             +++
+
+warning: `quiche` (lib) generated 12 warnings (run `cargo fix --lib -p quiche` to apply 12 suggestions)
+   Compiling quiche_apps v0.1.0 (/root/mp-nada/apps)
+    Finished `release` profile [optimized + debuginfo] target(s) in 52.80s
+     Running `target/release/quiche-server --listen '[fd00:0:0:4::1]:25565' --cert /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.crt --key /root/mp-nada/tokio-quiche/nada/src/bin/certs/cert.key --root /root/mp-nada/apps/src/bin/root --cc-algorithm cubic --no-retry`
+[2026-06-18T08:30:46.300619043Z INFO  quiche_server] listening on [fd00:0:0:4::1]:25565
++ echo 'Server is ready'
++ SYNC_TAG=unreliable_lowrtt_delay-5ms_rate-10mbit_run-01_services_ready
++ FINISH_TAG=unreliable_lowrtt_delay-5ms_rate-10mbit_run-01_client_finished
++ pos_sync --tag unreliable_lowrtt_delay-5ms_rate-10mbit_run-01_services_ready
++ pos_sync --tag unreliable_lowrtt_delay-5ms_rate-10mbit_run-01_client_finished
+[2026-06-18T08:32:57.713198434Z INFO  quiche_apps::common] 37c6d417e6e1b39bec132a8d3fc76ae9d9e2cc37 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow4.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.714621998Z INFO  quiche_apps::common] 37c6d417e6e1b39bec132a8d3fc76ae9d9e2cc37 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:32:57.714930649Z INFO  quiche_apps::common] 306a1217b854ade04e31494dfcb64eb9d8158a61 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow0.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.716253979Z INFO  quiche_apps::common] 306a1217b854ade04e31494dfcb64eb9d8158a61 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:32:57.723812560Z INFO  quiche_apps::common] bf02366732e17f1315caa1897554a72b5aa5de53 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow5.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.725223347Z INFO  quiche_apps::common] bf02366732e17f1315caa1897554a72b5aa5de53 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:32:57.728133060Z INFO  quiche_apps::common] 04f988f56964ce6c2bef2c911c1a6c1d35202453 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow1.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.729532248Z INFO  quiche_apps::common] 04f988f56964ce6c2bef2c911c1a6c1d35202453 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:32:57.729789431Z INFO  quiche_apps::common] 67b8597b1a3161b09b8e13f0655d2d1453a992ac got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow2.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.731206206Z INFO  quiche_apps::common] 67b8597b1a3161b09b8e13f0655d2d1453a992ac prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:32:57.735514466Z INFO  quiche_apps::common] e63e0d828e54acaaede1e24ad7cadfaaa3357067 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow8.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.736995228Z INFO  quiche_apps::common] e63e0d828e54acaaede1e24ad7cadfaaa3357067 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:32:57.737262031Z INFO  quiche_apps::common] c203de2023b327c1bd260e57b809473b593cbaec got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow7.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.738637506Z INFO  quiche_apps::common] c203de2023b327c1bd260e57b809473b593cbaec prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:32:57.738834083Z INFO  quiche_apps::common] 01b1bf1dbc7526f62fed2f3675870b771d4c5400 got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow6.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.740172468Z INFO  quiche_apps::common] 01b1bf1dbc7526f62fed2f3675870b771d4c5400 prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
+[2026-06-18T08:32:57.740501893Z INFO  quiche_apps::common] e43a5f05254efdf12166971ff6e27286aed6f71c got request [(":method", "GET"), (":scheme", "https"), (":authority", "quic.tech"), (":path", "/flow3.txt"), ("priority", "u=3")] on stream id 0
+[2026-06-18T08:32:57.741879406Z INFO  quiche_apps::common] e43a5f05254efdf12166971ff6e27286aed6f71c prioritizing response on stream 0 as Priority { urgency: 3, incremental: false }
++ pos_energy_stop
++ cleanup
++ local pids
+++ pgrep -f quiche-server
++ pids=3620
++ '[' -z 3620 ']'
++ kill -INT 3620
++ timeout 10 bash -c 'while pgrep -f "quiche-server" >/dev/null; do sleep 0.2; done'
++ true
+++ pgrep -f quiche-server
+++ true
++ pids=
++ '[' -n '' ']'

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Multipath QUIC Performance and Energy Evaluation in Controlled IPv6 Testbed
+abstract: The dataset documents a systematic evaluation of multipath QUIC transport
+  under varied congestion‑control algorithms and scheduler policies. Experiments were
+  conducted on three nodes configured with dual‑path IPv6 connectivity, traffic shaping,
+  and controlled latency to emulate fast‑ and slow‑path conditions. For each configuration,
+  ten runs recorded throughput, energy consumption, and QLOG traces, enabling quantitative
+  comparison of protocol performance across network profiles. The results include
+  raw measurement logs, visualization outputs, and aggregated plots illustrating key
+  metrics.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- mp‑nada
+- QUIC multipath
+- Rust toolchain
+- token bucket filtering
+- throughput
+license: CC-BY-SA-4.0

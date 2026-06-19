@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Protocol Implementation Interoperability Dataset
+abstract: This dataset contains experimental results from testing multiple QUIC protocol
+  implementations across two networked Linux nodes (tartu and tallinn). The methodology
+  involved client-server interactions configured with various parameters to assess
+  performance. Execution time, energy consumption, and data synchronization success
+  were measured during the tests. Evaluation compared client and server hash values
+  for consistency, analyzed process timing, and computed goodput metrics from JSON
+  results files.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- QUIC Protocol
+- Goodput Measurement
+- Energy Consumption
+- Implementation Testing
+- Logs Capture
+license: CC-BY-SA-4.0

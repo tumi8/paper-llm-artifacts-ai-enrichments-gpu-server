@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eux
+
+USERNAME=$(pos_get_variable username -r)
+MASQUE_VIS_PAT=$(pos_get_variable masque-vis-pat -r)
+git clone "https://${USERNAME}:${MASQUE_VIS_PAT}@gitlab.lrz.de/guru/masque-vis.git" /root/masque-vis
+
+apt-get install -y python3.11-venv
+python3 -m venv /root/masque-vis/.venv
+/root/masque-vis/.venv/bin/pip install -r /root/masque-vis/config/requirements.txt

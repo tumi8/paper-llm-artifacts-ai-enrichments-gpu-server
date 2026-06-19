@@ -1,0 +1,39 @@
+++ pos_get_variable client_interface -r
++ CLIENT_INTERFACE=enp130s0f1
+++ pos_get_variable client_ip -r
++ CLIENT_IP=fd00:0:0:1::1
+++ pos_get_variable client_extra_ip -r
++ CLIENT_EXTRA_IP=fd00:0:0:2::1
+++ pos_get_variable client_extra_interface -r
++ CLIENT_EXTRA_INTERFACE=enp133s0f0
+++ pos_get_variable proxy_ip -r
++ PROXY_IP=fd00:0:0:3::1
+++ pos_get_variable prefix_length -r
++ PREFIX_LENGTH=112
+++ pos_get_variable client_table_id -r
++ CLIENT_TABLE_ID=100
+++ pos_get_variable client_extra_table_id -r
++ CLIENT_EXTRA_TABLE_ID=200
+++ pos_get_variable fast_path_rate -r
++ FAST_PATH_RATE=50
+++ pos_get_variable fast_path_delay -r
++ FAST_PATH_DELAY=2.5
+++ pos_get_variable tbf_latency -r
++ TBF_LATENCY=10
+++ pos_get_variable tbf_burst -r
++ TBF_BURST=64000
++ echo 'Configuring the client'\''s network'
++ echo '...Set IFs up'
++ ip link set dev enp130s0f1 up
++ ip link set dev enp133s0f0 up
++ echo '...Configure first path'
++ ip addr add dev enp130s0f1 fd00:0:0:1::1/112
++ ip -6 route add fd00:0:0:3::1/112 dev enp130s0f1 table 100
++ ip -6 rule add from fd00:0:0:1::1 lookup 100
++ echo '...Configure second path'
++ ip addr add dev enp133s0f0 fd00:0:0:2::1/112
++ ip -6 route add fd00:0:0:3::1/112 dev enp133s0f0 table 200
++ ip -6 rule add from fd00:0:0:2::1 lookup 200
++ echo '...Set fast path parameters'
++ tc qdisc add dev enp130s0f1 root handle 1: tbf rate 50mbit latency 10ms burst 64000
++ tc qdisc add dev enp130s0f1 parent 1: handle 10: netem delay 2.5ms

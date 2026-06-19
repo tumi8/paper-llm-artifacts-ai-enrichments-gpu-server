@@ -1,0 +1,36 @@
+{
+    "loop": {
+        "pkt_size": [
+            64,
+            1024
+        ],
+        "pkt_rate": [
+            100,
+            1000,
+            10000
+        ]
+    },
+    "nida": {
+        "git": {
+            "repo": "https://github.com/tumi8/libmoon.git",
+            "commit": "v22.11"
+        },
+        "port": {
+            "tx": 2,
+            "rx": 2
+        }
+    },
+    "cesis": {
+        "git": {
+            "repo": "https://github.com/tumi8/MoonGen.git",
+            "commit": "v22.11"
+        },
+        "port": {
+            "tx": 3,
+            "rx": 3
+        }
+    },
+    "global": {
+        "runtime": 360
+    }
+}

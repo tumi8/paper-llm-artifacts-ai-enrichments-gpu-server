@@ -1,0 +1,116 @@
+...Set slow path parameters
+Starting client iteration 02: /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-02
+Jun 18 10:34:31.663 INFO Multipath enabled with 2 total paths, pid: 11377, version: 0.1.0, module: masque_client:55
+Jun 18 10:34:31.663 INFO Multipath: initial_max_path_id=1, scheduler=lowrtt, pid: 11377, version: 0.1.0, module: masque_client:77
+Jun 18 10:34:31.673 INFO created unestablished quiche::Connection, scid: dbe9b4bd26545a63e593b3ad27e0159453afa8bf, pid: 11377, version: 0.1.0, module: tokio_quiche::quic:264
+Jun 18 10:34:31.673 INFO setting up qlogs, qlog_dir: /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-02, pid: 11377, version: 0.1.0, module: tokio_quiche::quic:269
+Jun 18 10:34:31.673 INFO setting up keylog file, pid: 11377, version: 0.1.0, module: tokio_quiche::quic:283
+Jun 18 10:34:31.692 INFO Probing 1 additional multipath paths..., pid: 11377, version: 0.1.0, module: masque_client:126
+Jun 18 10:34:31.692 INFO Probing path from [fd00:0:0:2::1]:38906 to [fd00:0:0:3::1]:443, pid: 11377, version: 0.1.0, module: masque_client:131
+Jun 18 10:34:32.728 INFO 6167182254235005493: Path ([fd00:0:0:2::1]:38906, [fd00:0:0:3::1]:443) with ID 1 is now validated for connection dbe9b4bd26545a63e593b3ad27e0159453afa8bf, pid: 11377, version: 0.1.0, module: tokio_quiche::quic::io::worker:802
+Jun 18 10:34:34.693 INFO Path probing period complete, proceeding with MASQUE tunnels, pid: 11377, version: 0.1.0, module: masque_client:140
+Jun 18 10:34:34.694 INFO creating new flow for MASQUE request, flow_id: 0, stream_id: 0, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.694 INFO creating new flow for MASQUE request, flow_id: 1, stream_id: 4, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.694 INFO HTTP/3 DATAGRAM flow created, flow_id: 0, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.694 INFO sending outbound request, request_id: 0, stream_id: 0, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.694 INFO HTTP/3 DATAGRAM flow created, flow_id: 1, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.694 INFO sending outbound request, request_id: 1, stream_id: 4, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.694 INFO creating new flow for MASQUE request, flow_id: 2, stream_id: 8, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.694 INFO creating new flow for MASQUE request, flow_id: 3, stream_id: 12, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.694 INFO HTTP/3 DATAGRAM flow created, flow_id: 2, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.694 INFO sending outbound request, request_id: 2, stream_id: 8, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.694 INFO HTTP/3 DATAGRAM flow created, flow_id: 3, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.694 INFO sending outbound request, request_id: 3, stream_id: 12, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.694 INFO creating new flow for MASQUE request, flow_id: 4, stream_id: 16, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.694 INFO HTTP/3 DATAGRAM flow created, flow_id: 4, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.694 INFO sending outbound request, request_id: 4, stream_id: 16, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.694 INFO creating new flow for MASQUE request, flow_id: 5, stream_id: 20, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.694 INFO HTTP/3 DATAGRAM flow created, flow_id: 5, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.694 INFO sending outbound request, request_id: 5, stream_id: 20, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.694 INFO creating new flow for MASQUE request, flow_id: 6, stream_id: 24, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.694 INFO HTTP/3 DATAGRAM flow created, flow_id: 6, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.694 INFO sending outbound request, request_id: 6, stream_id: 24, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.694 INFO creating new flow for MASQUE request, flow_id: 7, stream_id: 28, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.695 INFO HTTP/3 DATAGRAM flow created, flow_id: 7, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.695 INFO sending outbound request, request_id: 7, stream_id: 28, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.695 INFO creating new flow for MASQUE request, flow_id: 8, stream_id: 32, pid: 11377, version: 0.1.0, module: tokio_quiche::http3::driver::client:168
+Jun 18 10:34:34.695 INFO HTTP/3 DATAGRAM flow created, flow_id: 8, pid: 11377, version: 0.1.0, module: masque_client:296
+Jun 18 10:34:34.695 INFO sending outbound request, request_id: 8, stream_id: 32, pid: 11377, version: 0.1.0, module: masque_client:322
+Jun 18 10:34:34.701 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 0, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.701 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.701 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 4, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.702 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.702 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 8, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.702 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.702 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 12, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.702 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.702 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.702 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.702 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.702 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 16, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.702 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.702 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 20, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.702 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.702 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 24, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.702 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.702 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.702 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 28, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.702 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.702 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.703 INFO incoming headers, headers: [":status: 200", "capsule-protocol: ?1"], stream_id: 32, pid: 11377, version: 0.1.0, module: masque_client:185
+Jun 18 10:34:34.703 INFO MASQUE proxying request successful; using the Capsule Protocol, pid: 11377, version: 0.1.0, module: masque_client:220
+Jun 18 10:34:34.703 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.703 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.703 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.703 INFO End-to-end QUIC client started, pid: 11377, version: 0.1.0, module: masque::e2e:181
+Jun 18 10:34:34.760 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.760 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.760 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.761 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.761 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.762 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.762 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.762 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.762 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.764 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.764 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.764 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.766 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.766 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.767 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.767 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.768 INFO End-to-end QUIC connection established, pid: 11377, version: 0.1.0, module: masque::e2e:385
+Jun 18 10:34:34.769 INFO Inner HTTP/3 connection created, pid: 11377, version: 0.1.0, module: masque::e2e:396
+Jun 18 10:34:34.786 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:34.786 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:34.786 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:34.788 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:34.794 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:34.794 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:34.794 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:34.794 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:34.794 INFO Sent GET request on stream 0, pid: 11377, version: 0.1.0, module: masque::e2e:369
+Jun 18 10:34:35.634 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:35.634 INFO Flow 1 total request time: 850142µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:35.643 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:35.643 INFO Flow 0 total request time: 858830µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:35.666 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:35.666 INFO Flow 2 total request time: 881839µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:36.080 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:36.080 INFO Flow 3 total request time: 1287869µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:36.109 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:36.109 INFO Flow 4 total request time: 1317127µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:36.109 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:36.109 INFO Flow 5 total request time: 1322964µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:36.572 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:36.572 INFO Flow 6 total request time: 1779230µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:36.579 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:36.579 INFO Flow 8 total request time: 1787382µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:36.590 INFO HTTP/3 stream 0 finished, pid: 11377, version: 0.1.0, module: masque::e2e:578
+Jun 18 10:34:36.590 INFO Flow 7 total request time: 1797627µs, pid: 11377, version: 0.1.0, module: masque::e2e:589
+Jun 18 10:34:39.603 WARN Client-side tunnel closed, pid: 11377, version: 0.1.0, module: masque::e2e:311
+Jun 18 10:34:39.603 WARN Client-side tunnel closed, pid: 11377, version: 0.1.0, module: masque::e2e:311
+Jun 18 10:34:39.603 WARN Client-side tunnel closed, pid: 11377, version: 0.1.0, module: masque::e2e:311
+Jun 18 10:34:39.603 INFO Connection stats written to /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-02/outer-connection-stats-dbe9b4bd26545a63e593b3ad27e0159453afa8bf.json, pid: 11377, version: 0.1.0, module: masque:107
+Jun 18 10:34:39.603 WARN Client-side tunnel closed, pid: 11377, version: 0.1.0, module: masque::e2e:311
+Jun 18 10:34:39.603 WARN Client-side tunnel closed, pid: 11377, version: 0.1.0, module: masque::e2e:311

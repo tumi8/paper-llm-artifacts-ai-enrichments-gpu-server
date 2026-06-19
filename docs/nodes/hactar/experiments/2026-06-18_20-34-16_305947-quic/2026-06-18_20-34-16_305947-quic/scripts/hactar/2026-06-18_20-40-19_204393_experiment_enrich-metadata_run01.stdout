@@ -1,0 +1,1024 @@
+2026-06-18 20:44:33  Loop params: model_profile=gemma3_12b model=<profile-or-default> ctx=15000 temperature=0.0 top_p=0.9 num_predict=<ollama-default> think=<profile-or-default-or-omitted> peek_chars=100
+2026-06-18 20:44:33  Run manifest path: /tmp/llm-enrichment-manifest.json
+2026-06-18 20:44:33  GPU metrics CSV path: /tmp/llm-enrichment-gpu-metrics.csv
+2026-06-18 20:44:33  Immutable baseline folder: /srv/testbed/results/warmuth/default/2026-06-18_09-02-45_976298
+2026-06-18 20:44:33  Working directory root: /tmp/enricher
+2026-06-18 20:44:33  Per-run upload label: 2026-06-18_09-02-45_976298
+2026-06-18 20:44:33  Created fresh working copy for this loop run: /tmp/enricher/2026-06-18_09-02-45_976298
+2026-06-18 20:44:33  Resolved Ollama model for cleanup: gemma3:12b
+2026-06-18 20:44 INFO: Resolved model profile 'gemma3_12b' from /root/ai-metadata-enricher/config/model_profiles.yml -> model=gemma3:12b think=<omitted>
+2026-06-18 20:44 INFO: Started GPU metrics monitor: /tmp/llm-enrichment-gpu-metrics.csv (interval=1000 ms)
+2026-06-18 20:44 INFO: Pulling model 'gemma3:12b'...
+2026-06-18 20:46 INFO: Model 'gemma3:12b' is ready.
+2026-06-18 20:46 INFO: Warming up model 'gemma3:12b'...
+2026-06-18 20:46 INFO: Model ready.
+2026-06-18 20:46 INFO: Starting enrichment for result folder: /tmp/enricher/2026-06-18_09-02-45_976298
+2026-06-18 20:46 INFO: Processing experiment: config/allocation.json
+2026-06-18 20:46 INFO: Found 27 executed command(s)
+2026-06-18 20:46 INFO: Skipping pre-described entity: scripts/tallinn/2026-06-18_09-04-56_935648_bootstrap.file (type: {'CommandFileBootstrap'})
+2026-06-18 20:46 INFO: Skipping pre-described entity: scripts/tallinn/2026-06-18_09-02-46_191883_reset.command (type: {'CommandFileReset'})
+2026-06-18 20:46 INFO: Skipping pre-described entity: scripts/tartu/2026-06-18_09-06-20_091531_bootstrap.file (type: {'CommandFileBootstrap'})
+2026-06-18 20:46 INFO: Skipping pre-described entity: scripts/tartu/2026-06-18_09-02-46_355329_reset.command (type: {'CommandFileReset'})
+2026-06-18 20:46 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tallinn/2026-06-18_09-06-23_080432_sync-clock.command
+  name    : 2026-06-18_09-06-23_080432_sync-clock.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tallinn/2026-06-18_09-06-23_080432_sync-clock.command
+  filetype: command
+2026-06-18 20:46 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:46 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-06-23_080432_sync-clock.command | context=command | prompt_tokens=461 | output_tokens=18 | prompt_eval_s=1.728 | eval_s=0.685 | total_s=4.446 | load_s=1.178 | prompt_tps=266.73 | output_tps=26.28
+2026-06-18 20:46 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-06-23_080432_sync-clock.command [command]
+2026-06-18 20:46 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-06-24_724063_sync-clock.command
+  name    : 2026-06-18_09-06-24_724063_sync-clock.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-06-24_724063_sync-clock.command
+  filetype: command
+2026-06-18 20:46 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:46 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-06-24_724063_sync-clock.command | context=command | prompt_tokens=461 | output_tokens=18 | prompt_eval_s=1.591 | eval_s=0.677 | total_s=3.501 | load_s=1.222 | prompt_tps=289.77 | output_tps=26.58
+2026-06-18 20:46 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-06-24_724063_sync-clock.command [command]
+2026-06-18 20:46 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tallinn/2026-06-18_09-06-26_240240_apt-update.command
+  name    : 2026-06-18_09-06-26_240240_apt-update.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tallinn/2026-06-18_09-06-26_240240_apt-update.command
+  filetype: command
+2026-06-18 20:46 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:46 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-06-26_240240_apt-update.command | context=command | prompt_tokens=424 | output_tokens=15 | prompt_eval_s=1.429 | eval_s=0.552 | total_s=3.207 | load_s=1.215 | prompt_tps=296.72 | output_tps=27.19
+2026-06-18 20:46 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-06-26_240240_apt-update.command [command]
+2026-06-18 20:46 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tallinn/2026-06-18_09-06-30_301047_install-packages.command
+  name    : 2026-06-18_09-06-30_301047_install-packages.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tallinn/2026-06-18_09-06-30_301047_install-packages.command
+  filetype: command
+2026-06-18 20:46 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:46 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-06-30_301047_install-packages.command | context=command | prompt_tokens=467 | output_tokens=13 | prompt_eval_s=1.528 | eval_s=0.468 | total_s=3.272 | load_s=1.249 | prompt_tps=305.70 | output_tps=27.78
+2026-06-18 20:46 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-06-30_301047_install-packages.command [command]
+2026-06-18 20:46 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-06-41_597909_apt-update.command
+  name    : 2026-06-18_09-06-41_597909_apt-update.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-06-41_597909_apt-update.command
+  filetype: command
+2026-06-18 20:46 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:46 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-06-41_597909_apt-update.command | context=command | prompt_tokens=424 | output_tokens=15 | prompt_eval_s=1.428 | eval_s=0.553 | total_s=3.175 | load_s=1.181 | prompt_tps=296.93 | output_tps=27.12
+2026-06-18 20:46 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-06-41_597909_apt-update.command [command]
+2026-06-18 20:46 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-06-45_508189_install-packages.command
+  name    : 2026-06-18_09-06-45_508189_install-packages.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-06-45_508189_install-packages.command
+  filetype: command
+2026-06-18 20:46 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:46 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-06-45_508189_install-packages.command | context=command | prompt_tokens=467 | output_tokens=13 | prompt_eval_s=1.530 | eval_s=0.469 | total_s=3.194 | load_s=1.185 | prompt_tps=305.18 | output_tps=27.72
+2026-06-18 20:46 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-06-45_508189_install-packages.command [command]
+2026-06-18 20:46 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tallinn/2026-06-18_09-06-54_869667_add-ip.command
+  name    : 2026-06-18_09-06-54_869667_add-ip.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tallinn/2026-06-18_09-06-54_869667_add-ip.command
+  filetype: command
+2026-06-18 20:46 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:46 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-06-54_869667_add-ip.command | context=command | prompt_tokens=450 | output_tokens=14 | prompt_eval_s=1.434 | eval_s=0.515 | total_s=3.189 | load_s=1.224 | prompt_tps=313.73 | output_tps=27.18
+2026-06-18 20:46 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-06-54_869667_add-ip.command [command]
+2026-06-18 20:46 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tallinn/2026-06-18_09-06-56_315281_set-link-up.command
+  name    : 2026-06-18_09-06-56_315281_set-link-up.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tallinn/2026-06-18_09-06-56_315281_set-link-up.command
+  filetype: command
+2026-06-18 20:46 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:47 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-06-56_315281_set-link-up.command | context=command | prompt_tokens=439 | output_tokens=12 | prompt_eval_s=1.437 | eval_s=0.433 | total_s=3.115 | load_s=1.226 | prompt_tps=305.47 | output_tps=27.71
+2026-06-18 20:47 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-06-56_315281_set-link-up.command [command]
+2026-06-18 20:47 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tallinn/2026-06-18_09-06-57_673581_update-hosts.command
+  name    : 2026-06-18_09-06-57_673581_update-hosts.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tallinn/2026-06-18_09-06-57_673581_update-hosts.command
+  filetype: command
+2026-06-18 20:47 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:47 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-06-57_673581_update-hosts.command | context=command | prompt_tokens=440 | output_tokens=17 | prompt_eval_s=1.432 | eval_s=0.630 | total_s=3.296 | load_s=1.221 | prompt_tps=307.26 | output_tps=26.99
+2026-06-18 20:47 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-06-57_673581_update-hosts.command [command]
+2026-06-18 20:47 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-06-59_034676_add-ip.command
+  name    : 2026-06-18_09-06-59_034676_add-ip.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-06-59_034676_add-ip.command
+  filetype: command
+2026-06-18 20:47 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:47 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-06-59_034676_add-ip.command | context=command | prompt_tokens=450 | output_tokens=20 | prompt_eval_s=1.438 | eval_s=0.747 | total_s=3.429 | load_s=1.230 | prompt_tps=312.92 | output_tps=26.76
+2026-06-18 20:47 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-06-59_034676_add-ip.command [command]
+2026-06-18 20:47 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-07-00_392575_set-link-up.command
+  name    : 2026-06-18_09-07-00_392575_set-link-up.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-07-00_392575_set-link-up.command
+  filetype: command
+2026-06-18 20:47 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:47 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-07-00_392575_set-link-up.command | context=command | prompt_tokens=439 | output_tokens=12 | prompt_eval_s=1.435 | eval_s=0.433 | total_s=3.081 | load_s=1.200 | prompt_tps=305.96 | output_tps=27.70
+2026-06-18 20:47 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-07-00_392575_set-link-up.command [command]
+2026-06-18 20:47 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-07-01_750318_update-hosts.command
+  name    : 2026-06-18_09-07-01_750318_update-hosts.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-07-01_750318_update-hosts.command
+  filetype: command
+2026-06-18 20:47 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:47 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-07-01_750318_update-hosts.command | context=command | prompt_tokens=440 | output_tokens=18 | prompt_eval_s=1.501 | eval_s=0.672 | total_s=3.411 | load_s=1.223 | prompt_tps=293.19 | output_tps=26.77
+2026-06-18 20:47 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-07-01_750318_update-hosts.command [command]
+2026-06-18 20:47 INFO: Skipping pre-described entity: scripts/tallinn/2026-06-18_09-07-03_542240_bootstrap.file (type: {'CommandFileBootstrap'})
+2026-06-18 20:47 INFO: Skipping pre-described entity: scripts/tartu/2026-06-18_09-07-07_141896_bootstrap.file (type: {'CommandFileBootstrap'})
+2026-06-18 20:47 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-07-10_786262_build.file
+  name    : 2026-06-18_09-07-10_786262_build.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-07-10_786262_build.file
+  filetype: script
+2026-06-18 20:47 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:47 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-07-10_786262_build.file | context=command | prompt_tokens=2848 | output_tokens=75 | prompt_eval_s=6.557 | eval_s=3.314 | total_s=12.065 | load_s=1.211 | prompt_tps=434.36 | output_tps=22.63
+2026-06-18 20:47 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-07-10_786262_build.file [command]
+2026-06-18 20:47 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tallinn/2026-06-18_09-07-10_755877_build.file
+  name    : 2026-06-18_09-07-10_755877_build.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tallinn/2026-06-18_09-07-10_755877_build.file
+  filetype: script
+2026-06-18 20:47 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:47 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-07-10_755877_build.file | context=command | prompt_tokens=2848 | output_tokens=78 | prompt_eval_s=6.537 | eval_s=3.409 | total_s=12.497 | load_s=1.257 | prompt_tps=435.65 | output_tps=22.88
+2026-06-18 20:47 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-07-10_755877_build.file [command]
+2026-06-18 20:47 INFO: -----------------------------------------------------------
+Processing looped command entity: scripts/tallinn/2026-06-18_09-15-39_419147_run-server.file
+  name    : 2026-06-18_09-15-39_419147_run-server.file
+  type    : {'CommandFileLooped'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tallinn/2026-06-18_09-15-39_419147_run-server.file
+  filetype: script
+2026-06-18 20:47 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:47 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-15-39_419147_run-server.file | context=command | prompt_tokens=1858 | output_tokens=65 | prompt_eval_s=5.052 | eval_s=2.798 | total_s=10.401 | load_s=1.234 | prompt_tps=367.75 | output_tps=23.23
+2026-06-18 20:47 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server.file [command]
+2026-06-18 20:47 INFO: Found 72 loop run(s) for scripts/tallinn/2026-06-18_09-15-39_419147_run-server.file
+2026-06-18 20:47 DEBUG:     Loop run 1/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run00.loop
+2026-06-18 20:47 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:48 INFO: LLM usage | entity=scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run00.loop | context=loop run | prompt_tokens=1909 | output_tokens=66 | prompt_eval_s=5.095 | eval_s=2.796 | total_s=10.974 | load_s=1.202 | prompt_tps=374.67 | output_tps=23.60
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run00.loop [loop run (new)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run00/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:48 INFO: LLM usage | entity=files/tallinn/logs_run00/ | context=result data | prompt_tokens=1884 | output_tokens=37 | prompt_eval_s=5.148 | eval_s=1.575 | total_s=9.851 | load_s=1.229 | prompt_tps=365.97 | output_tps=23.49
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run00/ [result data (new)]
+2026-06-18 20:48 DEBUG:     Loop run 2/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run01.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run01.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run01/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run01/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 3/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run02.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run02.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run02/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run02/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 4/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run03.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run03.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run03/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run03/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 5/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run04.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run04.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run04/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run04/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 6/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run05.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run05.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run05/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run05/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 7/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run06.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run06.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run06/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run06/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 8/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run07.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run07.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run07/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run07/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 9/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run08.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run08.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run08/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run08/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 10/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run09.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run09.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run09/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run09/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 11/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run10.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run10.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run10/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run10/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 12/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run11.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run11.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run11/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run11/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 13/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run12.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run12.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run12/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run12/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 14/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run13.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run13.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run13/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run13/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 15/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run14.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run14.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run14/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run14/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 16/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run15.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run15.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run15/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run15/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 17/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run16.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run16.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run16/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run16/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 18/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run17.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run17.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run17/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run17/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 19/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run18.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run18.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run18/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run18/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 20/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run19.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run19.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run19/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run19/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 21/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run20.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run20.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run20/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run20/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 22/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run21.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run21.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run21/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run21/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 23/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run22.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run22.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run22/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run22/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 24/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run23.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run23.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run23/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run23/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 25/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run24.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run24.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run24/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run24/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 26/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run25.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run25.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run25/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run25/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 27/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run26.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run26.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run26/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run26/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 28/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run27.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run27.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run27/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run27/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 29/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run28.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run28.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run28/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run28/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 30/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run29.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run29.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run29/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run29/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 31/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run30.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run30.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run30/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run30/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 32/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run31.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run31.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run31/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run31/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 33/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run32.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run32.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run32/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run32/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 34/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run33.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run33.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run33/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run33/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 35/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run34.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run34.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run34/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run34/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 36/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run35.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run35.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run35/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run35/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 37/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run36.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run36.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run36/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run36/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 38/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run37.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run37.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run37/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run37/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 39/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run38.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run38.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run38/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run38/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 40/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run39.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run39.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run39/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run39/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 41/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run40.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run40.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run40/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run40/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 42/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run41.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run41.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run41/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run41/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 43/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run42.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run42.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run42/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run42/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 44/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run43.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run43.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run43/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run43/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 45/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run44.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run44.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run44/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run44/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 46/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run45.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run45.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run45/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run45/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 47/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run46.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run46.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run46/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run46/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 48/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run47.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run47.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run47/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run47/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 49/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run48.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run48.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run48/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run48/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 50/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run49.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run49.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run49/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run49/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 51/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run50.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run50.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run50/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run50/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 52/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run51.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run51.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run51/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run51/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 53/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run52.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run52.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run52/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run52/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 54/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run53.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run53.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run53/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run53/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 55/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run54.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run54.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run54/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run54/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 56/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run55.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run55.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run55/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run55/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 57/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run56.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run56.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run56/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run56/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 58/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run57.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run57.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run57/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run57/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 59/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run58.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run58.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run58/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run58/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 60/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run59.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run59.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run59/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run59/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 61/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run60.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run60.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run60/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run60/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 62/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run61.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run61.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run61/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run61/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 63/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run62.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run62.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run62/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run62/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 64/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run63.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run63.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run63/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run63/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 65/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run64.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run64.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run64/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run64/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 66/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run65.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run65.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run65/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run65/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 67/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run66.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run66.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run66/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run66/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 68/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run67.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run67.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run67/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run67/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 69/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run68.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run68.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run68/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run68/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 70/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run69.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run69.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run69/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run69/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 71/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run70.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run70.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run70/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run70/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 72/72: scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run71.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tallinn/2026-06-18_09-15-39_419147_run-server_run71.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tallinn/logs_run71/ (normalized: files/tallinn/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tallinn/logs_run71/ [result data (cached)]
+2026-06-18 20:48 INFO: -----------------------------------------------------------
+Processing looped command entity: scripts/tartu/2026-06-18_09-15-39_502592_run-client.file
+  name    : 2026-06-18_09-15-39_502592_run-client.file
+  type    : {'CommandFileLooped'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-15-39_502592_run-client.file
+  filetype: script
+2026-06-18 20:48 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:48 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-15-39_502592_run-client.file | context=command | prompt_tokens=1564 | output_tokens=50 | prompt_eval_s=4.657 | eval_s=2.111 | total_s=9.847 | load_s=1.205 | prompt_tps=335.84 | output_tps=23.69
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client.file [command]
+2026-06-18 20:48 INFO: Found 72 loop run(s) for scripts/tartu/2026-06-18_09-15-39_502592_run-client.file
+2026-06-18 20:48 DEBUG:     Loop run 1/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run00.loop
+2026-06-18 20:48 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:48 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-15-39_502592_run-client_run00.loop | context=loop run | prompt_tokens=1615 | output_tokens=58 | prompt_eval_s=4.675 | eval_s=2.468 | total_s=10.247 | load_s=1.160 | prompt_tps=345.45 | output_tps=23.50
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run00.loop [loop run (new)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run00/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:48 INFO: LLM usage | entity=files/tartu/logs_run00/ | context=result data | prompt_tokens=1586 | output_tokens=37 | prompt_eval_s=4.640 | eval_s=1.564 | total_s=9.311 | load_s=1.234 | prompt_tps=341.81 | output_tps=23.66
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run00/ [result data (new)]
+2026-06-18 20:48 DEBUG:     Loop run 2/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run01.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run01.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run01/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run01/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 3/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run02.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run02.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run02/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run02/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 4/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run03.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run03.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run03/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run03/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 5/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run04.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run04.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run04/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run04/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 6/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run05.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run05.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run05/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run05/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 7/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run06.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run06.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run06/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run06/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 8/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run07.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run07.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run07/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run07/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 9/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run08.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run08.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run08/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run08/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 10/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run09.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run09.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run09/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run09/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 11/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run10.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run10.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run10/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run10/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 12/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run11.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run11.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run11/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run11/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 13/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run12.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run12.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run12/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run12/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 14/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run13.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run13.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run13/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run13/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 15/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run14.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run14.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run14/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run14/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 16/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run15.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run15.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run15/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run15/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 17/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run16.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run16.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run16/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run16/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 18/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run17.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run17.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run17/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run17/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 19/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run18.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run18.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run18/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run18/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 20/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run19.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run19.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run19/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run19/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 21/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run20.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run20.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run20/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run20/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 22/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run21.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run21.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run21/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run21/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 23/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run22.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run22.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run22/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run22/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 24/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run23.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run23.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run23/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run23/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 25/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run24.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run24.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run24/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run24/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 26/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run25.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run25.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run25/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run25/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 27/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run26.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run26.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run26/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run26/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 28/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run27.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run27.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run27/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run27/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 29/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run28.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run28.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run28/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run28/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 30/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run29.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run29.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run29/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run29/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 31/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run30.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run30.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run30/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run30/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 32/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run31.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run31.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run31/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run31/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 33/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run32.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run32.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run32/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run32/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 34/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run33.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run33.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run33/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run33/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 35/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run34.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run34.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run34/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run34/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 36/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run35.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run35.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run35/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run35/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 37/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run36.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run36.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run36/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run36/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 38/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run37.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run37.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run37/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run37/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 39/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run38.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run38.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run38/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run38/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 40/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run39.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run39.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run39/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run39/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 41/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run40.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run40.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run40/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run40/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 42/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run41.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run41.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run41/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run41/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 43/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run42.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run42.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run42/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run42/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 44/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run43.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run43.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run43/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run43/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 45/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run44.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run44.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run44/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run44/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 46/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run45.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run45.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run45/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run45/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 47/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run46.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run46.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run46/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run46/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 48/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run47.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run47.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run47/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run47/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 49/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run48.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run48.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run48/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run48/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 50/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run49.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run49.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run49/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run49/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 51/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run50.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run50.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run50/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run50/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 52/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run51.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run51.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run51/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run51/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 53/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run52.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run52.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run52/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run52/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 54/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run53.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run53.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run53/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run53/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 55/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run54.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run54.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run54/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run54/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 56/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run55.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run55.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run55/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run55/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 57/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run56.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run56.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run56/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run56/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 58/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run57.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run57.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run57/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run57/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 59/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run58.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run58.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run58/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run58/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 60/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run59.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run59.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run59/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run59/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 61/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run60.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run60.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run60/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run60/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 62/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run61.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run61.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run61/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run61/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 63/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run62.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run62.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run62/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run62/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 64/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run63.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run63.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run63/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run63/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 65/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run64.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run64.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run64/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run64/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 66/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run65.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run65.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run65/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run65/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 67/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run66.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run66.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run66/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run66/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 68/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run67.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run67.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run67/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run67/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 69/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run68.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run68.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run68/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run68/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 70/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run69.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run69.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run69/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run69/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 71/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run70.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run70.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run70/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run70/ [result data (cached)]
+2026-06-18 20:48 DEBUG:     Loop run 72/72: scripts/tartu/2026-06-18_09-15-39_502592_run-client_run71.loop
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-15-39_502592_run-client_run71.loop [loop run (cached)]
+2026-06-18 20:48 INFO:   Processing resultData 1: files/tartu/logs_run71/ (normalized: files/tartu/logs_run/)
+2026-06-18 20:48 DEBUG:   -> description set for files/tartu/logs_run71/ [result data (cached)]
+2026-06-18 20:48 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-35-48_486541_create-evaluation-dir.command
+  name    : 2026-06-18_09-35-48_486541_create-evaluation-dir.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-35-48_486541_create-evaluation-dir.command
+  filetype: command
+2026-06-18 20:48 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:48 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-35-48_486541_create-evaluation-dir.command | context=command | prompt_tokens=429 | output_tokens=15 | prompt_eval_s=1.436 | eval_s=0.555 | total_s=5.699 | load_s=1.232 | prompt_tps=298.66 | output_tps=27.01
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-35-48_486541_create-evaluation-dir.command [command]
+2026-06-18 20:48 INFO: Skipping pre-described entity: scripts/tartu/2026-06-18_09-35-50_100723_copy_files.command (type: {'CommandFileCopy'})
+2026-06-18 20:48 INFO: Skipping pre-described entity: scripts/tartu/2026-06-18_09-35-51_192470_copy_scripts.command (type: {'CommandFileCopy'})
+2026-06-18 20:48 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-35-52_859734_install-evaluation-requirements.command
+  name    : 2026-06-18_09-35-52_859734_install-evaluation-requirements.command
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-35-52_859734_install-evaluation-requirements.command
+  filetype: command
+2026-06-18 20:48 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:48 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-35-52_859734_install-evaluation-requirements.command | context=command | prompt_tokens=438 | output_tokens=17 | prompt_eval_s=1.502 | eval_s=0.639 | total_s=3.396 | load_s=1.241 | prompt_tps=291.65 | output_tps=26.59
+2026-06-18 20:48 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-35-52_859734_install-evaluation-requirements.command [command]
+2026-06-18 20:48 INFO: -----------------------------------------------------------
+Processing command entity: scripts/tartu/2026-06-18_09-36-10_635968_evaluation.file
+  name    : 2026-06-18_09-36-10_635968_evaluation.file
+  type    : {'CommandFile'}
+  path    : /tmp/enricher/2026-06-18_09-02-45_976298/scripts/tartu/2026-06-18_09-36-10_635968_evaluation.file
+  filetype: script
+2026-06-18 20:48 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:49 INFO: LLM usage | entity=scripts/tartu/2026-06-18_09-36-10_635968_evaluation.file | context=command | prompt_tokens=3418 | output_tokens=64 | prompt_eval_s=7.430 | eval_s=2.853 | total_s=12.469 | load_s=1.243 | prompt_tps=460.02 | output_tps=22.44
+2026-06-18 20:49 DEBUG:   -> description set for scripts/tartu/2026-06-18_09-36-10_635968_evaluation.file [command]
+2026-06-18 20:49 INFO:   Processing resultData 1: files/tartu/quiche_536870912.tsv (normalized: files/tartu/quiche_536870912.tsv)
+2026-06-18 20:49 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:49 INFO: LLM usage | entity=files/tartu/quiche_536870912.tsv | context=result data | prompt_tokens=2154 | output_tokens=20 | prompt_eval_s=6.123 | eval_s=0.821 | total_s=10.701 | load_s=1.207 | prompt_tps=351.81 | output_tps=24.35
+2026-06-18 20:49 DEBUG:   -> description set for files/tartu/quiche_536870912.tsv [result data (new)]
+2026-06-18 20:49 INFO:   Processing resultData 2: files/tartu/lsquic_536870912.tsv (normalized: files/tartu/lsquic_536870912.tsv)
+2026-06-18 20:49 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:49 INFO: LLM usage | entity=files/tartu/lsquic_536870912.tsv | context=result data | prompt_tokens=2155 | output_tokens=20 | prompt_eval_s=6.110 | eval_s=0.823 | total_s=10.039 | load_s=1.202 | prompt_tps=352.69 | output_tps=24.31
+2026-06-18 20:49 DEBUG:   -> description set for files/tartu/lsquic_536870912.tsv [result data (new)]
+2026-06-18 20:49 INFO:   Processing resultData 3: files/tartu/picoquic_536870912.tsv (normalized: files/tartu/picoquic_536870912.tsv)
+2026-06-18 20:49 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:49 INFO: LLM usage | entity=files/tartu/picoquic_536870912.tsv | context=result data | prompt_tokens=2156 | output_tokens=18 | prompt_eval_s=6.090 | eval_s=0.727 | total_s=9.998 | load_s=1.242 | prompt_tps=354.05 | output_tps=24.75
+2026-06-18 20:49 DEBUG:   -> description set for files/tartu/picoquic_536870912.tsv [result data (new)]
+2026-06-18 20:49 INFO:   Processing resultData 4: files/tartu/plot1.png (normalized: files/tartu/plot1.png)
+2026-06-18 20:49 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:49 INFO: LLM usage | entity=files/tartu/plot1.png | context=result data | prompt_tokens=2077 | output_tokens=19 | prompt_eval_s=6.099 | eval_s=0.793 | total_s=10.011 | load_s=1.230 | prompt_tps=340.55 | output_tps=23.96
+2026-06-18 20:49 DEBUG:   -> description set for files/tartu/plot1.png [result data (new)]
+2026-06-18 20:49 INFO:   Processing resultData 5: files/tartu/plot1.pdf (normalized: files/tartu/plot1.pdf)
+2026-06-18 20:49 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:49 INFO: LLM usage | entity=files/tartu/plot1.pdf | context=result data | prompt_tokens=2077 | output_tokens=19 | prompt_eval_s=6.043 | eval_s=0.784 | total_s=9.928 | load_s=1.227 | prompt_tps=343.72 | output_tps=24.24
+2026-06-18 20:49 DEBUG:   -> description set for files/tartu/plot1.pdf [result data (new)]
+2026-06-18 20:49 INFO:   Processing resultData 6: files/tartu/results.json (normalized: files/tartu/results.json)
+2026-06-18 20:49 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:50 INFO: LLM usage | entity=files/tartu/results.json | context=result data | prompt_tokens=2125 | output_tokens=20 | prompt_eval_s=6.061 | eval_s=0.831 | total_s=10.028 | load_s=1.220 | prompt_tps=350.58 | output_tps=24.06
+2026-06-18 20:50 DEBUG:   -> description set for files/tartu/results.json [result data (new)]
+2026-06-18 20:50 INFO: Scanning experiment-level result data...
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run00/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run00/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run01/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run01/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run02/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run02/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run03/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run03/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run04/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run04/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run05/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run05/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run06/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run06/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run07/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run07/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run08/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run08/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run09/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run09/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run10/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run10/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run11/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run11/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run12/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run12/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run13/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run13/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run14/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run14/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run15/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run15/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run16/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run16/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run17/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run17/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run18/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run18/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run19/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run19/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run20/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run20/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run21/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run21/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run22/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run22/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run23/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run23/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run24/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run24/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run25/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run25/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run26/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run26/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run27/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run27/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run28/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run28/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run29/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run29/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run30/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run30/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run31/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run31/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run32/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run32/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run33/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run33/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run34/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run34/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run35/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run35/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run36/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run36/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run37/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run37/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run38/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run38/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run39/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run39/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run40/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run40/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run41/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run41/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run42/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run42/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run43/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run43/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run44/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run44/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run45/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run45/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run46/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run46/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run47/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run47/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run48/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run48/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run49/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run49/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run50/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run50/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run51/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run51/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run52/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run52/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run53/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run53/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run54/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run54/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run55/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run55/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run56/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run56/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run57/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run57/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run58/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run58/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run59/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run59/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run60/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run60/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run61/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run61/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run62/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run62/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run63/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run63/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run64/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run64/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run65/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run65/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run66/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run66/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run67/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run67/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run68/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run68/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run69/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run69/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run70/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run70/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tallinn/logs_run71/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/logs_run71/ (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/quiche_536870912.tsv (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/lsquic_536870912.tsv (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/picoquic_536870912.tsv (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/plot1.png (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/plot1.pdf (already covered)
+2026-06-18 20:50 DEBUG:   -> skip files/tartu/results.json (already covered)
+2026-06-18 20:50 DEBUG:   -> no hardware.json for tartu.baltikum.net.cit.tum.de, skipping node
+2026-06-18 20:50 DEBUG:   -> no hardware.json for tallinn.baltikum.net.cit.tum.de, skipping node
+2026-06-18 20:50 INFO: Generating crate-level title and description...
+2026-06-18 20:50 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:50 INFO: LLM usage | entity=./ | context=crate summary | prompt_tokens=2458 | output_tokens=105 | prompt_eval_s=6.586 | eval_s=4.584 | total_s=14.290 | load_s=1.246 | prompt_tps=373.19 | output_tps=22.91
+2026-06-18 20:50 DEBUG:   -> name replaced generic for ./ [crate summary]
+2026-06-18 20:50 DEBUG:   -> description refreshed existing for ./ [crate summary]
+2026-06-18 20:50 INFO: Sending prompt to model 'gemma3:12b' (attempt 1)
+2026-06-18 20:50 INFO: LLM usage | entity=./ | context=crate keywords | prompt_tokens=2371 | output_tokens=13 | prompt_eval_s=6.479 | eval_s=0.526 | total_s=9.497 | load_s=1.219 | prompt_tps=365.97 | output_tps=24.73
+2026-06-18 20:50 DEBUG:   -> keywords refreshed existing for ./ [crate keywords]
+2026-06-18 20:50 INFO: Updated CITATION.cff at /tmp/enricher/2026-06-18_09-02-45_976298/CITATION.cff
+2026-06-18 20:50 INFO: LLM usage summary | calls=31 | calls_with_usage=31 | prompt_tokens=43332 | output_tokens=981 | prompt_eval_s=120.232 | eval_s=40.806 | total_s=231.565 | load_s=37.795 | prompt_tps=360.40 | output_tps=24.04
+2026-06-18 20:50 INFO: Enrichment finished. Updated 316 entities.
+2026-06-18 20:50 INFO: Saved metadata. Updated 316 description(s).
+2026-06-18 20:50 INFO: Total time: 3m 51.9s
+2026-06-18 20:50 INFO: Wrote run summary JSON: /tmp/llm-enrichment-manifest.json
+2026-06-18 20:50:29  Unloaded Ollama model after run: gemma3:12b
+2026-06-18 20:50:29  Running autoscore using reference crate: /srv/testbed/results/warmuth/default/2026-06-18_09-02-45_976298_reference
+2026-06-18 20:50 INFO: Loaded 338 reference(s) from reference crate /srv/testbed/results/warmuth/default/2026-06-18_09-02-45_976298_reference
+2026-06-18 20:50 INFO: Matched 338 of 338 references (0 unmatched)
+2026-06-18 20:50 DEBUG: matplotlib data path: /root/venv3/lib/python3.11/site-packages/matplotlib/mpl-data
+2026-06-18 20:50 DEBUG: CONFIGDIR=/root/.config/matplotlib
+2026-06-18 20:50 DEBUG: interactive is False
+2026-06-18 20:50 DEBUG: platform is linux
+2026-06-18 20:50 DEBUG: CACHEDIR=/root/.cache/matplotlib
+2026-06-18 20:50 DEBUG: Using fontManager instance from /root/.cache/matplotlib/fontlist-v3.11.0.json
+2026-06-18 20:50 DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/tokenizer_config.json HTTP/1.1" 200 0
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "GET /api/models/microsoft/deberta-large-mnli/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "GET /api/models/microsoft/deberta-large-mnli/tree/main?recursive=True&expand=False HTTP/1.1" 200 None
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/config.json HTTP/1.1" 307 0
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/config.json HTTP/1.1" 200 0
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/model.safetensors HTTP/1.1" 404 0
+2026-06-18 20:50 WARNING: BERTScore CUDA execution failed with an incompatible kernel image; retrying on CPU.
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/tokenizer_config.json HTTP/1.1" 200 0
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "GET /api/models/microsoft/deberta-large-mnli/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "GET /api/models/microsoft/deberta-large-mnli/tree/main?recursive=True&expand=False HTTP/1.1" 200 None
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/config.json HTTP/1.1" 307 0
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /api/resolve-cache/models/microsoft/deberta-large-mnli/7296194b9009373def4f7c5dad292651e4b5cf4e/config.json HTTP/1.1" 200 0
+2026-06-18 20:50 DEBUG: https://huggingface.co:443 "HEAD /microsoft/deberta-large-mnli/resolve/main/model.safetensors HTTP/1.1" 404 0
+2026-06-18 20:50 INFO: Computed BERTScore for 338 pairs (requested=auto, actual=cpu)
+2026-06-18 20:50 INFO: BERTScore retried on CPU after CUDA failure: CUDA error: no kernel image is available for execution on the device
+Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+2026-06-18 20:50 INFO: Wrote autoscore report to /tmp/enricher/bertscore_results.json
+
+=== Autoscore: 338/338 matched ===
+  ROUGE-L F1 mean:      0.1882  (sd=0.2227)
+  Token overlap mean:   0.1685  (sd=0.2269)
+  Raw BERTScore F1:     0.319  (sd=0.19)
+  BERTScore P mean:     0.304
+  BERTScore R mean:     0.3311
+  [description] n=337  ROUGE-L=0.1881  overlap=0.1684
+  [name] n=1  ROUGE-L=0.2222  overlap=0.2
+  Normalized BERTScore: 0.3484  (sd=0.1118)
+  Normalized groups:    31 from 315 filtered pairs
+
+2026-06-18 20:50:45  Reference autoscore completed successfully.
+2026-06-18 20:50 INFO: Wrote markdown report to /tmp/enricher/bertscore_results.md
+Report written to /tmp/enricher/bertscore_results.md
+2026-06-18 20:50:45  Evaluation markdown report written to /tmp/enricher/bertscore_results.md
+2026-06-18 20:50:45  Uploading folder '/tmp/enricher-staging' as 'enrichment' with loop suffixing

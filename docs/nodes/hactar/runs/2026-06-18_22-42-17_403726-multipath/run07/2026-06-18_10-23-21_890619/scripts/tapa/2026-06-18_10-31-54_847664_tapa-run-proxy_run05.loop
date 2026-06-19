@@ -1,0 +1,5 @@
+{
+  "iteration": "03",
+  "scheduler": "reliable:lowrtt",
+  "slow_path_profile": "10:5"
+}

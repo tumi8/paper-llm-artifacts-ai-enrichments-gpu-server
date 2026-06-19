@@ -1,0 +1,53 @@
+...Set slow path parameters
+Jun 18 10:42:55.600 INFO Multipath enabled on proxy with 1 listen sockets, initial_max_path_id=1, pid: 13331, version: 0.1.0, module: masque_proxy:61
+Proxy is ready
+Jun 18 10:42:57.996 INFO 3122635985456464337: Seen new path ([fd00:0:0:3::1]:443, [fd00:0:0:2::1]:47572) with ID 1 for connection 94a2944d2738804b2bd727fc5780a21193af4dcb, pid: 13331, version: 0.1.0, module: tokio_quiche::quic::io::worker:774
+Jun 18 10:42:58.007 INFO 3122635985456464337: Path ([fd00:0:0:3::1]:443, [fd00:0:0:2::1]:47572) with ID 1 is now validated for connection 94a2944d2738804b2bd727fc5780a21193af4dcb, pid: 13331, version: 0.1.0, module: tokio_quiche::quic::io::worker:802
+Jun 18 10:42:59.971 INFO HTTP/3 DATAGRAM flow created, flow_id: 0, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.971 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=0,i,sched=lowrtt"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.971 INFO Parsed EPS scheduler hint for outer connection, sched: lowrtt, pid: 13331, version: 0.1.0, module: masque_proxy:209
+Jun 18 10:42:59.971 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.971 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:42:59.971 INFO HTTP/3 DATAGRAM flow created, flow_id: 1, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.971 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=0,i"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.971 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.971 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:42:59.971 INFO HTTP/3 DATAGRAM flow created, flow_id: 2, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.971 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=0,i"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.971 INFO Applying runtime packet scheduler update, scheduler: lowrtt, pid: 13331, version: 0.1.0, module: tokio_quiche::quic::io::worker:217
+Jun 18 10:42:59.971 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.971 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:42:59.971 INFO HTTP/3 DATAGRAM flow created, flow_id: 3, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.971 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=3,i"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.971 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.971 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:42:59.972 INFO HTTP/3 DATAGRAM flow created, flow_id: 4, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.972 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=3,i"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.972 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.972 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:42:59.972 INFO HTTP/3 DATAGRAM flow created, flow_id: 5, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.972 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=3,i"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.972 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.972 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:42:59.972 INFO HTTP/3 DATAGRAM flow created, flow_id: 6, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.972 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=5,i"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.972 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.972 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:42:59.972 INFO HTTP/3 DATAGRAM flow created, flow_id: 7, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.972 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=5,i"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.972 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.972 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:42:59.972 INFO HTTP/3 DATAGRAM flow created, flow_id: 8, pid: 13331, version: 0.1.0, module: masque_proxy:291
+Jun 18 10:42:59.972 INFO incoming headers, headers: [":method: CONNECT", ":protocol: connect-udp", ":authority: masque.technology", ":scheme: https", ":path: /.well-known/masque/udp/fd00:0:0:4::1/25565", "capsule-protocol: ?1", "priority: u=5,i"], pid: 13331, version: 0.1.0, module: masque_proxy:164
+Jun 18 10:42:59.972 INFO Handling MASQUE proxying request, port: 25565, ip: fd00:0:0:4::1, pid: 13331, version: 0.1.0, module: masque_proxy:233
+Jun 18 10:42:59.972 INFO Using the Capsule Protocol for this tunnel, pid: 13331, version: 0.1.0, module: masque_proxy:245
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Closed capsule tunnel to the proxy, pid: 13331, version: 0.1.0, module: masque_proxy:427
+Jun 18 10:43:04.893 INFO Connection stats written to /root/results/delay-5ms_rate-10mbit/reliable_lowrtt/run-05/outer-connection-stats-94a2944d2738804b2bd727fc5780a21193af4dcb.json, pid: 13331, version: 0.1.0, module: masque:107

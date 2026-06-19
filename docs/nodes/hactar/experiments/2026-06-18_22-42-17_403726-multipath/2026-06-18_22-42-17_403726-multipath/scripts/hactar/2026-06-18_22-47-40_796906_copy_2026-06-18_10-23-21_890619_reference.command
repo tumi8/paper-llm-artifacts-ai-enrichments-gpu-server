@@ -1,0 +1,1 @@
+scp -r /srv/testbed/results/warmuth/default/llm-enrichment/v1.0.0/multipath/2026-06-18_10-23-21_890619_reference hactar.blockchain.net.cit.tum.de:/srv/testbed/results/warmuth/default

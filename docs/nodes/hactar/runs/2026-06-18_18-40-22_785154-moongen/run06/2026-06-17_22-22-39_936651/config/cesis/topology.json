@@ -1,0 +1,26 @@
+{
+    "nida.baltikum.net.cit.tum.de": [
+        {
+            "inf_a": "enp5s0f0",
+            "inf_b": "enp131s0f0",
+            "mac_a": "a0:36:9f:59:07:00",
+            "mac_b": "a0:36:9f:3b:5b:4c",
+            "type": "link",
+            "properties": {
+                "speed": "10GbaseT - Four-pair Category 6A or better, full duplex mode only",
+                "device_b": "server"
+            }
+        },
+        {
+            "inf_a": "enp5s0f1",
+            "inf_b": "enp131s0f1",
+            "mac_a": "a0:36:9f:59:07:02",
+            "mac_b": "a0:36:9f:3b:5b:4e",
+            "type": "link",
+            "properties": {
+                "speed": "10GbaseT - Four-pair Category 6A or better, full duplex mode only",
+                "device_b": "server"
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: QUIC Protocol Performance Evaluation Experiment
+abstract: This dataset documents an experiment designed to evaluate the performance
+  characteristics of various QUIC protocol implementations under different bandwidth
+  constraints. The methodology involved establishing a controlled environment on two
+  nodes (tartu and tallinn) through automated bootstrapping, system configuration,
+  and package installation steps. Multiple configurations were tested, including varying
+  bandwidth limits and transport layer implementations. Data collection focused on
+  measuring goodput performance, execution time, and success rates via client and
+  server processes, generating JSON reports and visualization plots for analysis.
+  Per-run logs and evaluation outputs are archived to facilitate detailed investigation
+  of the experiment’s results.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Marcel
+  family-names: Kempf
+  orcid: https://orcid.org/0000-0001-7540-776X
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+keywords:
+- Quiche
+- TQuic
+- QUIC
+- Network Transport
+- Bandwidth Limit
+license: CC-BY-SA-4.0

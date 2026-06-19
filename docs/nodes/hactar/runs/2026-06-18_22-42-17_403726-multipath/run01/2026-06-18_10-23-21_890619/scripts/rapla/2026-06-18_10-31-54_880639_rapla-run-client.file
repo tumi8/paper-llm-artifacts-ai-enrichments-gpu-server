@@ -1,0 +1,97 @@
+#!/bin/bash
+set -eux
+
+RESULTS_DIR=$(pos_get_variable results_dir -r)
+SCHEDULER_CONFIG=$(pos_get_variable scheduler --from-loop)
+SLOW_PATH_PROFILE=$(pos_get_variable slow_path_profile --from-loop)
+IFS=':' read -r SLOW_PATH_RATE SLOW_PATH_DELAY <<< "$SLOW_PATH_PROFILE"
+TBF_LATENCY=$(pos_get_variable tbf_latency -r)
+TBF_BURST=$(pos_get_variable tbf_burst -r)
+ITERATION=$(pos_get_variable iteration --from-loop)
+CC_ALGORITHM=$(pos_get_variable cc_algorithm -r)
+
+RELIABLE_FLAG=""
+SCHEDULER="$SCHEDULER_CONFIG"
+
+case "$SCHEDULER_CONFIG" in
+    reliable:*)
+        RELIABLE_FLAG="--reliable"
+        SCHEDULER=${SCHEDULER_CONFIG#reliable:}
+        ;;
+    unreliable:*)
+        SCHEDULER=${SCHEDULER_CONFIG#unreliable:}
+        ;;
+esac
+
+PATH_PROPERTIES="delay-${SLOW_PATH_DELAY}ms_rate-${SLOW_PATH_RATE}mbit"
+SCHEDULER_DIR_NAME=${SCHEDULER_CONFIG//[^[:alnum:]_-]/_}
+RUN_NAME="${SCHEDULER_DIR_NAME}_${PATH_PROPERTIES}_run-${ITERATION}"
+RUN_DIR="$RESULTS_DIR/$PATH_PROPERTIES/$SCHEDULER_DIR_NAME/run-$ITERATION"
+mkdir -p "$RUN_DIR"
+
+CLIENT_IP=$(pos_get_variable client_ip -r)
+CLIENT_EXTRA_IP=$(pos_get_variable client_extra_ip -r)
+CLIENT_EXTRA_INTERFACE=$(pos_get_variable client_extra_interface -r)
+PROXY_IP=$(pos_get_variable proxy_ip -r)
+PROXY_PORT=$(pos_get_variable proxy_port -r)
+TARGET_IP=$(pos_get_variable server_ip -r)
+TARGET_PORT=$(pos_get_variable server_port -r)
+PROXY_ADDRESS="[$PROXY_IP]:$PROXY_PORT"
+
+TUNNEL_PRIO_LIST=(
+    " --op u=0,i"
+    " --op u=0,i"
+    " --op u=3,i"
+    " --op u=3,i"
+    " --op u=3,i"
+    " --op u=5,i"
+    " --op u=5,i"
+    " --op u=5,i"
+)
+
+REQUEST_FLAGS=(
+    "--endpoint /flow0.txt"
+    " --ep /flow1.txt"
+    " --ep /flow2.txt"
+    " --ep /flow3.txt"
+    " --ep /flow4.txt"
+    " --ep /flow5.txt"
+    " --ep /flow6.txt"
+    " --ep /flow7.txt"
+    " --ep /flow8.txt"
+)
+
+echo "...Set slow path parameters"
+tc qdisc replace dev "$CLIENT_EXTRA_INTERFACE" root handle 1: tbf rate "${SLOW_PATH_RATE}mbit" latency "${TBF_LATENCY}ms" burst "${TBF_BURST}"
+tc qdisc replace dev "$CLIENT_EXTRA_INTERFACE" parent 1: handle 10: netem delay "${SLOW_PATH_DELAY}ms"
+
+SYNC_TAG="${RUN_NAME}_services_ready"
+FINISH_TAG="${RUN_NAME}_client_finished"
+
+pos_sync --tag "$SYNC_TAG"
+
+RUN_FLAGS="${RELIABLE_FLAG} --outer-prio u=0,i,sched=${SCHEDULER}${TUNNEL_PRIO_LIST[*]} ${REQUEST_FLAGS[*]}"
+
+echo "Starting client iteration $ITERATION: $RUN_DIR"
+
+pos_energy_start --loop --filename "client"
+
+cd /root/mp-nada/tokio-quiche/nada && cargo run --release --bin masque-client -- \
+    --results-dir "$RUN_DIR" \
+    --proxy-address "$PROXY_ADDRESS" \
+    --target-ip "$TARGET_IP" \
+    --target-port "$TARGET_PORT" \
+    --multipath \
+    --probe-timeout 3 \
+    --client-address "[$CLIENT_IP]:0" \
+    --extra-address "[$CLIENT_EXTRA_IP]:0" \
+    --log-stats \
+    --qlog \
+    --log-keys \
+    --cc-algorithm "$CC_ALGORITHM" \
+    --scheduler "$SCHEDULER" \
+    $RUN_FLAGS
+
+pos_sync --tag "$FINISH_TAG"
+
+pos_energy_stop

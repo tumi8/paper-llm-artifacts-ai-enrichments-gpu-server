@@ -1,0 +1,90 @@
+{
+    "palanga.baltikum.net.cit.tum.de": [
+        {
+            "inf_a": "enp2s0f0",
+            "inf_b": "enp2s0f1np1",
+            "mac_a": "50:7c:6f:52:19:be",
+            "mac_b": "58:a2:e1:27:9f:f3",
+            "type": "splitter_link",
+            "properties": {
+                "speed": "10GigBaseLR - R fiber over 1310 nm optics",
+                "device_b": "server",
+                "endpoint": "receiver",
+                "sniffer": [
+                    {
+                        "fqdn": "valga.baltikum.net.cit.tum.de",
+                        "inf": "ens2f1",
+                        "mac": "50:7c:6f:54:ac:1d"
+                    }
+                ]
+            }
+        },
+        {
+            "inf_a": "enp2s0f1",
+            "inf_b": "enp2s0f0np0",
+            "mac_a": "50:7c:6f:52:19:bf",
+            "mac_b": "58:a2:e1:27:9f:f2",
+            "type": "splitter_link",
+            "properties": {
+                "speed": "10GigBaseLR - R fiber over 1310 nm optics",
+                "device_b": "server",
+                "endpoint": "transmitter",
+                "sniffer": [
+                    {
+                        "fqdn": "valga.baltikum.net.cit.tum.de",
+                        "inf": "ens2f0",
+                        "mac": "50:7c:6f:54:ac:1c"
+                    }
+                ]
+            }
+        }
+    ],
+    "valga.baltikum.net.cit.tum.de": [
+        {
+            "inf_a": "enp130s0f0",
+            "inf_b": "ens5f1",
+            "mac_a": "00:1b:21:bc:b4:50",
+            "mac_b": "90:e2:ba:92:c1:2d",
+            "type": "link",
+            "properties": {
+                "speed": "10GigBaseCX4 - X copper over 8 pair 100-Ohm balanced cable",
+                "device_b": "server"
+            }
+        }
+    ],
+    "tapa.baltikum.net.cit.tum.de": [
+        {
+            "inf_a": "enp130s0f1",
+            "inf_b": "enp130s0f1",
+            "mac_a": "00:1b:21:bc:b4:52",
+            "mac_b": "00:1b:21:bc:b1:e2",
+            "type": "link",
+            "properties": {
+                "speed": "10GigBaseCX4 - X copper over 8 pair 100-Ohm balanced cable",
+                "device_b": "server"
+            }
+        },
+        {
+            "inf_a": "enp133s0f0",
+            "inf_b": "enp133s0f0",
+            "mac_a": "00:1b:21:be:3a:4c",
+            "mac_b": "00:1b:21:be:39:1c",
+            "type": "link",
+            "properties": {
+                "speed": "10GigBaseCX4 - X copper over 8 pair 100-Ohm balanced cable",
+                "device_b": "server"
+            }
+        },
+        {
+            "inf_a": "enp133s0f1",
+            "inf_b": "enp133s0f1",
+            "mac_a": "00:1b:21:be:3a:4e",
+            "mac_b": "00:1b:21:be:39:1e",
+            "type": "link",
+            "properties": {
+                "speed": "10GigBaseCX4 - X copper over 8 pair 100-Ohm balanced cable",
+                "device_b": "server"
+            }
+        }
+    ]
+}

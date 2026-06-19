@@ -1,0 +1,487 @@
+{
+    "motherboard": {
+        "bios": {
+            "date": "04/28/2014",
+            "vendor": "American Megatrends",
+            "version": "3.0b"
+        },
+        "model": "X9DRH-7TF/7F/iTF/iF",
+        "vendor": "Supermicro",
+        "revision": "1234567890"
+    },
+    "processor": [
+        {
+            "slot": "SOCKET 0",
+            "cores": 8,
+            "model": "Xeon E5-2640 v2 @ 2.00GHz",
+            "vendor": "Intel",
+            "threads": 16,
+            "version": "6.62.4",
+            "microcode": "1046",
+            "virtualized": false,
+            "architecture": "64bit"
+        },
+        {
+            "slot": "SOCKET 1",
+            "cores": 8,
+            "model": "Xeon E5-2640 v2 @ 2.00GHz",
+            "vendor": "Intel",
+            "threads": 16,
+            "version": "6.62.4",
+            "microcode": "1046",
+            "virtualized": false,
+            "architecture": "64bit"
+        }
+    ],
+    "memory": {
+        "dimms": [
+            {
+                "slot": "P1_DIMMA1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965439-093.A",
+                "serial": "D21EF992",
+                "vendor": "Kingston",
+                "capacity_bytes": 4294967296,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 4,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMA2",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P1_DIMMB1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965439-093.A",
+                "serial": "CD1ED792",
+                "vendor": "Kingston",
+                "capacity_bytes": 4294967296,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 4,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMB2",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P1_DIMMC1",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P1_DIMMC2",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P1_DIMMD1",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P1_DIMMD2",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P2_DIMME1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965439-093.A",
+                "serial": "CD1E1993",
+                "vendor": "Kingston",
+                "capacity_bytes": 4294967296,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 4,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMME2",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P2_DIMMF1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965439-093.A",
+                "serial": "D11E0F93",
+                "vendor": "Kingston",
+                "capacity_bytes": 4294967296,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 4,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMMF2",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P2_DIMMG1",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P2_DIMMG2",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P2_DIMMH1",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            },
+            {
+                "slot": "P2_DIMMH2",
+                "type": null,
+                "empty": true,
+                "model": null,
+                "serial": null,
+                "vendor": null,
+                "capacity_bytes": null,
+                "maximum_speed_val": null,
+                "capacity_human_val": null,
+                "maximum_speed_unit": null,
+                "capacity_human_unit": null,
+                "operational_speed_val": null,
+                "operational_speed_unit": null
+            }
+        ],
+        "dimm_slots": 16,
+        "ecc_details": "Multi-bit ECC",
+        "ecc_support": true,
+        "maximum_capacity_bytes": 137438953472,
+        "installed_capacity_bytes": 17179869184,
+        "maximum_capacity_human_val": 128,
+        "maximum_capacity_human_unit": "GiB",
+        "installed_capacity_human_val": 16,
+        "installed_capacity_human_unit": "GiB"
+    },
+    "storage": [
+        {
+            "model": "Cruzer Fit",
+            "serial": "4C530009800218102021",
+            "vendor": "Sisk",
+            "version": "1.27",
+            "dev_name": "/dev/sda",
+            "size_bytes": 8004304896,
+            "bus_address": "scsi@7:0.0.0",
+            "size_human_val": 8.004304896,
+            "size_human_unit": "GB"
+        }
+    ],
+    "graphics": [],
+    "network": [
+        {
+            "model": "I210 Gigabit Fiber",
+            "vendor": "Intel",
+            "version": "03",
+            "firmware": "3.20, 0x80000578, 1.1197.0",
+            "interfaces": [
+                {
+                    "mac": "6c:b3:11:4a:37:44",
+                    "dev_name": "enp2s0",
+                    "bus_address": "pci@0000:02:00.0",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 1,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "SFP",
+                        "transceiver_model": "P.1396.10",
+                        "transceiver_modes": [
+                            "1000baseKX/Full"
+                        ],
+                        "transceiver_medium": "Optical Fiber",
+                        "transceiver_serial": "F7AZ2XK",
+                        "transceiver_revision": "A"
+                    }
+                }
+            ],
+            "bus_address": "pci@0000:02:00.0"
+        },
+        {
+            "model": "10-Gigabit X540-AT2",
+            "vendor": "Intel",
+            "version": "01",
+            "firmware": "0x80000389",
+            "interfaces": [
+                {
+                    "mac": "a0:36:9f:3b:5b:4c",
+                    "dev_name": "enp131s0f0",
+                    "bus_address": "pci@0000:83:00.0",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 10,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "100baseT/Full",
+                            "1000baseT/Full",
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                },
+                {
+                    "mac": "a0:36:9f:3b:5b:4e",
+                    "dev_name": "enp131s0f1",
+                    "bus_address": "pci@0000:83:00.1",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 10,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "100baseT/Full",
+                            "1000baseT/Full",
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                }
+            ],
+            "bus_address": "pci@0000:83:00.{0,1}"
+        },
+        {
+            "model": "82576 Gigabit",
+            "vendor": "Intel",
+            "version": "01",
+            "firmware": "1.2.1",
+            "interfaces": [
+                {
+                    "mac": "90:e2:ba:1c:55:7c",
+                    "dev_name": "enp135s0f0",
+                    "bus_address": "pci@0000:87:00.0",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 1,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "10baseT/Half",
+                            "10baseT/Full",
+                            "100baseT/Half",
+                            "100baseT/Full",
+                            "1000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                },
+                {
+                    "mac": "90:e2:ba:1c:55:7d",
+                    "dev_name": "enp135s0f1",
+                    "bus_address": "pci@0000:87:00.1",
+                    "current_configuration": {
+                        "link_detected": false,
+                        "link_speed_val": null,
+                        "link_speed_unit": null,
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "10baseT/Half",
+                            "10baseT/Full",
+                            "100baseT/Half",
+                            "100baseT/Full",
+                            "1000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                }
+            ],
+            "bus_address": "pci@0000:87:00.{0,1}"
+        },
+        {
+            "model": "82576 Gigabit",
+            "vendor": "Intel",
+            "version": "01",
+            "firmware": "1.2.1",
+            "interfaces": [
+                {
+                    "mac": "90:e2:ba:1c:55:7e",
+                    "dev_name": "enp137s0f0",
+                    "bus_address": "pci@0000:89:00.0",
+                    "current_configuration": {
+                        "link_detected": false,
+                        "link_speed_val": null,
+                        "link_speed_unit": null,
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "10baseT/Half",
+                            "10baseT/Full",
+                            "100baseT/Half",
+                            "100baseT/Full",
+                            "1000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                },
+                {
+                    "mac": "90:e2:ba:1c:55:7f",
+                    "dev_name": "enp137s0f1",
+                    "bus_address": "pci@0000:89:00.1",
+                    "current_configuration": {
+                        "link_detected": false,
+                        "link_speed_val": null,
+                        "link_speed_unit": null,
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "10baseT/Half",
+                            "10baseT/Full",
+                            "100baseT/Half",
+                            "100baseT/Full",
+                            "1000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                }
+            ],
+            "bus_address": "pci@0000:89:00.{0,1}"
+        }
+    ]
+}

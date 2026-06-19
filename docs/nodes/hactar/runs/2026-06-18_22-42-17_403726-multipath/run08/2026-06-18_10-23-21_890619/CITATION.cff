@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network Experiment Results for QUIC Server-Client Interactions
+abstract: This dataset contains results from experiments measuring energy consumption
+  during client-server interactions configured with specific network topologies (dual-path
+  routing). The methodology involved setting up nodes using defined profiles, including
+  different scheduling parameters. Evaluation processed these results into visualizations
+  to analyze performance under various conditions.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- Network Analysis
+- Routing Configuration
+- Energy Consumption
+- QUIC Server
+- Large Digit Files
+license: CC-BY-SA-4.0

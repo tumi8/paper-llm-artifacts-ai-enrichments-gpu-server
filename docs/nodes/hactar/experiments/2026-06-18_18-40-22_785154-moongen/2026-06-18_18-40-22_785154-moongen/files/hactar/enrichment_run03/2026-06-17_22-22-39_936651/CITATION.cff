@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: L2 Forwarding Latency Measurements Dataset
+abstract: This dataset contains results from experiments measuring L2 forwarding latency
+  using a load generator script (MoonGen) across multiple configurations. The methodology
+  involved running tests with varying packet rates and sizes on the target device
+  under test, capturing associated logs for analysis. Evaluation focused on deriving
+  performance metrics including latency measurements and energy consumption data during
+  execution.
+date-released: '2026-06-17'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- MoonGen
+- L2 Forwarder
+- pkt_rate
+- pkt_size
+- Energy Consumption
+license: CC-BY-SA-4.0

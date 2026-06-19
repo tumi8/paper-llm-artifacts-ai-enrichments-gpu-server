@@ -1,0 +1,14 @@
+unreliable_lowrtt:
+	End-to-end completion times per priority [s]
+		high: median: 1.8109s std. dev.: 0.4308s, min: 0.9267s max: 2.8070s n=15
+		medium: median: 1.7508s std. dev.: 0.3094s, min: 0.9686s max: 2.1485s n=15
+		low: median: 1.8202s std. dev.: 0.3154s, min: 1.3003s max: 2.3999s n=15
+	
+
+reliable_lowrtt:
+	End-to-end completion times per priority [s]
+		high: median: 0.7711s std. dev.: 0.0503s, min: 0.7025s max: 0.8818s n=15
+		medium: median: 1.2587s std. dev.: 0.0479s, min: 1.1826s max: 1.3230s n=15
+		low: median: 1.7874s std. dev.: 0.0823s, min: 1.6511s max: 1.9111s n=15
+	
+

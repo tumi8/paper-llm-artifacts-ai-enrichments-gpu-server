@@ -1,0 +1,21 @@
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+/usr/bin/deb-systemd-helper was not called from dpkg. Exiting.
+/usr/bin/deb-systemd-helper was not called from dpkg. Exiting.
+Failed to stop iperf3.service: Unit iperf3.service not loaded.
+info: downloading installer
+warn: It looks like you have an existing rustup settings file at:
+warn: /root/.rustup/settings.toml
+warn: Rustup will install the default toolchain as specified in the settings file,
+warn: instead of the one inferred from the default host triple.
+info: profile set to default
+info: default host triple is x86_64-unknown-linux-gnu
+info: syncing channel updates for stable-x86_64-unknown-linux-gnu
+info: latest update on 2026-05-28 for version 1.96.0 (ac68faa20 2026-05-25)
+info: downloading 6 components
+info: default toolchain set to stable-x86_64-unknown-linux-gnu
+Cloning into 'mp-nada'...
+Submodule 'boringssl' (https://github.com/google/boringssl.git) registered for path 'quiche/deps/boringssl'
+Cloning into '/root/mp-nada/quiche/deps/boringssl'...
+Switched to a new branch 'nada'

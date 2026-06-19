@@ -1,0 +1,27 @@
+#!/bin/bash
+set -eux
+
+FLOW_0=1000000
+FLOW_1=1000000
+FLOW_2=1000000
+FLOW_3=1000000
+FLOW_4=1000000
+FLOW_5=1000000
+FLOW_6=1000000
+FLOW_7=1000000
+FLOW_8=1000000
+
+TARGET_DIR="/root/mp-nada/apps/src/bin/root"
+mkdir -p "$TARGET_DIR"
+
+LC_ALL=C tr -dc '0' < /dev/urandom | head -c "$FLOW_0" > "$TARGET_DIR/flow0.txt"
+LC_ALL=C tr -dc '1' < /dev/urandom | head -c "$FLOW_1" > "$TARGET_DIR/flow1.txt"
+LC_ALL=C tr -dc '2' < /dev/urandom | head -c "$FLOW_2" > "$TARGET_DIR/flow2.txt"
+LC_ALL=C tr -dc '3' < /dev/urandom | head -c "$FLOW_3" > "$TARGET_DIR/flow3.txt"
+LC_ALL=C tr -dc '4' < /dev/urandom | head -c "$FLOW_4" > "$TARGET_DIR/flow4.txt"
+LC_ALL=C tr -dc '5' < /dev/urandom | head -c "$FLOW_5" > "$TARGET_DIR/flow5.txt"
+LC_ALL=C tr -dc '6' < /dev/urandom | head -c "$FLOW_6" > "$TARGET_DIR/flow6.txt"
+LC_ALL=C tr -dc '7' < /dev/urandom | head -c "$FLOW_7" > "$TARGET_DIR/flow7.txt"
+LC_ALL=C tr -dc '8' < /dev/urandom | head -c "$FLOW_8" > "$TARGET_DIR/flow8.txt"
+
+echo "Generated files"

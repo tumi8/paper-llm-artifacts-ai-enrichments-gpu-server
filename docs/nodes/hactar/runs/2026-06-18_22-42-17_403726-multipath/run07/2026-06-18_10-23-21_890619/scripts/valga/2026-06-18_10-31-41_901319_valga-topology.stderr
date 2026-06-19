@@ -1,0 +1,18 @@
+++ pos_get_variable server_interface -r
++ SERVER_INTERFACE=ens5f0
+++ pos_get_variable server_ip -r
++ SERVER_IP=fd00:0:0:4::1
+++ pos_get_variable proxy_ip -r
++ PROXY_IP=fd00:0:0:3::1
+++ pos_get_variable prefix_length -r
++ PREFIX_LENGTH=112
+++ pos_get_variable proxy_server_delay -r
++ DELAY=5
++ echo 'Configuring the server'\''s network'
++ echo '...Assign addresses'
++ ip addr add dev ens5f0 fd00:0:0:4::1/112
++ echo '...Set IFs up'
++ ip link set dev ens5f0 up
++ echo '...Set route to the proxy'
++ ip -6 route add fd00:0:0:3::1 dev ens5f0
++ tc qdisc add dev ens5f0 root netem delay 5ms

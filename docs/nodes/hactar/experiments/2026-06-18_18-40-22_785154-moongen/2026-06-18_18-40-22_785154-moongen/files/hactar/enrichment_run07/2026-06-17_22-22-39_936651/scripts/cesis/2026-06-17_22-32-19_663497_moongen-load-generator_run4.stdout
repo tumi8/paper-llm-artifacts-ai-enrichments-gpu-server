@@ -1,0 +1,9 @@
+Done setting up
+Starting test l2-load-latency
+Generate latency plot /root/MoonGen/histogram-latencies.png
+/root/MoonGen/histogram-latencies.csv: samples=1,802,667 min=44,211 mean=44,974 p50=45,068 p90=45,331 p95=45,440 p99=45,465 max=715,219
+Wrote 1 per-run plot(s) to evaluation/output
+Upload histogram /root/MoonGen/histogram-latencies.csv
+Upload latency plot /root/MoonGen/histogram-latencies.png
+Stopping test l2-load-latency
+All done LoadGen l2-load-latency

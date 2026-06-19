@@ -1,0 +1,22 @@
+#!/bin/bash
+set -eux
+
+SERVER_INTERFACE=$(pos_get_variable server_interface -r)
+SERVER_IP=$(pos_get_variable server_ip -r)
+PROXY_IP=$(pos_get_variable proxy_ip -r)
+PREFIX_LENGTH=$(pos_get_variable prefix_length -r)
+
+DELAY=$(pos_get_variable proxy_server_delay -r) # ms
+
+echo "Configuring the server's network"
+
+echo "...Assign addresses"
+ip addr add dev "$SERVER_INTERFACE" "$SERVER_IP"/"$PREFIX_LENGTH"
+
+echo "...Set IFs up"
+ip link set dev "$SERVER_INTERFACE" up
+
+echo "...Set route to the proxy"
+ip -6 route add "$PROXY_IP" dev "$SERVER_INTERFACE"
+
+tc qdisc add dev "$SERVER_INTERFACE" root netem delay "${DELAY}ms"

@@ -1,0 +1,50 @@
+{
+    "rapla.baltikum.net.cit.tum.de": [
+        {
+            "inf_a": "enp133s0f0",
+            "inf_b": "enp133s0f0",
+            "mac_a": "00:1b:21:be:39:1c",
+            "mac_b": "00:1b:21:be:3a:4c",
+            "type": "link",
+            "properties": {
+                "speed": "10GigBaseCX4 - X copper over 8 pair 100-Ohm balanced cable",
+                "device_b": "server"
+            }
+        },
+        {
+            "inf_a": "enp130s0f1",
+            "inf_b": "enp130s0f1",
+            "mac_a": "00:1b:21:bc:b1:e2",
+            "mac_b": "00:1b:21:bc:b4:52",
+            "type": "link",
+            "properties": {
+                "speed": "10GigBaseCX4 - X copper over 8 pair 100-Ohm balanced cable",
+                "device_b": "server"
+            }
+        },
+        {
+            "inf_a": "enp133s0f1",
+            "inf_b": "enp133s0f1",
+            "mac_a": "00:1b:21:be:39:1e",
+            "mac_b": "00:1b:21:be:3a:4e",
+            "type": "link",
+            "properties": {
+                "speed": "10GigBaseCX4 - X copper over 8 pair 100-Ohm balanced cable",
+                "device_b": "server"
+            }
+        }
+    ],
+    "valga.baltikum.net.cit.tum.de": [
+        {
+            "inf_a": "enp130s0f0",
+            "inf_b": "ens5f0",
+            "mac_a": "00:1b:21:bc:b1:e0",
+            "mac_b": "90:e2:ba:92:c1:2c",
+            "type": "link",
+            "properties": {
+                "speed": "10GigBaseCX4 - X copper over 8 pair 100-Ohm balanced cable",
+                "device_b": "server"
+            }
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+['bash', '-lc', 'pos_upload --recursive --outfile 2026-06-18_09-02-45_976298_original --timeout 240 /srv/testbed/results/warmuth/default/2026-06-18_09-02-45_976298']

@@ -1,0 +1,3 @@
+++ pos_get_variable results_dir -r
++ RESULTS_DIR=/root/results
++ pos_upload -r /root/results --timeout 300

@@ -1,0 +1,1 @@
+scp -r /home/warmuth/experiments/ai-metadata-enricher hactar.blockchain.net.cit.tum.de:/root/ai-metadata-enricher

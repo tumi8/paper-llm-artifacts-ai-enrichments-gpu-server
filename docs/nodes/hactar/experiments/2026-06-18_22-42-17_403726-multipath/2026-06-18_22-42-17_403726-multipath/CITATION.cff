@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Evaluation of Local LLMs for RO-Crate Metadata Enrichment
+abstract: This experiment enriches an existing RO-Crate artifact with generated titles,
+  descriptions, and keywords using locally hosted LLMs through Ollama. Different models
+  and prompt context budgets are combined to evaluate how model choice and available
+  artifact context influence metadata quality. Each run produces an enriched RO-Crate
+  artifact together with run manifests, including token and runtime statistics, GPU
+  and energy measurements, and automated comparisons against a human-written reference
+  using BERTScore metric.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+keywords:
+- RO-Crate
+- Metadata Enrichment
+- Large Language Models
+- Ollama
+- BERTScore

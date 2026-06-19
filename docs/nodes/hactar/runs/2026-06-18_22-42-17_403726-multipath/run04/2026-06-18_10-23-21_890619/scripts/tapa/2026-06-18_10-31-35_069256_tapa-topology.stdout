@@ -1,0 +1,7 @@
+Configuring the proxy network
+net.ipv6.conf.all.forwarding = 0
+...Set IFs up
+...Assign per-link addresses
+...Add client routes
+...Add server route
+...Set fixed path parameters

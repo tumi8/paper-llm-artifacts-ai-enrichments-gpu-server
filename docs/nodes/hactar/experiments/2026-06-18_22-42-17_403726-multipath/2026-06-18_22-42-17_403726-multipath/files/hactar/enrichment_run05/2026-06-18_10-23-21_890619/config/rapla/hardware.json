@@ -1,0 +1,481 @@
+{
+    "motherboard": {
+        "bios": {
+            "date": "06/18/2016",
+            "vendor": "American Megatrends",
+            "version": "3.2a"
+        },
+        "model": "X9DRH-7TF/7F/iTF/iF",
+        "vendor": "Supermicro",
+        "revision": "1234567890"
+    },
+    "processor": [
+        {
+            "slot": "SOCKET 0",
+            "cores": 6,
+            "model": "Xeon E5-2620 v2 @ 2.10GHz",
+            "vendor": "Intel",
+            "threads": 12,
+            "version": "6.62.4",
+            "microcode": "1064",
+            "virtualized": false,
+            "architecture": "64bit"
+        },
+        {
+            "slot": "SOCKET 1",
+            "cores": 6,
+            "model": "Xeon E5-2620 v2 @ 2.10GHz",
+            "vendor": "Intel",
+            "threads": 12,
+            "version": "6.62.4",
+            "microcode": "1064",
+            "virtualized": false,
+            "architecture": "64bit"
+        }
+    ],
+    "memory": {
+        "dimms": [
+            {
+                "slot": "P1_DIMMA1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "D01B9F15",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMA2",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "CF1BC515",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMB1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "B81BC715",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMB2",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "D11BC615",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMC1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "D01BBB15",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMC2",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "B81BB415",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMD1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965516-130.A",
+                "serial": "D407470C",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P1_DIMMD2",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A0",
+                "serial": "C91BCA15",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMME1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "CD1BCD15",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMME2",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "CD1BA415",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMMF1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "D01BBD15",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMMF2",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965516-195.A",
+                "serial": "BD2E84C6",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMMG1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "CE1BBE15",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMMG2",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "D21BA115",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMMH1",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A",
+                "serial": "CA1BBD15",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            },
+            {
+                "slot": "P2_DIMMH2",
+                "type": "DDR3",
+                "empty": false,
+                "model": "9965433-180.A0",
+                "serial": "CA1BB115",
+                "vendor": "Kingston",
+                "capacity_bytes": 8589934592,
+                "maximum_speed_val": 1600,
+                "capacity_human_val": 8,
+                "maximum_speed_unit": "MHz",
+                "capacity_human_unit": "GiB",
+                "operational_speed_val": 1600,
+                "operational_speed_unit": "MHz"
+            }
+        ],
+        "dimm_slots": 16,
+        "ecc_details": "Multi-bit ECC",
+        "ecc_support": true,
+        "maximum_capacity_bytes": 137438953472,
+        "installed_capacity_bytes": 137438953472,
+        "maximum_capacity_human_val": 128,
+        "maximum_capacity_human_unit": "GiB",
+        "installed_capacity_human_val": 128,
+        "installed_capacity_human_unit": "GiB"
+    },
+    "storage": [],
+    "graphics": [],
+    "network": [
+        {
+            "model": "E810-XXV for SFP",
+            "vendor": "Intel",
+            "version": "02",
+            "firmware": "3.20 0x8000d853 1.3146.0",
+            "interfaces": [
+                {
+                    "mac": "50:7c:6f:52:19:be",
+                    "dev_name": "enp2s0f0",
+                    "bus_address": "pci@0000:02:00.0",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 10,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "SFP",
+                        "transceiver_model": "P.1396.10",
+                        "transceiver_modes": [
+                            "1000baseX/Full",
+                            "10000baseLR/Full"
+                        ],
+                        "transceiver_medium": "Optical Fiber",
+                        "transceiver_serial": "F78PP0A",
+                        "transceiver_revision": "A"
+                    }
+                },
+                {
+                    "mac": "50:7c:6f:52:19:bf",
+                    "dev_name": "enp2s0f1",
+                    "bus_address": "pci@0000:02:00.1",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 10,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "SFP",
+                        "transceiver_model": "P.1396.10",
+                        "transceiver_modes": [
+                            "1000baseX/Full",
+                            "10000baseLR/Full"
+                        ],
+                        "transceiver_medium": "Optical Fiber",
+                        "transceiver_serial": "F78ZM3T",
+                        "transceiver_revision": "A"
+                    }
+                }
+            ],
+            "bus_address": "pci@0000:02:00.{0,1}"
+        },
+        {
+            "model": "10-Gigabit X540-AT2",
+            "vendor": "Intel",
+            "version": "01",
+            "firmware": "0x80000314",
+            "interfaces": [
+                {
+                    "mac": "0c:c4:7a:1e:34:58",
+                    "dev_name": "enp6s0f0",
+                    "bus_address": "pci@0000:06:00.0",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 1,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "100baseT/Full",
+                            "1000baseT/Full",
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                },
+                {
+                    "mac": "0c:c4:7a:1e:34:59",
+                    "dev_name": "enp6s0f1",
+                    "bus_address": "pci@0000:06:00.1",
+                    "current_configuration": {
+                        "link_detected": false,
+                        "link_speed_val": null,
+                        "link_speed_unit": null,
+                        "transceiver_type": "Internal transceiver",
+                        "transceiver_model": null,
+                        "transceiver_modes": [
+                            "100baseT/Full",
+                            "1000baseT/Full",
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Twisted Pair Cable",
+                        "transceiver_serial": null,
+                        "transceiver_revision": null
+                    }
+                }
+            ],
+            "bus_address": "pci@0000:06:00.{0,1}"
+        },
+        {
+            "model": "82599ES 10-Gigabit SFI/SFP+",
+            "vendor": "Intel",
+            "version": "01",
+            "firmware": "0x00012b2c, 1.1197.0",
+            "interfaces": [
+                {
+                    "mac": "00:1b:21:bc:b4:50",
+                    "dev_name": "enp130s0f0",
+                    "bus_address": "pci@0000:82:00.0",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 10,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "SFP",
+                        "transceiver_model": "P.C30.1H",
+                        "transceiver_modes": [
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Direct Attach Copper",
+                        "transceiver_serial": "F79H0WG-A",
+                        "transceiver_revision": "1.0"
+                    }
+                },
+                {
+                    "mac": "00:1b:21:bc:b4:52",
+                    "dev_name": "enp130s0f1",
+                    "bus_address": "pci@0000:82:00.1",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 10,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "SFP",
+                        "transceiver_model": "P.C30.H",
+                        "transceiver_modes": [
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Direct Attach Copper",
+                        "transceiver_serial": "F79H33H-B",
+                        "transceiver_revision": "1.0"
+                    }
+                }
+            ],
+            "bus_address": "pci@0000:82:00.{0,1}"
+        },
+        {
+            "model": "82599ES 10-Gigabit SFI/SFP+",
+            "vendor": "Intel",
+            "version": "01",
+            "firmware": "0x00012b2c, 1.1197.0",
+            "interfaces": [
+                {
+                    "mac": "00:1b:21:be:3a:4c",
+                    "dev_name": "enp133s0f0",
+                    "bus_address": "pci@0000:85:00.0",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 10,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "SFP",
+                        "transceiver_model": "P.1396.10",
+                        "transceiver_modes": [
+                            "1000baseT/Full",
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Optical Fiber",
+                        "transceiver_serial": "F78ZM3R",
+                        "transceiver_revision": "A"
+                    }
+                },
+                {
+                    "mac": "00:1b:21:be:3a:4e",
+                    "dev_name": "enp133s0f1",
+                    "bus_address": "pci@0000:85:00.1",
+                    "current_configuration": {
+                        "link_detected": true,
+                        "link_speed_val": 10,
+                        "link_speed_unit": "Gbit/s",
+                        "transceiver_type": "SFP",
+                        "transceiver_model": "P.1396.10",
+                        "transceiver_modes": [
+                            "1000baseT/Full",
+                            "10000baseT/Full"
+                        ],
+                        "transceiver_medium": "Optical Fiber",
+                        "transceiver_serial": "F78ZM3Q",
+                        "transceiver_revision": "A"
+                    }
+                }
+            ],
+            "bus_address": "pci@0000:85:00.{0,1}"
+        }
+    ]
+}

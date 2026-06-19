@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# exit on error
+set -e
+
+echo $(pos_get_variable hostname)
+
+# install dut
+GIT_REPO=$(pos_get_variable git/repo)
+
+DUT=libmoon
+
+apt update
+apt install -y meson ninja-build pkg-config python3-pyelftools libsystemd-dev
+
+echo "Cloning $GIT_REPO into $DUT"
+git clone --recursive $GIT_REPO $DUT
+cd $DUT
+# checkout a particular branch or commit
+git checkout $(pos_get_variable git/commit)
+
+# build libmoon
+./build.sh
+./setup-hugetlbfs.sh
+
+# disable turbo boost
+echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
+
+echo 'setup done'

@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it using the metadata below.
+type: dataset
+title: Network Congestion Control Experiment Results with QUIC under Varying Scheduler
+  and Slow-Path Conditions
+abstract: This dataset captures network performance evaluations of QUIC-based congestion
+  control algorithms under emulated latency and bandwidth constraints. Experiments
+  vary scheduler policies and slow-path network profiles across client-server-proxy
+  topologies, measuring throughput, latency, and energy consumption. Archive contents
+  include environment setup scripts, topology configuration files, per-run logs with
+  synchronized metrics, and structured result directories. Evaluation focuses on adaptive
+  scheduling behavior and protocol performance under controlled network emulation
+  scenarios.
+date-released: '2026-06-18'
+authors:
+- given-names: Kilian
+  family-names: Warmuth
+  orcid: https://orcid.org/0000-0001-6328-1047
+  affiliation: Technical University of Munich
+- given-names: Eric
+  family-names: Hauser
+  orcid: https://orcid.org/0000-0002-5378-3905
+  affiliation: Technical University of Munich
+- given-names: Daniel
+  family-names: Petri Rocha
+  orcid: https://orcid.org/0009-0000-1541-022X
+  affiliation: Technical University of Munich
+keywords:
+- pos
+- QUIC
+- congestion control
+- network topology
+- energy consumption
+license: CC-BY-SA-4.0

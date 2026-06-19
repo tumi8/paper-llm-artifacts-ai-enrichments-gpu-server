@@ -1,0 +1,38 @@
+{
+    "loop": {
+        "model_profile": [
+            "gemma3_4b",
+            "gemma3_12b",
+            "qwen3_14b",
+            "deepseek_r1_8b",
+            "gpt_oss_20b"
+        ],
+        "ctx": [
+            15000
+        ],
+        "temperature": [
+            0.0
+        ],
+        "top_p": [
+            0.9
+        ],
+        "peek_chars": [
+            100,
+            10000
+        ],
+        "baseline_result_folder": [
+            "/srv/testbed/results/warmuth/default/2026-06-18_09-02-45_976298"
+        ],
+        "crate_basename": [
+            "2026-06-18_09-02-45_976298"
+        ],
+        "reference_label": [
+            "2026-06-18_09-02-45_976298_reference"
+        ],
+        "reference_path": [
+            "/srv/testbed/results/warmuth/default/2026-06-18_09-02-45_976298_reference"
+        ]
+    },
+    "global": {},
+    "hactar": {}
+}

@@ -1,0 +1,11 @@
+{
+  "ctx": 15000,
+  "top_p": 0.9,
+  "peek_chars": 100,
+  "temperature": 0.0,
+  "model_profile": "gemma3_4b",
+  "crate_basename": "2026-06-17_22-22-39_936651",
+  "reference_path": "/srv/testbed/results/warmuth/default/2026-06-17_22-22-39_936651_reference",
+  "reference_label": "2026-06-17_22-22-39_936651_reference",
+  "baseline_result_folder": "/srv/testbed/results/warmuth/default/2026-06-17_22-22-39_936651"
+}
