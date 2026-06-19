@@ -1,10 +1,10 @@
-# Artifact: AI-Enrichment Runs of NVIDIA DGX Spark
+# Artifact: AI-Enrichment Runs of GPU Server
 
-This repository contains the evaluation artifacts of the enrichment runs using the NVIDIA DGX Spark.
+This repository contains the evaluation artifacts of the enrichment runs on the GPU Server.
 
 Browse the artifact:
 
-https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-spark/
+https://tumi8.github.io/paper-llm-artifacts-ai-enrichments-gpu-server/
 
 All artifacts are available here:
 
